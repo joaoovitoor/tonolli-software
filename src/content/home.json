@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "badge": "Software House em São Paulo",
+    "title": "Transformamos ideias em software que gera resultado",
+    "subtitle": "Desenvolvimento sob medida com inteligência artificial, arquitetura escalável e experiência comprovada em projetos de alta complexidade para empresas no Brasil e exterior.",
+    "cta": {
+      "primary": { "label": "Falar sobre meu projeto", "href": "/contato" },
+      "secondary": { "label": "Ver projetos", "href": "/projetos" }
+    }
+  },
+  "stats": [
+    { "value": "19+", "label": "Anos de experiência" },
+    { "value": "50+", "label": "Projetos entregues" },
+    { "value": "6+", "label": "Países atendidos" },
+    { "value": "99%", "label": "Clientes satisfeitos" }
+  ],
+  "servicesPreview": {
+    "title": "O que fazemos",
+    "subtitle": "Soluções completas de tecnologia para empresas que precisam de software confiável, escalável e inteligente.",
+    "items": [
+      {
+        "icon": "Code",
+        "title": "Desenvolvimento Sob Medida",
+        "description": "Sistemas web e mobile personalizados com Node.js, React, Next.js e TypeScript. Do MVP ao sistema enterprise."
+      },
+      {
+        "icon": "Brain",
+        "title": "Inteligência Artificial",
+        "description": "Agentes inteligentes, chatbots, automação e processamento de linguagem natural com LangChain e LLMs."
+      },
+      {
+        "icon": "RefreshCw",
+        "title": "Modernização de Sistemas",
+        "description": "Migração de sistemas legados para arquiteturas modernas com microserviços, serverless e cloud."
+      },
+      {
+        "icon": "Shield",
+        "title": "Consultoria & Arquitetura",
+        "description": "Revisão de arquitetura, code review, DevOps, CI/CD e mentoria técnica para equipes."
+      }
+    ]
+  },
+  "projectsPreview": {
+    "title": "Projetos em destaque",
+    "subtitle": "Produtos próprios e soluções desenvolvidas para clientes com resultados mensuráveis."
+  },
+  "cta": {
+    "title": "Tem um projeto em mente?",
+    "subtitle": "Avaliamos cada projeto individualmente para propor a melhor solução técnica e comercial.",
+    "button": { "label": "Iniciar conversa", "href": "/contato" }
+  },
+  "trust": {
+    "title": "Experiência com projetos de alta complexidade em diversos setores",
+    "companies": ["Fintech", "Entretenimento", "Agronegócio", "Saúde", "Marketing Digital"]
+  }
+}

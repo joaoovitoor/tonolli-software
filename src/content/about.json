@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Sobre a Tonolli Software",
+    "subtitle": "Uma software house brasileira especializada em desenvolvimento sob medida, inteligência artificial e modernização de sistemas para empresas que precisam de tecnologia que funciona."
+  },
+  "company": {
+    "title": "Quem somos",
+    "paragraphs": [
+      "A Tonolli Software é uma empresa de desenvolvimento de software com sede em São Paulo, no coração da Berrini — um dos principais polos de tecnologia do país.",
+      "Nascemos da combinação de quase duas décadas de experiência em engenharia de software com a visão de oferecer soluções de alto nível técnico para empresas que precisam de resultados reais.",
+      "Atuamos desde o desenvolvimento de sistemas completos do zero até a modernização de plataformas legadas, sempre com foco em arquitetura escalável, código de qualidade e entrega dentro do prazo.",
+      "Nosso diferencial é a experiência prática com projetos de alta complexidade em setores como fintech, agronegócio, entretenimento e saúde — tanto no mercado brasileiro quanto internacional."
+    ]
+  },
+  "founder": {
+    "title": "Quem está por trás",
+    "name": "João Vitor Ramos Tonolli",
+    "role": "Fundador & Software Architect",
+    "description": "Engenheiro de software com 19 anos de experiência e vivência em projetos internacionais de grande escala. Combina profundidade técnica com visão estratégica de negócios para garantir que cada projeto entregue valor real."
+  },
+  "values": {
+    "title": "Como trabalhamos",
+    "items": [
+      {
+        "title": "Qualidade sem atalhos",
+        "description": "Código limpo, arquitetura sólida e boas práticas em cada entrega. O mesmo padrão que se espera de empresas globais de tecnologia."
+      },
+      {
+        "title": "Transparência total",
+        "description": "Comunicação clara sobre prazos, custos e decisões técnicas. Você acompanha cada etapa e sabe exatamente onde está o projeto."
+      },
+      {
+        "title": "Resultado mensurável",
+        "description": "Tecnologia é meio, não fim. Cada linha de código entregue precisa gerar valor real e mensurável para o seu negócio."
+      },
+      {
+        "title": "Parceria de longo prazo",
+        "description": "Não entregamos e sumimos. Oferecemos suporte contínuo, evolução e acompanhamento técnico do que construímos."
+      }
+    ]
+  },
+  "numbers": {
+    "title": "Em números",
+    "items": [
+      { "value": "19+", "label": "Anos de experiência em software" },
+      { "value": "50+", "label": "Projetos entregues" },
+      { "value": "6+", "label": "Países atendidos" },
+      { "value": "2022", "label": "Fundação da empresa" }
+    ]
+  },
+  "cta": {
+    "title": "Vamos trabalhar juntos?",
+    "subtitle": "Se você precisa de software que funciona, escala e gera resultado, vamos conversar.",
+    "button": { "label": "Entrar em contato", "href": "/contato" }
+  }
+}

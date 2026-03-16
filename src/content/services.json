@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "title": "Serviços",
+    "subtitle": "Soluções de tecnologia sob medida para empresas que precisam de software confiável, escalável e inteligente."
+  },
+  "services": [
+    {
+      "id": "desenvolvimento",
+      "icon": "Code",
+      "title": "Desenvolvimento de Software Sob Medida",
+      "shortDescription": "Sistemas web e mobile personalizados para sua empresa.",
+      "description": "Construímos sistemas completos do zero ou evoluímos plataformas existentes. Utilizamos as tecnologias mais modernas do mercado para entregar software robusto, escalável e de fácil manutenção.",
+      "features": [
+        "Aplicações web com React, Next.js e TypeScript",
+        "APIs REST e GraphQL com Node.js e NestJS",
+        "Aplicações mobile multiplataforma",
+        "Integração com sistemas terceiros (ERPs, CRMs, APIs bancárias)",
+        "Dashboards e painéis administrativos",
+        "E-commerce e marketplaces"
+      ],
+      "technologies": ["React", "Next.js", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "MongoDB"]
+    },
+    {
+      "id": "inteligencia-artificial",
+      "icon": "Brain",
+      "title": "Inteligência Artificial & Automação",
+      "shortDescription": "Agentes inteligentes, chatbots e automação com IA.",
+      "description": "Desenvolvemos soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalhamos com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
+      "features": [
+        "Agentes inteligentes com LangChain e MCP",
+        "Chatbots e assistentes virtuais com LLMs",
+        "Processamento de documentos (PDF, áudio, imagens)",
+        "Análise de dados com machine learning",
+        "Otimização de custos de tokens e modelos",
+        "Integração com APIs de IA (OpenAI, Anthropic, Google)"
+      ],
+      "technologies": ["Python", "LangChain", "MCP", "LLMs", "OpenAI", "AWS Lambda"]
+    },
+    {
+      "id": "modernizacao",
+      "icon": "RefreshCw",
+      "title": "Modernização de Sistemas Legados",
+      "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
+      "description": "Transformamos sistemas legados em plataformas modernas, escaláveis e eficientes. Já lideramos projetos de modernização para empresas como Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
+      "features": [
+        "Migração de monolitos para microserviços",
+        "Arquitetura serverless (AWS Lambda, Azure Functions)",
+        "Migração de banco de dados com zero downtime",
+        "Containerização com Docker e Kubernetes",
+        "Migração entre clouds (AWS, GCP, Azure)",
+        "Refatoração de código legado"
+      ],
+      "technologies": ["Docker", "Kubernetes", "AWS", "GCP", "Azure", "Terraform"]
+    },
+    {
+      "id": "consultoria",
+      "icon": "Shield",
+      "title": "Consultoria & Arquitetura de Software",
+      "shortDescription": "Revisão de arquitetura, DevOps e mentoria técnica.",
+      "description": "Oferecemos consultoria técnica para empresas que precisam de orientação estratégica em tecnologia. Ajudamos a definir arquiteturas, implementar boas práticas de DevOps e capacitar equipes de desenvolvimento.",
+      "features": [
+        "Revisão e design de arquitetura de software",
+        "Implementação de CI/CD e DevOps",
+        "Code review e definição de padrões",
+        "Mentoria técnica para equipes",
+        "Auditoria de segurança e performance",
+        "Planejamento de infraestrutura cloud"
+      ],
+      "technologies": ["GitHub Actions", "Jenkins", "SonarQube", "New Relic", "Datadog"]
+    }
+  ],
+  "process": {
+    "title": "Como trabalhamos",
+    "subtitle": "Um processo transparente e colaborativo do início ao fim.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Descoberta",
+        "description": "Entendemos seu negócio, desafios e objetivos. Mapeamos requisitos técnicos e de negócio para propor a melhor solução."
+      },
+      {
+        "number": "02",
+        "title": "Proposta",
+        "description": "Apresentamos um plano detalhado com escopo, cronograma, tecnologias e investimento. Sem surpresas."
+      },
+      {
+        "number": "03",
+        "title": "Desenvolvimento",
+        "description": "Construímos em sprints com entregas frequentes. Você acompanha cada etapa e valida antes de avançarmos."
+      },
+      {
+        "number": "04",
+        "title": "Entrega & Suporte",
+        "description": "Deploy em produção com documentação completa. Oferecemos suporte contínuo e evolução do sistema."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Qual é o seu desafio?",
+    "subtitle": "Cada projeto é único. Conte-nos sobre sua necessidade e receba uma proposta personalizada.",
+    "button": { "label": "Solicitar proposta", "href": "/contato" }
+  }
+}

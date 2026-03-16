@@ -1,0 +1,44 @@
+{
+  "name": "Tonolli Software",
+  "legalName": "Tonolli Software LTDA",
+  "tradeName": "Softonolli",
+  "cnpj": "48.512.403/0001-46",
+  "domain": "tonollisoftware.com.br",
+  "url": "https://tonollisoftware.com.br",
+  "description": "Desenvolvimento de software sob medida, sistemas com inteligência artificial e modernização de plataformas legadas. 19+ anos de experiência em arquitetura de sistemas escaláveis.",
+  "shortDescription": "Software sob medida com inteligência artificial",
+  "founder": {
+    "name": "João Vitor Ramos Tonolli",
+    "role": "Fundador & Software Architect",
+    "experience": "19+ anos",
+    "bio": "Senior Software Architect com 19 anos de experiência construindo sistemas de alta escala. Atua com empresas dos EUA (CRED, Som Livre/Sony) e desenvolve produtos próprios com IA para o agronegócio e clima.",
+    "linkedin": "https://www.linkedin.com/in/joaoovitoor",
+    "github": "https://github.com/joaoovitoor",
+    "email": "joaoovitoor@hotmail.com"
+  },
+  "contact": {
+    "email": "contato@tonollisoftware.com.br",
+    "phone": "+5511980668176",
+    "whatsapp": "5511980668176",
+    "address": {
+      "street": "Av. Eng. Luiz Carlos Berrini, 1748",
+      "complement": "Conj. 2412G",
+      "neighborhood": "Cidade Monções",
+      "city": "São Paulo",
+      "state": "SP",
+      "zip": "04571-000",
+      "country": "BR"
+    }
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/joaoovitoor",
+    "github": "https://github.com/joaoovitoor"
+  },
+  "nav": [
+    { "label": "Início", "href": "/" },
+    { "label": "Serviços", "href": "/servicos" },
+    { "label": "Projetos", "href": "/projetos" },
+    { "label": "Sobre", "href": "/sobre" },
+    { "label": "Contato", "href": "/contato" }
+  ]
+}

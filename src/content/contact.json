@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "title": "Fale conosco",
+    "subtitle": "Conte-nos sobre seu projeto. Respondemos em até 24 horas com uma avaliação inicial e próximos passos."
+  },
+  "form": {
+    "title": "Sobre seu projeto",
+    "fields": {
+      "name": { "label": "Seu nome", "placeholder": "Como podemos te chamar?" },
+      "email": { "label": "E-mail", "placeholder": "seu@email.com" },
+      "phone": { "label": "WhatsApp", "placeholder": "(11) 98000-0000" },
+      "company": { "label": "Empresa", "placeholder": "Nome da sua empresa" }
+    },
+    "projectType": {
+      "label": "Que tipo de projeto você precisa?",
+      "options": [
+        { "value": "software", "label": "Desenvolvimento de Software" },
+        { "value": "ai", "label": "Inteligência Artificial / Automação" },
+        { "value": "modernization", "label": "Modernização de Sistema Legado" },
+        { "value": "consulting", "label": "Consultoria / Arquitetura" },
+        { "value": "other", "label": "Outro" }
+      ]
+    },
+    "budget": {
+      "label": "Investimento estimado",
+      "options": [
+        { "value": "10-30k", "label": "R$ 10.000 - R$ 30.000" },
+        { "value": "30-80k", "label": "R$ 30.000 - R$ 80.000" },
+        { "value": "80-150k", "label": "R$ 80.000 - R$ 150.000" },
+        { "value": "150k+", "label": "Acima de R$ 150.000" },
+        { "value": "undefined", "label": "Ainda não definido" }
+      ]
+    },
+    "timeline": {
+      "label": "Prazo desejado",
+      "options": [
+        { "value": "urgent", "label": "Urgente (menos de 1 mês)" },
+        { "value": "1-3months", "label": "1 a 3 meses" },
+        { "value": "3-6months", "label": "3 a 6 meses" },
+        { "value": "6months+", "label": "Mais de 6 meses" },
+        { "value": "flexible", "label": "Flexível" }
+      ]
+    },
+    "message": {
+      "label": "Descreva seu projeto",
+      "placeholder": "Conte-nos sobre o desafio que você precisa resolver. Quanto mais detalhes, melhor será nossa avaliação inicial."
+    },
+    "submit": "Enviar projeto"
+  },
+  "whatsappWidget": {
+    "greeting": "Olá! 👋 Sou da Tonolli Software. Como posso ajudar?",
+    "questions": [
+      {
+        "id": "type",
+        "question": "O que você precisa?",
+        "options": [
+          { "value": "software", "label": "Desenvolver um software" },
+          { "value": "ai", "label": "Solução com IA" },
+          { "value": "modernize", "label": "Modernizar sistema existente" },
+          { "value": "consulting", "label": "Consultoria técnica" },
+          { "value": "other", "label": "Outro assunto" }
+        ]
+      },
+      {
+        "id": "stage",
+        "question": "Em que estágio está o projeto?",
+        "options": [
+          { "value": "idea", "label": "Apenas uma ideia" },
+          { "value": "planned", "label": "Já tenho requisitos definidos" },
+          { "value": "started", "label": "Já comecei e preciso de ajuda" },
+          { "value": "running", "label": "Sistema em produção que precisa evoluir" }
+        ]
+      }
+    ]
+  },
+  "info": {
+    "title": "Outras formas de contato",
+    "items": [
+      {
+        "icon": "Mail",
+        "label": "E-mail",
+        "value": "contato@tonollisoftware.com.br",
+        "href": "mailto:contato@tonollisoftware.com.br"
+      },
+      {
+        "icon": "Phone",
+        "label": "WhatsApp",
+        "value": "+55 (11) 98066-8176",
+        "href": "https://wa.me/5511980668176"
+      },
+      {
+        "icon": "MapPin",
+        "label": "Endereço",
+        "value": "Av. Eng. Luiz Carlos Berrini, 1748 - São Paulo/SP",
+        "href": "https://maps.google.com/?q=Av+Eng+Luiz+Carlos+Berrini+1748+São+Paulo"
+      }
+    ]
+  }
+}

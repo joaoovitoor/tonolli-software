@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "Projetos",
+    "subtitle": "Conheça alguns dos produtos e soluções desenvolvidos pela Tonolli Software."
+  },
+  "projects": [
+    {
+      "id": "prevagro",
+      "title": "PrevAgro",
+      "category": "Produto Próprio",
+      "badge": "IA & Agronegócio",
+      "shortDescription": "Plataforma de previsão de colheitas com inteligência artificial para produtores rurais brasileiros.",
+      "description": "O PrevAgro permite que produtores rurais calculem datas de transplante, início de colheita e fim de ciclo com base em dados climáticos históricos, configurações de cultivo e localização geográfica.",
+      "url": "https://prevagro.com.br",
+      "image": "/images/projects/prevagro.png",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "IA/ML"],
+      "highlights": [
+        "133+ cultivos cadastrados",
+        "4500+ configurações de cultivo",
+        "Dados climáticos históricos por cidade",
+        "Área administrativa completa"
+      ],
+      "ownership": "Tonolli Software"
+    },
+    {
+      "id": "climia",
+      "title": "ClimIA",
+      "category": "Produto Próprio",
+      "badge": "IA & Clima",
+      "shortDescription": "API de previsão climática de alta performance baseada em dados históricos e inteligência artificial.",
+      "description": "API REST construída em Go que fornece previsões climáticas precisas baseadas em análise de dados históricos. Arquitetura modular e escalável para integração com múltiplas fontes de dados meteorológicos.",
+      "image": "/images/projects/climia.png",
+      "technologies": ["Go", "PostgreSQL", "AWS", "REST API", "IA/ML"],
+      "highlights": [
+        "API REST de alta performance",
+        "Dados históricos de temperatura por região",
+        "Integração com Aurora PostgreSQL",
+        "Arquitetura modular e escalável"
+      ],
+      "ownership": "Tonolli Software"
+    },
+    {
+      "id": "plataforma-ai",
+      "title": "Plataforma AI Multi-canal",
+      "category": "Projeto Cliente",
+      "badge": "IA & Fintech",
+      "shortDescription": "Sistema de agentes inteligentes para comunicação multi-canal em uma fintech americana.",
+      "description": "Plataforma que processa comunicação via múltiplos canais usando agentes de IA, com preprocessing de documentos diversos e integração com APIs financeiras proprietárias.",
+      "technologies": ["Python", "LangChain", "MCP", "LLMs", "NLP"],
+      "highlights": [
+        "40% de redução em custos operacionais de IA",
+        "Integração multi-canal automatizada",
+        "Processamento de PDF, áudio e imagens",
+        "Arquitetura MCP para APIs internas"
+      ],
+      "ownership": "Cliente"
+    },
+    {
+      "id": "modernizacao-enterprise",
+      "title": "Modernização Enterprise",
+      "category": "Projeto Cliente",
+      "badge": "Enterprise",
+      "shortDescription": "Transformação de sistemas legados em 4 plataformas modernas para uma multinacional de entretenimento.",
+      "description": "Projeto de modernização completa de infraestrutura tecnológica, migrando sistemas legados para arquiteturas modernas com microserviços, serverless e integração com serviços globais.",
+      "technologies": ["Node.js", "TypeScript", "AWS Lambda", "SQL Server", "CI/CD"],
+      "highlights": [
+        "70% de redução em custos de infraestrutura",
+        "Entrega 3 meses antes do prazo",
+        "4 plataformas enterprise construídas",
+        "Operação com supervisão global"
+      ],
+      "ownership": "Cliente"
+    },
+    {
+      "id": "analise-video-ai",
+      "title": "Análise de Vídeo com IA",
+      "category": "Projeto Cliente",
+      "badge": "IA & Marketing",
+      "shortDescription": "Plataforma automatizada de análise de conteúdo em vídeo com inteligência artificial para grandes marcas.",
+      "description": "Pipeline automatizado de processamento de vídeo com extração de áudio, transcrição e análise de frames com IA. Sistema de scoring e aprovação automatizada para escalar produção de conteúdo.",
+      "technologies": ["Python", "AWS Lambda", "SNS/SQS", "LangChain", "Serverless"],
+      "highlights": [
+        "Escala de 200 para 2000+ vídeos/mês",
+        "Pipeline totalmente automatizado com IA",
+        "Expansão para múltiplos países",
+        "Atende grandes marcas de varejo e consumo"
+      ],
+      "ownership": "Cliente"
+    }
+  ],
+  "cta": {
+    "title": "Quer um projeto como estes?",
+    "subtitle": "Cada projeto é concebido, arquitetado e desenvolvido com o mesmo rigor técnico. Conte-nos sobre o seu desafio.",
+    "button": { "label": "Iniciar meu projeto", "href": "/contato" }
+  }
+}
