@@ -1,12 +1,10 @@
 import Image from 'next/image';
 
 const logos = [
-  { name: 'Opção 1: Neural Network + Code', file: 'logo.svg', meaning: 'Nós conectados (IA) com brackets de código (Software)' },
-  { name: 'Opção 2: Hexágono + Camadas', file: 'logo-alt1.svg', meaning: 'Hexágono (IA) com blocos empilhados (Software)' },
-  { name: 'Opção 3: Circuito + Brackets', file: 'logo-alt2.svg', meaning: 'Fluxo de circuito (IA) com brackets de código (Software)' },
-  { name: 'Opção 4: Módulos Conectados', file: 'logo-alt3.svg', meaning: 'Módulos interconectados (IA + Software)' },
-  { name: 'Opção 5: Data Flow + Layers', file: 'logo-alt4.svg', meaning: 'Fluxo de dados (IA) com camadas (Software)' },
-  { name: 'Opção 6: Hub Neural + Frame', file: 'logo-alt5.svg', meaning: 'Hub neural (IA) com frame de código (Software)' },
+  { name: 'Opção 1: Triângulo T Proporcional', file: 'logo.svg', meaning: 'Triângulo com proporções de T - base larga (barra) e vértice central (haste)' },
+  { name: 'Opção 2: Triângulo T Mais Largo', file: 'logo-alt1.svg', meaning: 'Triângulo com topo ainda mais largo' },
+  { name: 'Opção 3: Triângulo T Extra Largo', file: 'logo-alt2.svg', meaning: 'Topo muito largo, base estreita - T mais pronunciado' },
+  { name: 'Opção 4: Triângulo T Balanceado', file: 'logo-alt3.svg', meaning: 'Proporções balanceadas entre largura e altura' },
 ];
 
 export default function LogoComparison() {
