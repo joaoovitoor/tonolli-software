@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import siteData from '@/content/site.json';
 
@@ -10,10 +11,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 font-bold text-white text-sm">
-                T
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 mb-4">
+              <Image
+                src="/images/logo.svg"
+                alt={siteData.name}
+                width={28}
+                height={28}
+                className="h-7 w-7"
+              />
               <span className="text-lg font-semibold text-white">
                 {siteData.name}
               </span>

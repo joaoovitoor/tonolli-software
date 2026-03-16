@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import siteData from '@/content/site.json';
@@ -13,10 +14,14 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800/50 bg-gray-950/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 font-bold text-white text-sm">
-              T
-            </div>
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image
+              src="/images/logo.svg"
+              alt={siteData.name}
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
             <span className="text-lg font-semibold text-white">
               {siteData.name}
             </span>
