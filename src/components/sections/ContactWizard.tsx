@@ -131,6 +131,7 @@ export default function ContactWizard() {
     company: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [messageCompleted, setMessageCompleted] = useState(false);
 
   const update = (fields: Partial<FormState>) =>
     setForm((prev) => ({ ...prev, ...fields }));
@@ -150,6 +151,9 @@ export default function ContactWizard() {
       cleared[order[i]] = '';
     }
     update(cleared);
+    if (field === 'message') {
+      setMessageCompleted(false);
+    }
   };
 
   const scrollToBottom = () => {
@@ -160,7 +164,7 @@ export default function ContactWizard() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [form.projectType, form.stage, form.budget, form.timeline, form.message && form.name]);
+  }, [form.projectType, form.stage, form.budget, form.timeline, messageCompleted, form.name]);
 
   const handleSubmit = () => {
     if (!form.name || !form.email || !form.message) return;
@@ -280,6 +284,9 @@ export default function ContactWizard() {
           doneLabel={form.budgetLabel}
           onReset={() => resetFrom('budget')}
         >
+          <p className="text-xs text-gray-500 mb-4 -mt-2">
+            Não trabalhamos com projetos abaixo de R$ 10.000.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {budgetOptions.map((opt) => (
               <button
@@ -332,7 +339,7 @@ export default function ContactWizard() {
         <StepCard
           number={5}
           title="Conte-nos sobre o projeto"
-          done={!!form.message}
+          done={messageCompleted}
           doneLabel={form.message.length > 60 ? form.message.slice(0, 60) + '...' : form.message}
           onReset={() => resetFrom('message')}
         >
@@ -346,7 +353,10 @@ export default function ContactWizard() {
             />
             <button
               onClick={() => {
-                if (form.message.trim()) scrollToBottom();
+                if (form.message.trim()) {
+                  setMessageCompleted(true);
+                  scrollToBottom();
+                }
               }}
               disabled={!form.message.trim()}
               className="mt-3 flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
@@ -359,7 +369,7 @@ export default function ContactWizard() {
       )}
 
       {/* Step 6: Contact Info */}
-      {form.message && (
+      {messageCompleted && form.message && (
         <StepCard number={6} title="Seus dados para contato">
           <div className="space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

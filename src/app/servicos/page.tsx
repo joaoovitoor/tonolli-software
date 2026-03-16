@@ -58,7 +58,7 @@ export default function ServicosPage() {
         subtitle={servicesData.hero.subtitle}
       />
 
-      <section className="pb-24">
+      <section className="pt-8 pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
           {servicesData.services.map((service) => {
             const Icon = iconMap[service.icon] || Code;

@@ -12,6 +12,23 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Tesla-inspired typography for brand name - bold like logo */
+.brand-name {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 700; /* Bold to match logo thickness */
+  letter-spacing: 0.08em; /* Tesla-style wide spacing */
+  text-transform: uppercase;
+  font-stretch: 100%;
+  font-style: normal;
 }
 
 ::selection {

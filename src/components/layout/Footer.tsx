@@ -19,7 +19,7 @@ export default function Footer() {
                 height={28}
                 className="h-7 w-7"
               />
-              <span className="text-lg font-semibold text-white">
+              <span className="text-lg text-white brand-name">
                 {siteData.name}
               </span>
             </Link>

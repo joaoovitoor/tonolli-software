@@ -1,6 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <path d="M8 8h32v8H28v24h-8V16H8V8z" fill="#2563eb"/>
-  <path d="M20 16h8v8l-8-8z" fill="#1d4ed8"/>
-  <path d="M8 8h12l8 8H8V8z" fill="#3b82f6"/>
-  <path d="M28 8h12v8H28l-8-8h8z" fill="#2563eb"/>
+  <!-- Neural Network Hub - extra thick and bold -->
+  <!-- Central hub (much larger) -->
+  <circle cx="24" cy="24" r="7.5" fill="white"/>
+  
+  <!-- Four nodes around (much larger) -->
+  <circle cx="12" cy="12" r="5.5" fill="white"/>
+  <circle cx="36" cy="12" r="5.5" fill="white"/>
+  <circle cx="12" cy="36" r="5.5" fill="white"/>
+  <circle cx="36" cy="36" r="5.5" fill="white"/>
+  
+  <!-- Extra thick connection lines -->
+  <line x1="24" y1="24" x2="12" y2="12" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="24" y1="24" x2="36" y2="12" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="24" y1="24" x2="12" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="24" y1="24" x2="36" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
 </svg>

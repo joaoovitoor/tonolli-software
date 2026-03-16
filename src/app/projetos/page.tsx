@@ -40,7 +40,7 @@ export default function ProjetosPage() {
         subtitle={projectsData.hero.subtitle}
       />
 
-      <section className="pb-16">
+      <section className="pt-8 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-2">
