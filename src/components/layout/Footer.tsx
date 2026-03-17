@@ -100,10 +100,10 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 {siteData.legalName}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 CNPJ: {siteData.cnpj}
               </p>
             </div>
