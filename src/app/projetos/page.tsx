@@ -40,17 +40,25 @@ export default function ProjetosPage() {
         subtitle={projectsData.hero.subtitle}
       />
 
-      <section className="pt-8 pb-16">
+      <section className="pt-8 pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Produtos Próprios
-            </h2>
-            <p className="text-gray-400">
-              Soluções criadas, projetadas e mantidas pela Tonolli Software.
-            </p>
+          <div className="mb-12 flex items-end justify-between">
+            <div>
+              <span className="text-sm font-medium text-emerald-500 tracking-wider uppercase mb-2 block">
+                Portfólio
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Produtos Próprios
+              </h2>
+              <p className="text-gray-400 max-w-xl">
+                Soluções criadas, projetadas e mantidas pela Tonolli Software.
+              </p>
+            </div>
+            <span className="hidden sm:block text-sm text-gray-500">
+              {ownProjects.length} produtos
+            </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {ownProjects.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
@@ -58,15 +66,23 @@ export default function ProjetosPage() {
         </div>
       </section>
 
-      <section className="py-16 border-t border-gray-800/50">
+      <section className="py-20 border-t border-gray-800/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Projetos para Clientes
-            </h2>
-            <p className="text-gray-400">
-              Sistemas enterprise desenvolvidos para empresas globais.
-            </p>
+          <div className="mb-12 flex items-end justify-between">
+            <div>
+              <span className="text-sm font-medium text-blue-500 tracking-wider uppercase mb-2 block">
+                Clientes
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Projetos para Clientes
+              </h2>
+              <p className="text-gray-400 max-w-xl">
+                Sistemas enterprise desenvolvidos para empresas globais.
+              </p>
+            </div>
+            <span className="hidden sm:block text-sm text-gray-500">
+              {clientProjects.length} projetos
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clientProjects.map((project) => (

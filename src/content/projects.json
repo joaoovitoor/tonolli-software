@@ -15,8 +15,8 @@
       "image": "/images/projects/prevagro.png",
       "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "IA/ML"],
       "highlights": [
-        "133+ cultivos cadastrados",
         "4500+ configurações de cultivo",
+        "133+ cultivos cadastrados",
         "Dados climáticos históricos por cidade",
         "Área administrativa completa"
       ],
@@ -29,13 +29,14 @@
       "badge": "IA & Clima",
       "shortDescription": "API de previsão climática de alta performance baseada em dados históricos e inteligência artificial.",
       "description": "API REST construída em Go que fornece previsões climáticas precisas baseadas em análise de dados históricos. Arquitetura modular e escalável para integração com múltiplas fontes de dados meteorológicos.",
+      "url": "https://climia.com.br",
       "image": "/images/projects/climia.png",
       "technologies": ["Go", "PostgreSQL", "AWS", "REST API", "IA/ML"],
       "highlights": [
+        "Arquitetura modular e escalável",
         "API REST de alta performance",
-        "Dados históricos de temperatura por região",
         "Integração com Aurora PostgreSQL",
-        "Arquitetura modular e escalável"
+        "Dados históricos de temperatura por região"
       ],
       "ownership": "Tonolli Software"
     },
@@ -51,8 +52,8 @@
       "highlights": [
         "IA integrada para geração de conteúdo",
         "Importação automática do LinkedIn via PDF",
-        "Sistema de créditos e pagamento com Stripe",
-        "Backend serverless com NestJS + AWS Lambda"
+        "Templates otimizados para ATS (Gupy, Kenoby)",
+        "Sistema de créditos com pagamento via Stripe"
       ],
       "ownership": "Tonolli Software"
     },
@@ -66,9 +67,9 @@
       "technologies": ["Python", "LangChain", "MCP", "LLMs", "NLP"],
       "highlights": [
         "40% de redução em custos operacionais de IA",
-        "Integração multi-canal automatizada",
+        "Arquitetura MCP para APIs internas",
         "Processamento de PDF, áudio e imagens",
-        "Arquitetura MCP para APIs internas"
+        "Integração multi-canal automatizada"
       ],
       "ownership": "Cliente"
     },
@@ -82,8 +83,8 @@
       "technologies": ["Node.js", "TypeScript", "AWS Lambda", "SQL Server", "CI/CD"],
       "highlights": [
         "70% de redução em custos de infraestrutura",
-        "Entrega 3 meses antes do prazo",
         "4 plataformas enterprise construídas",
+        "Entrega 3 meses antes do prazo",
         "Operação com supervisão global"
       ],
       "ownership": "Cliente"
@@ -98,8 +99,8 @@
       "technologies": ["Python", "AWS Lambda", "SNS/SQS", "LangChain", "Serverless"],
       "highlights": [
         "Escala de 200 para 2000+ vídeos/mês",
-        "Pipeline totalmente automatizado com IA",
         "Expansão para múltiplos países",
+        "Pipeline totalmente automatizado com IA",
         "Atende grandes marcas de varejo e consumo"
       ],
       "ownership": "Cliente"
