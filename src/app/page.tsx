@@ -10,7 +10,7 @@ import homeData from '@/content/home.json';
 import projectsData from '@/content/projects.json';
 
 export const metadata: Metadata = {
-  title: 'Tonolli Software | Software sob medida com inteligência artificial',
+  title: 'Tonolli Software | Software e IA sob medida',
   description:
     'Desenvolvimento de software sob medida, sistemas com inteligência artificial e modernização de plataformas. 19+ anos de experiência. São Paulo.',
   alternates: { canonical: '/' },

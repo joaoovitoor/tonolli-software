@@ -43,9 +43,9 @@ export default function ContatoPage() {
             </div>
             <div className="lg:col-span-2">
               <div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8 sticky top-24">
-                <h3 className="text-base font-semibold text-white uppercase tracking-wider mb-6">
+                <h2 className="text-base font-semibold text-white uppercase tracking-wider mb-6">
                   {contactData.info.title}
-                </h3>
+                </h2>
                 <div className="space-y-6">
                   {contactData.info.items.map((item) => {
                     const Icon = iconMap[item.icon] || Mail;
@@ -72,9 +72,9 @@ export default function ContatoPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-800/50">
-                  <h4 className="text-sm font-semibold text-white mb-3">
+                  <h3 className="text-sm font-semibold text-white mb-3">
                     Horário
-                  </h4>
+                  </h3>
                   <p className="text-sm text-gray-400">
                     Seg-Sex, 9h-18h (Brasília)
                   </p>
