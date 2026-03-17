@@ -1,4 +1,5 @@
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import Card from '@/components/ui/Card';
 
 interface ProjectCardProps {
@@ -9,6 +10,7 @@ interface ProjectCardProps {
   technologies: string[];
   highlights: string[];
   url?: string;
+  image?: string;
   ownership: string;
 }
 
@@ -31,6 +33,7 @@ export default function ProjectCard({
   technologies,
   highlights,
   url,
+  image,
   ownership,
 }: ProjectCardProps) {
   const colors = badgeColors[badge] || defaultColors;
@@ -40,9 +43,20 @@ export default function ProjectCard({
       <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.dot} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
       <div className="flex items-center justify-between mb-4">
-        <span className={`px-3 py-1 text-xs font-medium rounded-full ${colors.bg} ${colors.text} border ${colors.border}`}>
-          {badge}
-        </span>
+        <div className="flex items-center gap-3">
+          {image && (
+            <Image
+              src={image}
+              alt={`Logo ${title}`}
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain rounded-lg"
+            />
+          )}
+          <span className={`px-3 py-1 text-xs font-medium rounded-full ${colors.bg} ${colors.text} border ${colors.border}`}>
+            {badge}
+          </span>
+        </div>
         <span className="text-xs text-gray-500">{category}</span>
       </div>
 
