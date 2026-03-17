@@ -57,7 +57,7 @@ export default function ProjectCard({
             {badge}
           </span>
         </div>
-        <span className="text-xs text-gray-500">{category}</span>
+        <span className="text-xs text-gray-400">{category}</span>
       </div>
 
       <h3 className="text-xl font-semibold text-white mb-3">

@@ -17,7 +17,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.svg"
-              alt={siteData.name}
+              alt=""
               width={36}
               height={36}
               className="h-9 w-9"

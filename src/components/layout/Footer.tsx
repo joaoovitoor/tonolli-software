@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <Image
                 src="/images/logo.svg"
-                alt={siteData.name}
+                alt=""
                 width={28}
                 height={28}
                 className="h-7 w-7"
@@ -56,9 +56,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4" role="heading" aria-level={2}>
               Navegação
-            </h4>
+            </p>
             <ul className="space-y-3">
               {siteData.nav.map((item) => (
                 <li key={item.href}>
@@ -74,9 +74,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4" role="heading" aria-level={2}>
               Contato
-            </h4>
+            </p>
             <ul className="space-y-3">
               <li>
                 <a
@@ -100,10 +100,10 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-gray-500">
                 {siteData.legalName}
               </p>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-gray-500">
                 CNPJ: {siteData.cnpj}
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800/50 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-400">
             &copy; {currentYear} {siteData.name}. Todos os direitos reservados.
           </p>
         </div>
