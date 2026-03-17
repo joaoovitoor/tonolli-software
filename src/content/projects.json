@@ -29,7 +29,7 @@
       "badge": "IA & Clima",
       "shortDescription": "API de previsão climática de alta performance baseada em dados históricos e inteligência artificial.",
       "description": "API REST construída em Go que fornece previsões climáticas precisas baseadas em análise de dados históricos. Arquitetura modular e escalável para integração com múltiplas fontes de dados meteorológicos.",
-      "url": "https://climia.com.br",
+      "url": "https://www.climia.com.br",
       "image": "/images/projects/climia.png",
       "technologies": ["Go", "PostgreSQL", "AWS", "REST API", "IA/ML"],
       "highlights": [
