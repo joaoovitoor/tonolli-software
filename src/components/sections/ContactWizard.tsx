@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Code,
   Brain,
@@ -114,6 +115,7 @@ function StepCard({
 }
 
 export default function ContactWizard() {
+  const router = useRouter();
   const bottomRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState<FormState>({
     projectType: '',
@@ -130,7 +132,8 @@ export default function ContactWizard() {
     phone: '',
     company: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const [messageCompleted, setMessageCompleted] = useState(false);
 
   const update = (fields: Partial<FormState>) =>
@@ -166,10 +169,33 @@ export default function ContactWizard() {
     scrollToBottom();
   }, [form.projectType, form.stage, form.budget, form.timeline, messageCompleted, form.name]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) return;
-    setSubmitted(true);
-    scrollToBottom();
+    setSending(true);
+    setSendError(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          projectType: form.projectTypeLabel,
+          stage: form.stageLabel,
+          budget: form.budgetLabel,
+          timeline: form.timelineLabel,
+          message: form.message,
+        }),
+      });
+      if (!res.ok) throw new Error('send failed');
+      router.push('/contato/obrigado');
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -183,32 +209,6 @@ export default function ContactWizard() {
     });
     window.open(url, '_blank');
   };
-
-  if (submitted) {
-    return (
-      <div className="max-w-2xl mx-auto">
-        <div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-8 md:p-12 text-center animate-fade-in-up">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500 mx-auto mb-6">
-            <Send size={28} />
-          </div>
-          <h3 className="text-2xl font-bold text-white mb-3">
-            Projeto recebido!
-          </h3>
-          <p className="text-gray-400 mb-8 max-w-md mx-auto">
-            Vamos analisar sua solicitação e retornar em até 24 horas.
-            Para agilizar, envie também pelo WhatsApp:
-          </p>
-          <button
-            onClick={handleWhatsApp}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700 transition-colors cursor-pointer"
-          >
-            <MessageCircle size={18} />
-            Enviar pelo WhatsApp
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-2xl mx-auto space-y-4">
@@ -423,14 +423,19 @@ export default function ContactWizard() {
               </div>
             </div>
 
+            {sendError && (
+              <p className="text-sm text-red-400 text-center">
+                Erro ao enviar. Tente pelo WhatsApp ou contate-nos diretamente.
+              </p>
+            )}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <button
                 onClick={handleSubmit}
-                disabled={!form.name || !form.email}
+                disabled={!form.name || !form.email || sending}
                 className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
               >
                 <Send size={16} />
-                Enviar projeto
+                {sending ? 'Enviando...' : 'Enviar projeto'}
               </button>
               <button
                 onClick={handleWhatsApp}
