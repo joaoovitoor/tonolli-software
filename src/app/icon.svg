@@ -1,5 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <path d="M4 5 L16 5 L16 27 Z" fill="#c8d8ec"/>
-  <path d="M16 5 L28 5 L16 27 Z" fill="white"/>
-  <path d="M10 5 L16 13 L22 5 Z" fill="#0d1b2e"/>
+  <!--
+    Scaled version of logo.svg for 32x32
+    Same 5-face faceted gem geometry
+    Pivot: (16,5) top-center, (16,27) bottom tip
+    Edge midpoints: M_L=(10,16), M_R=(22,16)
+  -->
+
+  <!-- Left upper — ambient side light -->
+  <path d="M4 5 L16 5 L10 16 Z" fill="#a8c8e0"/>
+  <!-- Left lower — shadow face -->
+  <path d="M16 5 L10 16 L16 27 Z" fill="#4e7fa0"/>
+
+  <!-- Right upper — main lit face -->
+  <path d="M16 5 L28 5 L22 16 Z" fill="#ffffff"/>
+  <!-- Right lower — partially lit -->
+  <path d="M16 5 L22 16 L16 27 Z" fill="#b8d8ee"/>
+
+  <!-- Center ridge highlight -->
+  <line x1="16" y1="13" x2="16" y2="27" stroke="rgba(255,255,255,0.13)" stroke-width="0.6"/>
+
+  <!-- Notch — deep shadow -->
+  <path d="M10 5 L16 13 L22 5 Z" fill="#060d18"/>
+
+  <!-- Specular rim -->
+  <line x1="16" y1="5" x2="28" y2="5" stroke="rgba(255,255,255,0.55)" stroke-width="0.5" stroke-linecap="round"/>
 </svg>
