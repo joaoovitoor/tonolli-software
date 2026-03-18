@@ -1,29 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <!--
-    Faceted gem — T in triangle
-    Silhouette: (6,7)→(42,7)→(24,41) downward triangle
-    5 faces: left-upper, left-lower, right-upper, right-lower + notch
-    Notch wider+deeper → strong T crossbar / stem separation
-      Left arm:  6→13 (7u)   Right arm:  35→42 (7u)
-      Depth:     y=26 (56% down) → clear "neck" between bar and stem
+    Faceted gem — upward-pointing crystal triangle
+    4-face pyramid with center inner ridge at (24,27)
+    Internal "inverted-Y" structure creates 3D gem/crystal effect:
+      Face 1 (upper-left, brightest): apex→bottom-left→inner
+      Face 2 (lower-left, medium):    bottom-left→bottom-center→inner
+      Face 3 (upper-right, dark):     apex→inner→bottom-right
+      Face 4 (lower-right, darkest):  inner→bottom-center→bottom-right
+    Bottom notch + left-edge specular complete the 3D illusion
   -->
 
-  <!-- Left upper — ambient face (T crossbar left half) -->
-  <path d="M6 7 L24 7 L15 24 Z" fill="#a8c8e0"/>
-  <!-- Left lower — shadow face (T stem left side) -->
-  <path d="M24 7 L15 24 L24 41 Z" fill="#4e7fa0"/>
+  <!-- Face 1: upper-left — most illuminated (bright silver) -->
+  <path d="M24 5 L4 43 L24 27 Z" fill="#c8ccd8"/>
 
-  <!-- Right upper — main lit face (T crossbar right half) -->
-  <path d="M24 7 L42 7 L33 24 Z" fill="#ffffff"/>
-  <!-- Right lower — partially lit (T stem right side) -->
-  <path d="M24 7 L33 24 L24 41 Z" fill="#b8d8ee"/>
+  <!-- Face 2: lower-left — partial light (medium gray) -->
+  <path d="M4 43 L24 43 L24 27 Z" fill="#888ca0"/>
 
-  <!-- Center ridge highlight (stem, below notch tip) -->
-  <line x1="24" y1="27" x2="24" y2="41" stroke="rgba(255,255,255,0.13)" stroke-width="0.8"/>
+  <!-- Face 3: upper-right — shadow face (dark charcoal) -->
+  <path d="M24 5 L24 27 L44 43 Z" fill="#4c5062"/>
 
-  <!-- Notch — wider + deeper for clear T shape -->
-  <path d="M13 7 L24 26 L35 7 Z" fill="#060d18"/>
+  <!-- Face 4: lower-right — deepest shadow (near-black) -->
+  <path d="M24 27 L24 43 L44 43 Z" fill="#282c3a"/>
 
-  <!-- Specular rim on top-right edge -->
-  <line x1="24" y1="7" x2="42" y2="7" stroke="rgba(255,255,255,0.55)" stroke-width="0.7" stroke-linecap="round"/>
+  <!-- Bottom notch -->
+  <path d="M20 43 L24 38 L28 43 Z" fill="#080c18"/>
+
+  <!-- Left edge specular rim -->
+  <line x1="24" y1="5" x2="4" y2="43" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" stroke-linecap="round"/>
 </svg>

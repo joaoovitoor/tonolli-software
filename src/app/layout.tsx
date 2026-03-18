@@ -21,6 +21,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteData.url),
+  themeColor: '#0b1020',
   title: {
     default: `${siteData.name} | ${siteData.shortDescription}`,
     template: `%s | ${siteData.name}`,

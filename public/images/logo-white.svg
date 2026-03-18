@@ -1,20 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Left upper -->
-  <path d="M6 7 L24 7 L15 24 Z" fill="#a8c8e0"/>
-  <!-- Left lower -->
-  <path d="M24 7 L15 24 L24 41 Z" fill="#4e7fa0"/>
+  <!--
+    White variant — same 4-face upward-pointing crystal triangle
+    For use on dark solid backgrounds (all tones shifted to white/light range)
+  -->
 
-  <!-- Right upper -->
-  <path d="M24 7 L42 7 L33 24 Z" fill="#ffffff"/>
-  <!-- Right lower -->
-  <path d="M24 7 L33 24 L24 41 Z" fill="#b8d8ee"/>
+  <!-- Face 1: upper-left — bright white -->
+  <path d="M24 5 L4 43 L24 27 Z" fill="#ffffff"/>
 
-  <!-- Center ridge highlight -->
-  <line x1="24" y1="27" x2="24" y2="41" stroke="rgba(255,255,255,0.13)" stroke-width="0.8"/>
+  <!-- Face 2: lower-left — light gray -->
+  <path d="M4 43 L24 43 L24 27 Z" fill="#c0c4d0"/>
 
-  <!-- Notch — wider + deeper -->
-  <path d="M13 7 L24 26 L35 7 Z" fill="#060d18"/>
+  <!-- Face 3: upper-right — medium gray -->
+  <path d="M24 5 L24 27 L44 43 Z" fill="#8c90a0"/>
 
-  <!-- Specular rim -->
-  <line x1="24" y1="7" x2="42" y2="7" stroke="rgba(255,255,255,0.55)" stroke-width="0.7" stroke-linecap="round"/>
+  <!-- Face 4: lower-right — darker gray -->
+  <path d="M24 27 L24 43 L44 43 Z" fill="#606474"/>
+
+  <!-- Left edge specular rim -->
+  <line x1="24" y1="5" x2="4" y2="43" stroke="rgba(255,255,255,0.7)" stroke-width="0.9" stroke-linecap="round"/>
 </svg>

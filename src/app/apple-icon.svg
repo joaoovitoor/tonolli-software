@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <!--
+    apple-icon.svg  180x180 Apple touch icon
+    Same 4-face pyramid design, scaled for high-DPI home screen
+    Apex: (90,18)  Base: (18,162)’(162,162)  Inner: (90,108)
+  -->
+
+  <!-- Dark background -->
+  <rect width="180" height="180" rx="40" fill="#0b1020"/>
+
+  <!-- Face 1: upper-left  bright silver -->
+  <path d="M90 18 L18 162 L90 108 Z" fill="#c8ccd8"/>
+
+  <!-- Face 2: lower-left  medium gray -->
+  <path d="M18 162 L90 162 L90 108 Z" fill="#888ca0"/>
+
+  <!-- Face 3: upper-right  dark charcoal -->
+  <path d="M90 18 L90 108 L162 162 Z" fill="#4c5062"/>
+
+  <!-- Face 4: lower-right  deepest shadow -->
+  <path d="M90 108 L90 162 L162 162 Z" fill="#282c3a"/>
+
+  <!-- Bottom notch -->
+  <path d="M72 162 L90 140 L108 162 Z" fill="#0b1020"/>
+
+  <!-- Left edge specular -->
+  <line x1="90" y1="18" x2="18" y2="162" stroke="rgba(255,255,255,0.42)" stroke-width="4" stroke-linecap="round"/>
+</svg>
