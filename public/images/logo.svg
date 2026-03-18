@@ -11,20 +11,17 @@
   -->
 
   <!-- Face 1: upper-left — most illuminated (bright silver) -->
-  <path d="M24 5 L4 43 L24 27 Z" fill="#c8ccd8"/>
+  <path d="M24 5 L4 43 L24 27 Z" fill="#c8c9cb"/>
 
   <!-- Face 2: lower-left — partial light (medium gray) -->
-  <path d="M4 43 L24 43 L24 27 Z" fill="#888ca0"/>
+  <path d="M4 43 L24 43 L24 27 Z" fill="#888a8e"/>
 
   <!-- Face 3: upper-right — shadow face (dark charcoal) -->
-  <path d="M24 5 L24 27 L44 43 Z" fill="#4c5062"/>
+  <path d="M24 5 L24 27 L44 43 Z" fill="#4a4b50"/>
 
   <!-- Face 4: lower-right — deepest shadow (near-black) -->
-  <path d="M24 27 L24 43 L44 43 Z" fill="#282c3a"/>
-
-  <!-- Bottom notch -->
-  <path d="M20 43 L24 38 L28 43 Z" fill="#080c18"/>
+  <path d="M24 27 L24 43 L44 43 Z" fill="#282930"/>
 
   <!-- Left edge specular rim -->
-  <line x1="24" y1="5" x2="4" y2="43" stroke="rgba(255,255,255,0.42)" stroke-width="0.9" stroke-linecap="round"/>
+  <line x1="24" y1="5" x2="4" y2="43" stroke="rgba(255,255,255,0.45)" stroke-width="0.9" stroke-linecap="round"/>
 </svg>

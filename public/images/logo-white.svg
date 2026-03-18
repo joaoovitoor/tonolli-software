@@ -8,13 +8,13 @@
   <path d="M24 5 L4 43 L24 27 Z" fill="#ffffff"/>
 
   <!-- Face 2: lower-left — light gray -->
-  <path d="M4 43 L24 43 L24 27 Z" fill="#c0c4d0"/>
+  <path d="M4 43 L24 43 L24 27 Z" fill="#c0c2c4"/>
 
   <!-- Face 3: upper-right — medium gray -->
-  <path d="M24 5 L24 27 L44 43 Z" fill="#8c90a0"/>
+  <path d="M24 5 L24 27 L44 43 Z" fill="#8c8e90"/>
 
   <!-- Face 4: lower-right — darker gray -->
-  <path d="M24 27 L24 43 L44 43 Z" fill="#606474"/>
+  <path d="M24 27 L24 43 L44 43 Z" fill="#606264"/>
 
   <!-- Left edge specular rim -->
   <line x1="24" y1="5" x2="4" y2="43" stroke="rgba(255,255,255,0.7)" stroke-width="0.9" stroke-linecap="round"/>
