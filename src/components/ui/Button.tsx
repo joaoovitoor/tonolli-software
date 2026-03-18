@@ -16,11 +16,11 @@ interface ButtonProps {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/25',
+    'relative shimmer-sweep bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-700 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35',
   secondary:
-    'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-600/25',
+    'bg-emerald-600 text-white hover:bg-emerald-500 active:bg-emerald-700 shadow-lg shadow-emerald-600/25',
   outline:
-    'border border-gray-600 text-gray-200 hover:bg-white/5 hover:border-gray-400',
+    'border border-gray-700 text-gray-200 hover:bg-white/5 hover:border-gray-500 hover:text-white',
   ghost: 'text-gray-300 hover:text-white hover:bg-white/5',
 };
 

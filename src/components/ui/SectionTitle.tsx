@@ -22,14 +22,14 @@ export default function SectionTitle({
       )}
       <h2
         className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${
-          light ? 'text-gray-900' : 'text-white'
+          light ? 'text-gray-900' : 'gradient-heading'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-lg md:text-xl ${
+          className={`mt-4 text-lg leading-relaxed ${
             light ? 'text-gray-600' : 'text-gray-400'
           }`}
         >

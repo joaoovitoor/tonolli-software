@@ -24,8 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Tesla-inspired typography for brand name - bold like logo */
 .brand-name {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-weight: 700; /* Bold to match logo thickness */
-  letter-spacing: 0.08em; /* Tesla-style wide spacing */
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-stretch: 100%;
   font-style: normal;
@@ -41,6 +41,49 @@ select option {
   color: #e5e7eb;
 }
 
+/* Dot grid pattern — Vercel/Linear style */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Gradient heading text */
+.gradient-heading {
+  background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer sweep on primary buttons */
+.shimmer-sweep {
+  overflow: hidden;
+}
+
+.shimmer-sweep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  transform: skewX(-15deg);
+  animation: shimmer-sweep 3.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes shimmer-sweep {
+  0%   { left: -60%; }
+  100% { left: 130%; }
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -53,7 +96,7 @@ select option {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.5s ease-out forwards;
+  animation: fade-in-up 0.6s ease-out forwards;
   opacity: 0;
 }
 
@@ -61,5 +104,9 @@ select option {
   .animate-fade-in-up {
     animation: none;
     opacity: 1;
+  }
+
+  .shimmer-sweep::before {
+    animation: none;
   }
 }
