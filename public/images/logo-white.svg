@@ -1,3 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <path d="M10 8 L38 8 L24 40 Z" fill="white"/>
+  <!-- Left wing — slightly dimmer for 3D depth -->
+  <path d="M6 7 L24 7 L24 41 Z" fill="#c8d8ec"/>
+  <!-- Right wing — bright white highlight -->
+  <path d="M24 7 L42 7 L24 41 Z" fill="white"/>
+  <!-- Top center dark notch — creates the T / gem facet effect -->
+  <path d="M15 7 L24 19 L33 7 Z" fill="#0d1b2e"/>
 </svg>
