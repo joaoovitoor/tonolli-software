@@ -41,14 +41,14 @@
       "ownership": "Tonolli Software"
     },
     {
-      "id": "curricuia",
-      "title": "CurricuIA",
+      "id": "currify",
+      "title": "Currify",
       "category": "Produto Próprio",
       "badge": "IA & Carreira",
       "shortDescription": "Gerador de currículo profissional com inteligência artificial, importação do LinkedIn e templates otimizados para ATS.",
       "description": "Plataforma SaaS que permite criar currículos profissionais utilizando IA para gerar resumos, sugerir habilidades e melhorar descrições de experiência. Importação automática de dados do LinkedIn via PDF, sistema de créditos com pagamento via Stripe e templates otimizados para sistemas ATS como Gupy e Kenoby.",
-      "url": "https://curricuia.vercel.app",
-      "image": "/images/projects/curricuia.png",
+      "url": "https://currify.app",
+      "image": "/images/projects/currify.png",
       "technologies": ["Next.js", "React", "NestJS", "TypeScript", "AWS Lambda", "DynamoDB", "Anthropic Claude", "Stripe"],
       "highlights": [
         "IA integrada para geração de conteúdo",
