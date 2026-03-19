@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   // Performance optimizations
   compress: true,
 
+  images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+
   // Fix workspace root detection when parent folder has package.json
   turbopack: {
     root: __dirname,
