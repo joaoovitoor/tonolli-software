@@ -40,11 +40,17 @@ export async function POST(request: Request) {
     </div>
   `;
 
+  // Detect if this lead came from the AI chat (message contains conversation history)
+  const isAILead = message?.includes('👤 Cliente') || message?.includes('Lead capturado via Chat IA');
+  const subject = isAILead
+    ? `🤖 Lead via Chat IA — ${name}`
+    : `Novo projeto: ${projectType || 'Contato'} — ${name}`;
+
   const { error } = await resend.emails.send({
     from: 'Tonolli Software <onboarding@resend.dev>',
     to: 'joaoovitoor@hotmail.com',
     replyTo: email,
-    subject: `Novo projeto: ${projectType || 'Contato'} — ${name}`,
+    subject,
     html,
   });
 

@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Performance optimizations
   compress: true,
+
+  // Fix workspace root detection when parent folder has package.json
+  turbopack: {
+    root: __dirname,
+  },
   
   // Security headers (Vercel handles HTTPS)
   async headers() {
