@@ -47,7 +47,7 @@
       "badge": "IA & Carreira",
       "shortDescription": "Gerador de currículo profissional com inteligência artificial, importação do LinkedIn e templates otimizados para ATS.",
       "description": "Plataforma SaaS que permite criar currículos profissionais utilizando IA para gerar resumos, sugerir habilidades e melhorar descrições de experiência. Importação automática de dados do LinkedIn via PDF, sistema de créditos com pagamento via Stripe e templates otimizados para sistemas ATS como Gupy e Kenoby.",
-      "url": "https://currify.vercel.app",
+      "url": "https://currify.app",
       "image": "/images/projects/currify.svg",
       "technologies": ["Next.js", "React", "NestJS", "TypeScript", "AWS Lambda", "DynamoDB", "Anthropic Claude", "Stripe"],
       "highlights": [
