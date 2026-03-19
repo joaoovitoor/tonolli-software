@@ -2,7 +2,7 @@
 
 import { useChat } from '@ai-sdk/react';
 import { useEffect, useRef, useState } from 'react';
-import { X, Send, Bot, Sparkles, Loader2, MessageCircle } from 'lucide-react';
+import { X, Send, Bot, Sparkles, Loader2, MessageCircle, Mic, MicOff } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '5511980668176';
 
@@ -111,10 +111,14 @@ export default function ChatWidget() {
   const [captureData, setCaptureData] = useState<CaptureData>({ name: '', email: '', whatsapp: '' });
   const [captureSent, setCaptureSent] = useState(false);
   const [captureLoading, setCaptureLoading] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [isTranscribing, setIsTranscribing] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const aiResponseCount = useRef(0);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages } = useChat({
     api: '/api/chat',
@@ -225,6 +229,54 @@ export default function ChatWidget() {
     } finally {
       setCaptureLoading(false);
     }
+  };
+
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) audioChunksRef.current.push(e.data);
+      };
+
+      mediaRecorder.onstop = async () => {
+        stream.getTracks().forEach((t) => t.stop());
+        const blob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        setIsTranscribing(true);
+        try {
+          const form = new FormData();
+          form.append('audio', blob);
+          const res = await fetch('/api/transcribe', { method: 'POST', body: form });
+          const data = await res.json();
+          if (data.text) {
+            // Inject transcribed text into input and focus
+            const nativeInputSetter = Object.getOwnPropertyDescriptor(
+              window.HTMLInputElement.prototype, 'value'
+            )?.set;
+            if (inputRef.current && nativeInputSetter) {
+              nativeInputSetter.call(inputRef.current, data.text);
+              inputRef.current.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+            inputRef.current?.focus();
+          }
+        } finally {
+          setIsTranscribing(false);
+        }
+      };
+
+      mediaRecorder.start();
+      setIsRecording(true);
+    } catch {
+      alert('Permita o acesso ao microfone para usar o áudio.');
+    }
+  };
+
+  const stopRecording = () => {
+    mediaRecorderRef.current?.stop();
+    setIsRecording(false);
   };
 
   return (
@@ -375,19 +427,36 @@ export default function ChatWidget() {
           <div className="border-t border-white/5 p-3 shrink-0">
             <form
               onSubmit={handleSubmit}
-              className="flex items-center gap-2 rounded-xl border border-gray-700/60 bg-gray-900/60 px-3 py-2 focus-within:border-indigo-500/50 transition-colors"
+              className={`flex items-center gap-2 rounded-xl border bg-gray-900/60 px-3 py-2 transition-colors ${isRecording ? 'border-red-500/60' : 'border-gray-700/60 focus-within:border-indigo-500/50'}`}
             >
               <input
                 ref={inputRef}
                 value={input}
                 onChange={handleInputChange}
-                placeholder="Digite sua mensagem..."
-                disabled={isLoading}
+                placeholder={isRecording ? 'Gravando...' : isTranscribing ? 'Transcrevendo...' : 'Digite ou fale sua mensagem...'}
+                disabled={isLoading || isRecording || isTranscribing}
                 className="flex-1 bg-transparent text-sm text-white placeholder:text-gray-500 focus:outline-none disabled:opacity-50"
               />
+              {/* Mic button */}
+              <button
+                type="button"
+                onClick={isRecording ? stopRecording : startRecording}
+                disabled={isLoading || isTranscribing}
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-colors cursor-pointer disabled:opacity-40 ${isRecording ? 'bg-red-500 hover:bg-red-600 animate-pulse' : 'text-gray-500 hover:text-white hover:bg-white/10'}`}
+                aria-label={isRecording ? 'Parar gravação' : 'Gravar áudio'}
+              >
+                {isTranscribing ? (
+                  <Loader2 size={13} className="animate-spin text-indigo-400" />
+                ) : isRecording ? (
+                  <MicOff size={13} className="text-white" />
+                ) : (
+                  <Mic size={13} />
+                )}
+              </button>
+              {/* Send button */}
               <button
                 type="submit"
-                disabled={!input.trim() || isLoading}
+                disabled={!input.trim() || isLoading || isRecording}
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 disabled:opacity-40 cursor-pointer transition-colors"
                 aria-label="Enviar"
               >
@@ -395,7 +464,7 @@ export default function ChatWidget() {
               </button>
             </form>
             <p className="mt-1.5 text-center text-[10px] text-gray-700">
-              Powered by Tonolli IA · Llama 3.3
+              Powered by Tonolli IA · Llama 3.3 · Whisper
             </p>
           </div>
         </div>
