@@ -3,7 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ChatWidget from '@/components/ui/ChatWidget';
+import WhatsAppWidget from '@/components/sections/WhatsAppWidget';
 import siteData from '@/content/site.json';
 import { organizationJsonLd, websiteJsonLd, localBusinessJsonLd } from '@/lib/seo';
 
@@ -129,7 +129,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <ChatWidget />
+        <WhatsAppWidget />
       </body>
     </html>
   );
