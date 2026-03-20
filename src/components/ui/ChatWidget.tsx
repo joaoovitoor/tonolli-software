@@ -280,8 +280,8 @@ export default function ChatWidget() {
   };
 
   return (
-    <>
-      {/* Floating button — bottom right */}
+    <div className="hidden md:block">
+      {/* Desktop only — hidden on mobile */}
       {!isOpen && (
         <button
           onClick={handleOpen}
@@ -469,6 +469,6 @@ export default function ChatWidget() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
