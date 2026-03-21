@@ -170,15 +170,16 @@
 ### Display Path
 - `tonollisoftware.com.br/servicos/sob-medida`
 
-### Sitelinks (6)
+### Sitelinks (5)
 | Título | Descrição |
 |---|---|
-| Orçamento Grátis | Receba uma proposta em 24 horas · Projetos web, mobile e IA |
+| **Solicitar Proposta** *(substituiu "Orçamento Grátis" — sem sinal de "grátis")* | Proposta personalizada em 24 horas · Projetos sérios, sem compromisso |
 | Desenvolvimento Web | Sites e sistemas web sob medida · React, Node.js e APIs modernas |
 | Inteligência Artificial | Agentes de IA com LangChain · Chatbots e automação para B2B |
 | Modernização de Sistemas | Refatoramos sistemas legados · Cloud, microsserviços e APIs |
-| Aplicativos Mobile | Apps iOS e Android sob medida · React Native e Flutter |
 | 19 Anos de Experiência | Software house B2B confiável · 6 países atendidos, 50+ projetos |
+
+> "Aplicativos Mobile" removido — atraía público de dreamers de app, inconsistente com o posicionamento B2B/sistemas.
 
 ---
 
@@ -202,6 +203,8 @@
 | Mar/2026 | Ad group renomeado para "Sistemas Empresariais — Desenvolvimento e Refatoração" |
 | Mar/2026 | 37 keywords positivos confirmados (foco em sistema, não terceirização) |
 | Mar/2026 | Copy atualizado: 3 headlines + 2 descriptions corrigidos para foco B2B/sistemas |
+| Mar/2026 | Sitelink "Orçamento Grátis" → "Solicitar Proposta" (remove sinal de "grátis") |
+| Mar/2026 | Sitelink "Aplicativos Mobile" removido (atraía público errado) |
 
 ---
 
