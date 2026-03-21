@@ -1,0 +1,247 @@
+---
+description: Estratégia, histórico e estado atual da campanha Google Ads da Tonolli Software. Leia antes de qualquer ação relacionada a Google Ads, keywords, negativos, bid strategy ou copy de anúncio.
+alwaysApply: true
+---
+
+# ADS-MASTER — Tonolli Software Google Ads
+> **Documento único de estratégia, histórico e tracking para agentes de IA.**
+> Este arquivo substitui `ADS.md` e `ADS-KEYWORDS-PLAN.md`. Não crie outros arquivos de ads.
+> Última atualização: 21/03/2026
+
+---
+
+## COMO LER ESTE DOCUMENTO (instruções para o agente)
+
+1. **Leia as DECISÕES BLOQUEADAS antes de qualquer ação.** Não reverta sem aprovação explícita do usuário.
+2. **Leia o HISTÓRICO** para entender o que já foi tentado, o que falhou e o que foi removido — evite sugerir coisas que já foram descartadas.
+3. **O ESTADO ATUAL** é a foto do que está ativo no Google Ads hoje.
+4. **Qualquer mudança feita no Google Ads DEVE ser registrada aqui** na seção de histórico, com data e resultado.
+5. Nunca assuma que o documento está desatualizado — confie no histórico para saber o que foi feito.
+
+---
+
+## ESTADO ATUAL DA CAMPANHA (21/03/2026)
+
+| Campo | Valor |
+|---|---|
+| Campanha | Tonolli Software - Search - Leads B2B |
+| Tipo | Search |
+| Campaign ID | 23670950115 |
+| Ad Group | Sistemas Empresariais — Desenvolvimento e Refatoração (ID: 199693618692) |
+| Budget | R$27,07/dia |
+| Bid strategy | Maximize Clicks |
+| Max CPC (teto) | R$4,00 |
+| Keywords ativas | ~33 (todas Exact Match ou Exact de alta relevância) |
+| Negativos ativos | ~132 |
+| Status | Enabled |
+| Conta | contrateumprogramador@gmail.com (8098327439 / 2050914890) |
+
+> **PMax pausada** — estava drenando budget no Discovery/canal errado. Apenas Search ativa.
+> **Bid strategy alterada de "Maximize Conversions" para "Maximize Clicks" com teto R$4** — a campanha não tinha volume suficiente de conversões para o algoritmo aprender (0 contatos reais recebidos apesar do rastreamento ativo).
+
+---
+
+## DECISÕES BLOQUEADAS (não alterar sem aprovação explícita do usuário)
+
+| Decisão | Escolha | Data | Justificativa |
+|---|---|---|---|
+| **Perfil de comprador** | Perfil B — empresa com sistema legado | 21/03/2026 | Esse comprador TEM a dor, SABE o que precisa, tem budget aprovado. Conversão muito mais provável que Perfil A (quem quer construir algo novo). |
+| **Abordagem de keyword** | Precisão — 100% Exact Match na Fase 1 | 21/03/2026 | Sem broad, sem phrase genérica. Cada keyword representa intenção exata. |
+| **`"software para empresa"`** | Removida e não volta | 21/03/2026 | Genérica demais. Atraiu "apploja" — quem busca comprar SaaS pronto, não contratar desenvolvimento. |
+| **`manutenção de software` (negativo)** | Removido dos negativos | 21/03/2026 | É serviço real da Tonolli. Conflitava com keyword ativa `[manutenção de software]`. |
+| **Broad Match** | Proibido na Fase 1 | 21/03/2026 | Requer Smart Bidding (tCPA/Maximize Conversions) para funcionar. Com Maximize Clicks → desperdício puro. |
+
+---
+
+## HISTÓRICO DE MUDANÇAS
+
+### 21/03/2026 — Reestruturação completa da campanha
+
+**Contexto:** Campanha estava com CPC médio de R$9,68. 5 cliques, 0 contatos reais. Análise do Search Terms Report revelou tráfego altamente irrelevante (ex: "apploja", "glide apps", buscas de Angola).
+
+**PASSO 1 — Negativo removido**
+- ✅ `manutenção de software` (Broad) → removido da lista de negativos
+- Motivo: conflitava com keyword ativa `[manutenção de software]`
+
+**PASSO 2 — 11 keywords removidas**
+
+| Keyword removida | Match | Motivo |
+|---|---|---|
+| `"software para empresa"` | Phrase | 34 impr, 1 clique R$13,14 (foi "apploja"). Atrai SaaS buyer. |
+| `"empresa de software"` | Phrase | Exact já existia. Phrase gerava variantes ruins. |
+| `"software house"` | Phrase | Exact já existia. Phrase = ruído. |
+| `"empresa de software sp"` | Phrase | Não é Perfil B. Localização geográfica irrelevante. |
+| `"software house sp"` | Phrase | Idem. |
+| `"manutenção de sistema"` | Phrase | Trocada por exact `[manutenção de sistema]`. |
+| `"sistema sob medida"` | Phrase | Perfil A (quem quer construir algo novo). Fora do foco. |
+| `"desenvolvimento de software sp"` | Phrase | Perfil A. CPC R$12,63. Fora do foco. |
+| `[desenvolvimento de sistema personalizado]` | Exact | Perfil A. 0 impressões. Fora do foco. |
+| `[software b2b]` | Exact | 0 impressões. Muito genérico. |
+| `[sistema para empresa]` | Exact | Ambíguo. 2 impr. Atrai quem quer ERP. |
+
+**PASSO 3 — keywords Perfil B adicionadas (Exact Match)**
+
+| Keyword | Situação |
+|---|---|
+| `[refatoração de sistema]` | Adicionada (ou já existia) |
+| `[refatoração de código]` | Adicionada |
+| `[modernização de sistema]` | Adicionada |
+| `[modernização de sistema legado]` | Adicionada (ou já existia) |
+| `[reescrita de sistema]` | Adicionada (Low search volume — manter) |
+| `[migração de sistema]` | Adicionada |
+| `[migração de software]` | Adicionada |
+| `[manutenção de sistema empresarial]` | Adicionada (Low search volume — manter) |
+| `[suporte de sistema]` | Adicionada |
+| `[refatoração de software]` | Já existia na campanha |
+| `[sistema legado]` | Já existia na campanha |
+| `[manutenção de sistema]` | Já existia na campanha |
+| `[modernização de software]` | Já existia na campanha |
+
+**PASSO 4 — 39 negativos adicionados**
+
+*SaaS/ERP (Broad):* `erp`, `totvs`, `sap`, `salesforce`, `sistema pdv`, `software pdv`, `sistema de rh`, `software de rh`, `folha de pagamento`, `sistema financeiro`, `sistema de ponto`
+
+*Freelancer/Emprego (Broad/Phrase):* `freelancer`, `freelance`, `"contratar programador"`, `"contratar desenvolvedor"`, `vaga`, `estágio`, `salário`
+
+*Squad/Outsourcing (Phrase):* `"squad de desenvolvimento"`, `"time de desenvolvimento"`, `"terceirização de ti"`, `"outsourcing de ti"`, `"equipe de ti"`, `"contratar equipe"`, `"alocação de desenvolvedor"`
+
+*Informacional (Broad/Phrase):* `"o que é"`, `"como funciona"`, `tutorial`, `"curso de programação"`, `gratuito`, `free`, `trial`
+
+*Apostas (Broad/Phrase):* `tigrinho`, `"fortune tiger"`, `"jogo online"`
+
+*Help Desk (Phrase/Broad):* `"suporte técnico"`, `"suporte de ti"`, `"gestão de ti"`, `helpdesk`
+
+**PASSO 5 — Teto de CPC definido**
+- ✅ Maximize Clicks com teto de R$4,00 por clique
+
+---
+
+### 21/03/2026 — Criação da campanha Currify (campanha separada)
+
+Criada campanha **Currify - Search - Tráfego B2C** para currify.app (produto diferente).
+- Budget: R$10,00/dia — Bid: Maximize Clicks — Foco B2C
+- Essa campanha é independente e não está documentada aqui.
+
+---
+
+## O QUE JÁ TENTAMOS E NÃO FUNCIONA (não repetir)
+
+| O que | Por que não funciona |
+|---|---|
+| **Maximize Conversions sem dados suficientes** | Sem 30+ conversões/mês o algoritmo não aprende. Ficou com CPC alto (R$9,68) e zero conversões reais. |
+| **Keywords Phrase match genéricas** | `"software house"`, `"empresa de software"` etc. geraram tráfego de Angola, de "apploja", de buscas sem intenção de compra. |
+| **Keywords de localização (sp)** | `"empresa de software sp"`, `"software house sp"` — foco geográfico não trouxe leads qualificados, só ruído. |
+| **Keywords Perfil A sem filtro** | `"sistema sob medida"`, `[sistema para empresa]` — atraem quem quer construir algo novo, não quem tem sistema legado. |
+| **`[software b2b]` como keyword** | 0 impressões. Muito genérica, não representa intenção específica. |
+| **Negative `manutenção de software` (Broad)** | Bloqueava nossa própria keyword ativa `[manutenção de software]`. Conflito interno. |
+| **`totvs`, `sap`, `salesforce` como negativos Exact** | Exact negativo bloquearia apenas a busca exata. Precisa ser Broad para bloquear "totvs erp", "sap brasil" etc. |
+
+---
+
+## KEYWORDS ATIVAS AGORA (~33 — todas Exact Match)
+
+### Core Perfil B — Refatoração / Legado / Migração
+`[refatoração de sistema]` · `[refatoração de software]` · `[refatoração de código]` · `[sistema legado]` · `[modernização de sistema]` · `[modernização de sistema legado]` · `[modernização de software]` · `[reescrita de sistema]` · `[migração de sistema]` · `[migração de software]` · `[manutenção de sistema]` · `[manutenção de sistema empresarial]` · `[manutenção de software]` · `[suporte de sistema]`
+
+### Entry Points
+`[software house]` · `[empresa de software]` · `[desenvolvimento de software sob medida]`
+
+---
+
+## NEGATIVOS ATIVOS (~132)
+
+### Bloco original — Broad Match
+`apostas`, `bet`, `bets`, `bet365`, `blaze`, `cassino`, `cassino online`, `casa de apostas`, `apostas esportivas`, `aplicativo do zero`, `aplicativo grátis`, `aplicativo para ganhar dinheiro`, `app para ganhar dinheiro`, `criar aplicativo`, `criar app`, `como criar app`, `criar minha ia`, `chatbot grátis`, `barato`, `grátis`, `download`, `baixar`, `baixar primavera`, `primavera v10`, `primavera baixar`, `bootcamp`, `certificado ti`, `aprender desenvolvimento`, `aprender programar`, `como programar`, `controle de estoque`, `sistemas de controle de estoque`, `software de gestão`, `sistema de gestão`, `softwares de gestão`, `software de venda`, `sistema de gestão comercial`, `crm`, `crm software`, `manutenção de hardware`, `core sistema`, `dexa contas`, `sistema vendas online`, `xd software angola`, `apploja`, `glide apps`, `quais são os sistemas de gestão`
+
+### Adicionados em 21/03/2026
+**Broad:** `erp`, `totvs`, `sap`, `salesforce`, `sistema pdv`, `software pdv`, `sistema de rh`, `software de rh`, `folha de pagamento`, `sistema financeiro`, `sistema de ponto`, `freelancer`, `freelance`, `vaga`, `estágio`, `salário`, `tutorial`, `gratuito`, `free`, `trial`, `tigrinho`, `helpdesk`
+
+**Phrase:** `"contratar programador"`, `"contratar desenvolvedor"`, `"squad de desenvolvimento"`, `"time de desenvolvimento"`, `"terceirização de ti"`, `"outsourcing de ti"`, `"equipe de ti"`, `"contratar equipe"`, `"alocação de desenvolvedor"`, `"o que é"`, `"como funciona"`, `"curso de programação"`, `"fortune tiger"`, `"jogo online"`, `"suporte técnico"`, `"suporte de ti"`, `"gestão de ti"`
+
+---
+
+## COMO OS MATCH TYPES FUNCIONAM
+
+### Exact Match `[keyword]`
+Não é literalmente exato — Google aplica close variants automaticamente (reordenação, preposições, erros de digitação, sinônimos de intenção). **NÃO dispara** para contextos que mudam o significado ("o que é refatoração", "curso de").
+
+### Phrase Match `"keyword"` (expandido desde 2021)
+BMM foi fundido no Phrase em 2021. Hoje é mais amplo: aceita palavras extras antes/depois, reordenação, sinônimos. **Não usar na Fase 1** — avaliar na Fase 2 (30+ dias com dados).
+
+### Broad Match `keyword`
+Requer Smart Bidding (tCPA/Maximize Conversions). Com Maximize Clicks = desperdício. **Proibido até 30+ conversões e migração para tCPA.**
+
+### Negativos — diferença crítica
+Negativos **NÃO expandem** para close variants.
+- Broad (`-keyword`) → bloqueia toda busca com TODAS as palavras em qualquer ordem
+- Phrase (`-"keyword"`) → bloqueia toda busca que contenha essa frase (palavras extras OK antes/depois)
+- Exact (`-[keyword]`) → somente aquela busca exata
+
+**Regra:** Para marcas (totvs, sap, salesforce) usar **Broad** negativo — não Exact.
+
+---
+
+## PERFIL B — QUEM QUEREMOS ATRAIR
+
+> "Meu sistema atual não aguenta mais. Está travando o crescimento da empresa, é caro de manter, e a equipe tem medo de mexer nele."
+
+**Cargo:** CEO, CTO, Diretor, Gerente de TI — sistema legado em produção, crescimento travado.
+
+**Por que converte melhor:** orçamento já aprovado, não compara preço (compara RISCO), e a Tonolli (19 anos + casos reais) é o argumento perfeito para reduzir risco percebido.
+
+---
+
+## GUIDELINES DE COPY
+
+**Tom:** formal-técnico, não marketeiro. Repele dreamers, atrai decisor corporativo.
+
+**Palavras obrigatórias:** `sistema`, `corporativo`, `empresarial`, `refatoração`, `manutenção`, `modernização`, `legado`, `19 anos`, `B2B`, `projeto`, `software house`
+
+**Palavras proibidas no copy:** `aplicativo`, `app`, `MVP`, `grátis`, `gratuito`, `LangChain`, `Node.js`, `React` (tecnologias como headline confundem o decisor e atraem devs)
+
+---
+
+## SITE — LANDING PAGE (decisão pendente)
+
+A homepage atual é genérica. Uma landing page dedicada (`/refatoracao-de-sistemas` ou `/sistema-legado`) melhoraria o Quality Score → CPC cai.
+
+**Regra:** não adaptar ao algoritmo. Adaptar ao **comprador** — linguagem que ele reconhece como sua dor. Headline sugerida: "Seu sistema legado está travando o crescimento?"
+
+---
+
+## CONVERSÃO
+
+- **Evento:** Formulário de contato preenchido → `/contato/obrigado`
+- **Status:** Rastreamento ativo, mas 0 contatos reais recebidos até 21/03/2026
+- **Atenção:** Confirmar que a URL rastreada é exatamente `/contato/obrigado` (sem duplicação de path)
+
+---
+
+## ROADMAP
+
+### 7 dias (~28/03/2026)
+- [ ] Search Terms Report — negativar queries fora do Perfil B
+- [ ] Checar se CPC médio caiu abaixo de R$4,00
+- [ ] Confirmar que keywords de refatoração/migração estão gerando impressões
+
+### 30 dias (~21/04/2026)
+- [ ] CTR das keywords de refatoração/legado (meta: >5%)
+- [ ] 0 cliques com impressões → problema de copy, não de keyword
+- [ ] 10+ conversões: testar Maximize Conversions em campanha separada
+- [ ] Avaliar Phrase Match nas keywords com melhor CTR
+- [ ] Iniciar discussão sobre landing page dedicada
+
+### 90 dias (ou 30+ conversões)
+- [ ] Migrar para tCPA
+- [ ] Campanha separada Broad Match + tCPA (budget máx 10%)
+- [ ] Enhanced Conversions for Leads (conectar CRM)
+- [ ] Valores diferenciados por tipo de conversão
+
+---
+
+## CONTEXTO DO NEGÓCIO
+
+- **Empresa:** Tonolli Software — software house B2B, 19 anos, 50+ projetos, 6 países
+- **Serviços core:** Desenvolvimento sob medida, refatoração de sistemas legados, manutenção de software corporativo
+- **Diferencial:** Senioridade + histórico = menor risco percebido pelo Perfil B
+- **Site:** tonollisoftware.com.br
