@@ -1,7 +1,7 @@
 # Google Ads — Tonolli Software
 
 > Arquivo de contexto da campanha. Referência estratégica — keywords e assets mudam com frequência.
-> Última atualização: 20/03/2026
+> Última atualização: 21/03/2026
 
 ---
 
@@ -147,7 +147,7 @@
 | 3 | Sistemas Personalizados | 23 |
 | 4 | Inteligência Artificial | 23 |
 | 5 | Agentes de IA para Empresas | 27 |
-| 6 | Software House Especializada | 28 |
+| 6 | **Modernize Sistema Legado** *(substituiu "Software House Especializada" — par duplicado + keyword popular adicionada)* | 24 |
 | 7 | Contratar Software House | 24 |
 | 8 | **Refatoração de Sistemas** *(substituiu "Aplicativo Sob Medida")* | 22 |
 | 9 | Modernize seu Sistema | 21 |
@@ -164,13 +164,13 @@
 |---|---|---|
 | 1 | **Desenvolvemos, refatoramos e modernizamos sistemas para empresas. 19 anos de experiência.** *(substituiu versão com Node.js/LangChain)* | 89 |
 | 2 | Modernize sistemas legados. Migração para cloud, microsserviços e arquitetura moderna. | 86 |
-| 3 | **Refatoramos e modernizamos sistemas legados. Software house B2B, 19 anos de experiência.** *(substituiu versão de IA/chatbot)* | 88 |
-| 4 | Software house B2B com 19 anos. Projetos web, mobile e IA. Solicite uma proposta grátis. | 88 |
+| 3 | **Equipe sênior, projetos estruturados. Atendemos empresas com demandas reais de sistemas.** *(substituiu versão similar à Desc 1)* | 88 |
+| 4 | **Empresa de software B2B com 19 anos e 6 países atendidos. Solicite uma proposta agora.** *(removido "grátis" — contradiz posicionamento B2B)* | 86 |
 
 ### Display Path
 - `tonollisoftware.com.br/servicos/sob-medida`
 
-### Sitelinks (5)
+### Sitelinks (6/6)
 | Título | Descrição |
 |---|---|
 | **Solicitar Proposta** *(substituiu "Orçamento Grátis" — sem sinal de "grátis")* | Proposta personalizada em 24 horas · Projetos sérios, sem compromisso |
@@ -178,6 +178,7 @@
 | Inteligência Artificial | Agentes de IA com LangChain · Chatbots e automação para B2B |
 | Modernização de Sistemas | Refatoramos sistemas legados · Cloud, microsserviços e APIs |
 | 19 Anos de Experiência | Software house B2B confiável · 6 países atendidos, 50+ projetos |
+| **Cases de Sucesso** *(adicionado — 6º sitelink, prova social B2B)* | 50+ projetos entregues em 6 países · Empresas de médio e grande porte |
 
 > "Aplicativos Mobile" removido — atraía público de dreamers de app, inconsistente com o posicionamento B2B/sistemas.
 
@@ -205,6 +206,11 @@
 | Mar/2026 | Copy atualizado: 3 headlines + 2 descriptions corrigidos para foco B2B/sistemas |
 | Mar/2026 | Sitelink "Orçamento Grátis" → "Solicitar Proposta" (remove sinal de "grátis") |
 | Mar/2026 | Sitelink "Aplicativos Mobile" removido (atraía público errado) |
+| 21/03/2026 | Headline 6 "Software House Especializada" → "Modernize Sistema Legado" (par duplicado eliminado + keyword popular) |
+| 21/03/2026 | Description 3 reescrita para eliminar redundância com Desc 1 (ambas repetiam "refatoramos e modernizamos") |
+| 21/03/2026 | Description 4: "grátis" removido → "Solicite uma proposta agora" (alinhado ao posicionamento B2B) |
+| 21/03/2026 | Sitelink 6 "Cases de Sucesso" adicionado (slot vazio preenchido — prova social B2B) |
+| 21/03/2026 | **Ad Strength atingiu "Excellent"** — todas as sugestões do Google atendidas |
 
 ---
 
