@@ -41,7 +41,7 @@ export default function Hero({
             </span>
           )}
 
-          <h1 className="animate-fade-in-up delay-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight gradient-heading leading-[1.1]">
+          <h1 className="animate-fade-in-up delay-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight gradient-heading-brand leading-[1.1]">
             {title}
           </h1>
 

@@ -110,3 +110,61 @@ select option {
     animation: none;
   }
 }
+
+/* Visível para usuários sem JavaScript */
+@media (scripting: none) {
+  .animate-fade-in-up {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Gradient heading com brand color */
+.gradient-heading-brand {
+  background: linear-gradient(160deg, #ffffff 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Focus visible acessível */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Alto contraste (forced-colors) */
+@media (forced-colors: active) {
+  .gradient-heading,
+  .gradient-heading-brand {
+    -webkit-text-fill-color: ButtonText;
+    background: none;
+  }
+
+  .bg-dot-grid {
+    background: none;
+  }
+
+  .shimmer-sweep::before {
+    display: none;
+  }
+}
+
+/* Print */
+@media print {
+  header,
+  footer,
+  .shimmer-sweep::before {
+    display: none;
+  }
+
+  .bg-dot-grid {
+    background: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

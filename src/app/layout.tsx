@@ -11,12 +11,14 @@ const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
   subsets: ['latin'],
   display: 'swap',
+  weight: ['400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -126,8 +128,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${jakarta.variable} font-sans antialiased`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+        >
+          Pular para o conteúdo
+        </a>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppWidget />
       </body>

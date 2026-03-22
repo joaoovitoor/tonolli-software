@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import Card from '@/components/ui/Card';
+import FadeInSection from '@/components/ui/FadeInSection';
 
 interface ProjectCardProps {
   title: string;
@@ -39,6 +40,7 @@ export default function ProjectCard({
   const colors = badgeColors[badge] || defaultColors;
 
   return (
+    <FadeInSection className="h-full">
     <Card className="flex flex-col h-full group relative overflow-hidden">
       <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.dot} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
@@ -110,5 +112,6 @@ export default function ProjectCard({
         </div>
       </div>
     </Card>
+    </FadeInSection>
   );
 }
