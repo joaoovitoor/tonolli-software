@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import siteData from '@/content/site.json';
 import Button from '@/components/ui/Button';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800/50 bg-gray-950/80 backdrop-blur-xl">
@@ -33,14 +35,18 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className={`px-4 py-2 text-sm transition-colors rounded-lg hover:bg-white/5 ${
+                  pathname === item.href
+                    ? 'text-white bg-white/5'
+                    : 'text-gray-400 hover:text-white'
+                }`}
               >
                 {item.label}
               </Link>
             ))}
             <div className="ml-4">
               <Button href="/contato" size="sm">
-                Falar com especialista
+                Diagnóstico gratuito
               </Button>
             </div>
           </nav>
@@ -63,14 +69,18 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="px-4 py-3 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-colors"
+                className={`px-4 py-3 rounded-lg hover:bg-white/5 transition-colors ${
+                  pathname === item.href
+                    ? 'text-white bg-white/5'
+                    : 'text-gray-300 hover:text-white'
+                }`}
               >
                 {item.label}
               </Link>
             ))}
             <div className="mt-2 px-4">
               <Button href="/contato" size="sm" className="w-full">
-                Falar com especialista
+                Diagnóstico gratuito
               </Button>
             </div>
           </nav>

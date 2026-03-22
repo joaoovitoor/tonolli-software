@@ -41,10 +41,10 @@ interface FormState {
 }
 
 const projectTypeOptions = [
-  { value: 'software', label: 'Desenvolvimento de Software', icon: Code, desc: 'Sistema web, mobile ou API do zero' },
-  { value: 'ai', label: 'Inteligência Artificial', icon: Brain, desc: 'Agentes IA, chatbots, automação' },
   { value: 'modernization', label: 'Modernização de Sistema', icon: RefreshCw, desc: 'Migrar ou refatorar sistema legado' },
+  { value: 'software', label: 'Desenvolvimento de Software', icon: Code, desc: 'Sistema web, mobile ou API do zero' },
   { value: 'consulting', label: 'Consultoria Técnica', icon: Shield, desc: 'Arquitetura, code review, mentoria' },
+  { value: 'ai', label: 'Inteligência Artificial', icon: Brain, desc: 'Agentes IA, chatbots, automação' },
   { value: 'other', label: 'Outro assunto', icon: HelpCircle, desc: 'Algo diferente do listado' },
 ];
 

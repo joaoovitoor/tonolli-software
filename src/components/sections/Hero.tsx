@@ -7,6 +7,7 @@ interface HeroProps {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   centered?: boolean;
+  compact?: boolean;
 }
 
 export default function Hero({
@@ -16,9 +17,10 @@ export default function Hero({
   primaryCta,
   secondaryCta,
   centered = true,
+  compact = false,
 }: HeroProps) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section className={`relative overflow-hidden ${compact ? 'pt-24 pb-12 md:pt-28 md:pb-16' : 'pt-32 pb-20 md:pt-40 md:pb-32'}`}>
       <div className="absolute inset-0 -z-10">
         <div className="bg-dot-grid absolute inset-0 opacity-100" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[650px] bg-blue-600/10 rounded-full blur-[140px]" />

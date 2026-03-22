@@ -7,7 +7,7 @@ export function organizationJsonLd() {
     name: siteData.name,
     legalName: siteData.legalName,
     url: siteData.url,
-    logo: `${siteData.url}/images/logo.svg`,
+    logo: `${siteData.url}/images/logo.png`,
     description: siteData.description,
     address: {
       '@type': 'PostalAddress',

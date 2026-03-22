@@ -13,8 +13,8 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <Image
-                src="/images/logo.svg"
-                alt=""
+                src="/images/logo-white.svg"
+                alt="Tonolli Software"
                 width={28}
                 height={28}
                 className="h-7 w-7"
@@ -56,9 +56,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4" role="heading" aria-level={2}>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Navegação
-            </p>
+            </h3>
             <ul className="space-y-3">
               {siteData.nav.map((item) => (
                 <li key={item.href}>
@@ -74,9 +74,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4" role="heading" aria-level={2}>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Contato
-            </p>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a

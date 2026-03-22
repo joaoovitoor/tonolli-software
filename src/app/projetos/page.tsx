@@ -38,6 +38,7 @@ export default function ProjetosPage() {
       <Hero
         title={projectsData.hero.title}
         subtitle={projectsData.hero.subtitle}
+        compact
       />
 
       <section className="pt-8 pb-20">

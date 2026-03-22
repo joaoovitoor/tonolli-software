@@ -34,6 +34,7 @@ export default function SobrePage() {
       <Hero
         title={aboutData.hero.title}
         subtitle={aboutData.hero.subtitle}
+        compact
       />
 
       <section className="pt-8 pb-24">
@@ -53,9 +54,9 @@ export default function SobrePage() {
             </div>
             <div className="lg:col-span-2">
               <Card hover={false}>
-                <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
+                <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
                   {aboutData.founder.title}
-                </h4>
+                </p>
                 <h3 className="text-xl font-semibold text-white mb-1">
                   {aboutData.founder.name}
                 </h3>

@@ -5,6 +5,22 @@
   },
   "services": [
     {
+      "id": "modernizacao",
+      "icon": "RefreshCw",
+      "title": "Modernização de Sistemas Legados",
+      "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
+      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. A Tonolli tem 19 anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação. Já entregamos para Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
+      "features": [
+        "Seu sistema continua operando durante toda a modernização — zero downtime",
+        "Mapeamos todas as dependências antes de tocar em qualquer código",
+        "Documentação completa entregue junto com o sistema modernizado",
+        "Escopo e prazo fechados antes de assinar — sem surpresas de custo",
+        "Refatoração progressiva: modernizamos por partes, sem big bang",
+        "Diagnóstico técnico gratuito em até 48 horas"
+      ],
+      "technologies": ["Docker", "Kubernetes", "AWS", "GCP", "Azure", "Terraform"]
+    },
+    {
       "id": "desenvolvimento",
       "icon": "Code",
       "title": "Desenvolvimento de Software Sob Medida",
@@ -21,38 +37,6 @@
       "technologies": ["React", "Next.js", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "MongoDB"]
     },
     {
-      "id": "inteligencia-artificial",
-      "icon": "Brain",
-      "title": "Inteligência Artificial & Automação",
-      "shortDescription": "Agentes inteligentes, chatbots e automação com IA.",
-      "description": "Desenvolvemos soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalhamos com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
-      "features": [
-        "Agentes inteligentes com LangChain e MCP",
-        "Chatbots e assistentes virtuais com LLMs",
-        "Processamento de documentos (PDF, áudio, imagens)",
-        "Análise de dados com machine learning",
-        "Otimização de custos de tokens e modelos",
-        "Integração com APIs de IA (OpenAI, Anthropic, Google)"
-      ],
-      "technologies": ["Python", "LangChain", "MCP", "LLMs", "OpenAI", "AWS Lambda"]
-    },
-    {
-      "id": "modernizacao",
-      "icon": "RefreshCw",
-      "title": "Modernização de Sistemas Legados",
-      "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
-      "description": "Transformamos sistemas legados em plataformas modernas, escaláveis e eficientes. Já lideramos projetos de modernização para empresas como Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
-      "features": [
-        "Migração de monolitos para microserviços",
-        "Arquitetura serverless (AWS Lambda, Azure Functions)",
-        "Migração de banco de dados com zero downtime",
-        "Containerização com Docker e Kubernetes",
-        "Migração entre clouds (AWS, GCP, Azure)",
-        "Refatoração de código legado"
-      ],
-      "technologies": ["Docker", "Kubernetes", "AWS", "GCP", "Azure", "Terraform"]
-    },
-    {
       "id": "consultoria",
       "icon": "Shield",
       "title": "Consultoria & Arquitetura de Software",
@@ -67,6 +51,22 @@
         "Planejamento de infraestrutura cloud"
       ],
       "technologies": ["GitHub Actions", "Jenkins", "SonarQube", "New Relic", "Datadog"]
+    },
+    {
+      "id": "inteligencia-artificial",
+      "icon": "Brain",
+      "title": "Inteligência Artificial & Automação",
+      "shortDescription": "Agentes inteligentes, chatbots e automação com IA.",
+      "description": "Desenvolvemos soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalhamos com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
+      "features": [
+        "Agentes inteligentes com LangChain e MCP",
+        "Chatbots e assistentes virtuais com LLMs",
+        "Processamento de documentos (PDF, áudio, imagens)",
+        "Análise de dados com machine learning",
+        "Otimização de custos de tokens e modelos",
+        "Integração com APIs de IA (OpenAI, Anthropic, Google)"
+      ],
+      "technologies": ["Python", "LangChain", "MCP", "LLMs", "OpenAI", "AWS Lambda"]
     }
   ],
   "process": {

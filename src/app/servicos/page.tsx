@@ -56,6 +56,7 @@ export default function ServicosPage() {
       <Hero
         title={servicesData.hero.title}
         subtitle={servicesData.hero.subtitle}
+        compact
       />
 
       <section className="pt-8 pb-24">
@@ -90,9 +91,9 @@ export default function ServicosPage() {
                   </div>
                 </div>
                 <div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8">
-                  <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
+                  <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
                     O que inclui
-                  </h4>
+                  </p>
                   <ul className="space-y-3">
                     {service.features.map((feature) => (
                       <li

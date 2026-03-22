@@ -33,6 +33,7 @@ export default function ContatoPage() {
       <Hero
         title={contactData.hero.title}
         subtitle={contactData.hero.subtitle}
+        compact
       />
 
       <section className="pt-8 pb-24">
