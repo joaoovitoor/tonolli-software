@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:currify.app)",
+      "WebSearch",
+      "Bash(claude mcp:*)",
+      "Read(//Users/joaoovitoor/.claude/**)",
+      "Bash(python3 -m json.tool)",
+      "Skill(update-config)"
+    ]
+  }
+}

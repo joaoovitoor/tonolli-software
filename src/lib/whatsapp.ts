@@ -52,8 +52,6 @@ export function buildWhatsAppFromForm(data: {
   company: string;
   projectType: string;
   message: string;
-  budget?: string;
-  timeline?: string;
 }): string {
   const phone = siteData.contact.whatsapp;
   const parts = [
@@ -61,8 +59,6 @@ export function buildWhatsAppFromForm(data: {
     `*Nome:* ${data.name}`,
     data.company ? `*Empresa:* ${data.company}` : null,
     `*Tipo:* ${data.projectType}`,
-    data.budget ? `*Orçamento:* ${data.budget}` : null,
-    data.timeline ? `*Prazo:* ${data.timeline}` : null,
     `\n*Descrição:*\n${data.message}`,
   ].filter(Boolean);
 

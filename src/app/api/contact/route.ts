@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const body = await request.json();
-  const { name, email, phone, company, projectType, stage, budget, timeline, message } = body;
+  const { name, email, phone, company, projectType, message } = body;
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: 'Campos obrigatórios ausentes.' }, { status: 400 });
@@ -16,9 +16,6 @@ export async function POST(request: Request) {
     phone && ['WhatsApp', phone],
     company && ['Empresa', company],
     projectType && ['Tipo de projeto', projectType],
-    stage && ['Estágio', stage],
-    budget && ['Investimento', budget],
-    timeline && ['Prazo', timeline],
   ].filter(Boolean) as [string, string][];
 
   const tableRows = rows
