@@ -145,7 +145,7 @@ export default function ContactWizard() {
     }, 150);
   };
 
-  const scrollToStep = (ref: React.RefObject<HTMLDivElement>) => {
+  const scrollToStep = (ref: React.RefObject<HTMLDivElement | null>) => {
     setTimeout(() => {
       ref.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 200);

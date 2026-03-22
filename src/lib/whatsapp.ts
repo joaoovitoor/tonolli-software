@@ -51,20 +51,20 @@ export function buildWhatsAppFromForm(data: {
   name: string;
   company: string;
   projectType: string;
-  budget: string;
-  timeline: string;
   message: string;
+  budget?: string;
+  timeline?: string;
 }): string {
   const phone = siteData.contact.whatsapp;
   const parts = [
     '*Nova solicitação via site Tonolli Software*\n',
     `*Nome:* ${data.name}`,
-    `*Empresa:* ${data.company}`,
+    data.company ? `*Empresa:* ${data.company}` : null,
     `*Tipo:* ${data.projectType}`,
-    `*Orçamento:* ${data.budget}`,
-    `*Prazo:* ${data.timeline}`,
+    data.budget ? `*Orçamento:* ${data.budget}` : null,
+    data.timeline ? `*Prazo:* ${data.timeline}` : null,
     `\n*Descrição:*\n${data.message}`,
-  ];
+  ].filter(Boolean);
 
   const text = encodeURIComponent(parts.join('\n'));
   return `https://wa.me/${phone}?text=${text}`;
