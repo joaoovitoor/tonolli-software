@@ -8,36 +8,21 @@ import {
   RefreshCw,
   Shield,
   HelpCircle,
-  Lightbulb,
-  ClipboardList,
-  Wrench,
-  Rocket,
-  DollarSign,
-  Clock,
-  MessageSquare,
-  User,
   Check,
   Send,
   MessageCircle,
   ChevronRight,
 } from 'lucide-react';
-import contactData from '@/content/contact.json';
 import { buildWhatsAppFromForm } from '@/lib/whatsapp';
 
 interface FormState {
+  name: string;
+  company: string;
   projectType: string;
   projectTypeLabel: string;
-  stage: string;
-  stageLabel: string;
-  budget: string;
-  budgetLabel: string;
-  timeline: string;
-  timelineLabel: string;
   message: string;
-  name: string;
   email: string;
   phone: string;
-  company: string;
 }
 
 const projectTypeOptions = [
@@ -48,15 +33,13 @@ const projectTypeOptions = [
   { value: 'other', label: 'Outro assunto', icon: HelpCircle, desc: 'Algo diferente do listado' },
 ];
 
-const stageOptions = [
-  { value: 'idea', label: 'Tenho apenas uma ideia', icon: Lightbulb },
-  { value: 'planned', label: 'Já tenho requisitos definidos', icon: ClipboardList },
-  { value: 'started', label: 'Já comecei e preciso de ajuda', icon: Wrench },
-  { value: 'running', label: 'Sistema em produção que precisa evoluir', icon: Rocket },
-];
-
-const budgetOptions = contactData.form.budget.options;
-const timelineOptions = contactData.form.timeline.options;
+const messagePlaceholders: Record<string, string> = {
+  modernization: 'Descreva o sistema atual: tecnologia, idade aproximada, principais problemas e o que precisa mudar...',
+  software: 'Descreva o sistema que precisa construir: funcionalidades principais, usuários, integrações necessárias...',
+  consulting: 'Descreva o contexto: qual decisão técnica precisa tomar ou qual problema quer resolver...',
+  ai: 'Descreva o processo que quer automatizar ou onde IA pode ajudar no seu negócio...',
+  other: 'Descreva o que precisa — qualquer detalhe é bem-vindo...',
+};
 
 function StepCard({
   number,
@@ -116,61 +99,75 @@ function StepCard({
 
 export default function ContactWizard() {
   const router = useRouter();
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  const step3Ref = useRef<HTMLDivElement>(null);
+  const step4Ref = useRef<HTMLDivElement>(null);
+
   const [form, setForm] = useState<FormState>({
+    name: '',
+    company: '',
     projectType: '',
     projectTypeLabel: '',
-    stage: '',
-    stageLabel: '',
-    budget: '',
-    budgetLabel: '',
-    timeline: '',
-    timelineLabel: '',
     message: '',
-    name: '',
     email: '',
     phone: '',
-    company: '',
   });
+  const [nameCompleted, setNameCompleted] = useState(false);
+  const [messageCompleted, setMessageCompleted] = useState(false);
+  const [selectingValue, setSelectingValue] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState(false);
-  const [messageCompleted, setMessageCompleted] = useState(false);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const update = (fields: Partial<FormState>) =>
     setForm((prev) => ({ ...prev, ...fields }));
 
-  const resetFrom = (field: keyof FormState) => {
-    const order: (keyof FormState)[] = [
-      'projectType', 'projectTypeLabel',
-      'stage', 'stageLabel',
-      'budget', 'budgetLabel',
-      'timeline', 'timelineLabel',
-      'message',
-      'name', 'email', 'phone', 'company',
-    ];
-    const idx = order.indexOf(field);
-    const cleared: Partial<FormState> = {};
-    for (let i = idx; i < order.length; i++) {
-      cleared[order[i]] = '';
-    }
-    update(cleared);
-    if (field === 'message') {
+  const resetStep = (from: 'name' | 'projectType' | 'message') => {
+    if (from === 'name') {
+      setForm({ name: '', company: '', projectType: '', projectTypeLabel: '', message: '', email: '', phone: '' });
+      setNameCompleted(false);
+      setMessageCompleted(false);
+    } else if (from === 'projectType') {
+      update({ projectType: '', projectTypeLabel: '', message: '', email: '', phone: '' });
+      setMessageCompleted(false);
+    } else if (from === 'message') {
+      update({ message: '', email: '', phone: '' });
       setMessageCompleted(false);
     }
+    setSubmitAttempted(false);
   };
 
-  const scrollToBottom = () => {
+  const selectWithFeedback = (value: string, updateFn: () => void) => {
+    setSelectingValue(value);
     setTimeout(() => {
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 100);
+      setSelectingValue(null);
+      updateFn();
+    }, 150);
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [form.projectType, form.stage, form.budget, form.timeline, messageCompleted, form.name]);
+  const scrollToStep = (ref: React.RefObject<HTMLDivElement>) => {
+    setTimeout(() => {
+      ref.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 200);
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (nameCompleted) scrollToStep(step2Ref); }, [nameCompleted]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (form.projectType) scrollToStep(step3Ref); }, [form.projectType]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (messageCompleted) scrollToStep(step4Ref); }, [messageCompleted]);
+
+  const currentStep = !nameCompleted ? 1
+    : !form.projectType ? 2
+    : !messageCompleted ? 3
+    : 4;
+
+  const progressPct = ((currentStep - 1) / 4) * 100;
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.message) return;
+    setSubmitAttempted(true);
+    if (!form.email) return;
     setSending(true);
     setSendError(false);
     try {
@@ -183,9 +180,6 @@ export default function ContactWizard() {
           phone: form.phone,
           company: form.company,
           projectType: form.projectTypeLabel,
-          stage: form.stageLabel,
-          budget: form.budgetLabel,
-          timeline: form.timelineLabel,
           message: form.message,
         }),
       });
@@ -203,254 +197,220 @@ export default function ContactWizard() {
       name: form.name,
       company: form.company,
       projectType: form.projectTypeLabel,
-      budget: form.budgetLabel,
-      timeline: form.timelineLabel,
       message: form.message,
     });
     window.open(url, '_blank');
   };
 
+  const optionClass = (value: string) =>
+    `flex items-start gap-3 rounded-xl border p-4 text-left transition-all cursor-pointer group ${
+      selectingValue === value
+        ? 'border-blue-400 bg-blue-500/15 scale-[0.98]'
+        : 'border-gray-700 bg-gray-800/30 hover:border-blue-500 hover:bg-blue-500/5'
+    }`;
+
+  const iconClass = (value: string) =>
+    `w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+      selectingValue === value
+        ? 'bg-blue-500/30 text-blue-300'
+        : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20'
+    }`;
+
+  const inputClass = (hasError: boolean) =>
+    `w-full rounded-xl border px-4 py-3 text-sm text-white placeholder:text-gray-500 bg-gray-800/50 focus:outline-none transition-colors ${
+      hasError ? 'border-red-500 focus:border-red-400' : 'border-gray-700 focus:border-blue-500'
+    }`;
+
   return (
     <div className="max-w-2xl mx-auto space-y-4">
-      {/* Step 1: Project Type */}
+      {/* Progress bar */}
+      <div className="mb-2">
+        <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
+          <span>Passo {currentStep} de 4</span>
+          <span>{Math.round(progressPct)}% concluído</span>
+        </div>
+        <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-blue-500 rounded-full transition-all duration-500 ease-out"
+            style={{ width: `${progressPct}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Step 1: Quem é você */}
       <StepCard
         number={1}
-        title="O que você precisa?"
-        done={!!form.projectType}
-        doneLabel={form.projectTypeLabel}
-        onReset={() => resetFrom('projectType')}
+        title="Quem é você?"
+        done={nameCompleted}
+        doneLabel={form.company ? `${form.name} · ${form.company}` : form.name}
+        onReset={() => resetStep('name')}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {projectTypeOptions.map((opt) => {
-            const Icon = opt.icon;
-            return (
-              <button
-                key={opt.value}
-                onClick={() =>
-                  update({ projectType: opt.value, projectTypeLabel: opt.label })
-                }
-                className="flex items-start gap-3 rounded-xl border border-gray-700 bg-gray-800/30 p-4 text-left hover:border-blue-500 hover:bg-blue-500/5 transition-all cursor-pointer group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
-                  <Icon size={16} />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-white">{opt.label}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{opt.desc}</p>
-                </div>
-              </button>
-            );
-          })}
+        <div className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs text-gray-400 mb-1.5">Nome *</label>
+              <input
+                type="text"
+                value={form.name}
+                onChange={(e) => update({ name: e.target.value })}
+                onKeyDown={(e) => { if (e.key === 'Enter' && form.name.trim()) setNameCompleted(true); }}
+                placeholder="Seu nome"
+                className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                autoFocus
+              />
+            </div>
+            <div>
+              <label className="block text-xs text-gray-400 mb-1.5">Empresa</label>
+              <input
+                type="text"
+                value={form.company}
+                onChange={(e) => update({ company: e.target.value })}
+                onKeyDown={(e) => { if (e.key === 'Enter' && form.name.trim()) setNameCompleted(true); }}
+                placeholder="Nome da empresa"
+                className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+          </div>
+          <button
+            onClick={() => { if (form.name.trim()) setNameCompleted(true); }}
+            disabled={!form.name.trim()}
+            className="flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+          >
+            Continuar
+            <ChevronRight size={16} />
+          </button>
         </div>
       </StepCard>
 
-      {/* Step 2: Stage */}
-      {form.projectType && (
-        <StepCard
-          number={2}
-          title="Em que estágio está?"
-          done={!!form.stage}
-          doneLabel={form.stageLabel}
-          onReset={() => resetFrom('stage')}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {stageOptions.map((opt) => {
-              const Icon = opt.icon;
-              return (
-                <button
-                  key={opt.value}
-                  onClick={() =>
-                    update({ stage: opt.value, stageLabel: opt.label })
-                  }
-                  className="flex items-center gap-3 rounded-xl border border-gray-700 bg-gray-800/30 p-4 text-left hover:border-blue-500 hover:bg-blue-500/5 transition-all cursor-pointer group"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
-                    <Icon size={16} />
-                  </div>
-                  <p className="text-sm font-medium text-white">{opt.label}</p>
-                </button>
-              );
-            })}
-          </div>
-        </StepCard>
-      )}
-
-      {/* Step 3: Budget */}
-      {form.stage && (
-        <StepCard
-          number={3}
-          title="Qual o investimento estimado?"
-          done={!!form.budget}
-          doneLabel={form.budgetLabel}
-          onReset={() => resetFrom('budget')}
-        >
-          <p className="text-xs text-gray-500 mb-4 -mt-2">
-            Não trabalhamos com projetos abaixo de R$ 10.000.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {budgetOptions.map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() =>
-                  update({ budget: opt.value, budgetLabel: opt.label })
-                }
-                className="flex items-center gap-3 rounded-xl border border-gray-700 bg-gray-800/30 p-4 text-left hover:border-blue-500 hover:bg-blue-500/5 transition-all cursor-pointer group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
-                  <DollarSign size={16} />
-                </div>
-                <p className="text-sm font-medium text-white">{opt.label}</p>
-              </button>
-            ))}
-          </div>
-        </StepCard>
-      )}
-
-      {/* Step 4: Timeline */}
-      {form.budget && (
-        <StepCard
-          number={4}
-          title="Qual o prazo desejado?"
-          done={!!form.timeline}
-          doneLabel={form.timelineLabel}
-          onReset={() => resetFrom('timeline')}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {timelineOptions.map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() =>
-                  update({ timeline: opt.value, timelineLabel: opt.label })
-                }
-                className="flex items-center gap-3 rounded-xl border border-gray-700 bg-gray-800/30 p-4 text-left hover:border-blue-500 hover:bg-blue-500/5 transition-all cursor-pointer group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
-                  <Clock size={16} />
-                </div>
-                <p className="text-sm font-medium text-white">{opt.label}</p>
-              </button>
-            ))}
-          </div>
-        </StepCard>
-      )}
-
-      {/* Step 5: Message */}
-      {form.timeline && (
-        <StepCard
-          number={5}
-          title="Conte-nos sobre o projeto"
-          done={messageCompleted}
-          doneLabel={form.message.length > 60 ? form.message.slice(0, 60) + '...' : form.message}
-          onReset={() => resetFrom('message')}
-        >
-          <div>
-            <textarea
-              value={form.message}
-              onChange={(e) => update({ message: e.target.value })}
-              placeholder="Descreva o desafio que você precisa resolver, o contexto do projeto, e qualquer detalhe relevante..."
-              rows={4}
-              className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none resize-none"
-            />
-            <button
-              onClick={() => {
-                if (form.message.trim()) {
-                  setMessageCompleted(true);
-                  scrollToBottom();
-                }
-              }}
-              disabled={!form.message.trim()}
-              className="mt-3 flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-            >
-              Continuar
-              <ChevronRight size={16} />
-            </button>
-          </div>
-        </StepCard>
-      )}
-
-      {/* Step 6: Contact Info */}
-      {messageCompleted && form.message && (
-        <StepCard number={6} title="Seus dados para contato">
-          <div className="space-y-3">
+      {/* Step 2: O que você precisa */}
+      {nameCompleted && (
+        <div ref={step2Ref}>
+          <StepCard
+            number={2}
+            title="O que você precisa?"
+            done={!!form.projectType}
+            doneLabel={form.projectTypeLabel}
+            onReset={() => resetStep('projectType')}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs text-gray-400 mb-1.5">
-                  Nome *
-                </label>
-                <input
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => update({ name: e.target.value })}
-                  placeholder="Como podemos te chamar?"
-                  className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-gray-400 mb-1.5">
-                  E-mail *
-                </label>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => update({ email: e.target.value })}
-                  placeholder="seu@email.com"
-                  className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-gray-400 mb-1.5">
-                  WhatsApp
-                </label>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => update({ phone: e.target.value })}
-                  placeholder="(11) 98000-0000"
-                  className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-gray-400 mb-1.5">
-                  Empresa
-                </label>
-                <input
-                  type="text"
-                  value={form.company}
-                  onChange={(e) => update({ company: e.target.value })}
-                  placeholder="Nome da empresa"
-                  className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
+              {projectTypeOptions.map((opt) => {
+                const Icon = opt.icon;
+                return (
+                  <button
+                    key={opt.value}
+                    onClick={() =>
+                      selectWithFeedback(opt.value, () =>
+                        update({ projectType: opt.value, projectTypeLabel: opt.label })
+                      )
+                    }
+                    className={optionClass(opt.value)}
+                  >
+                    <div className={iconClass(opt.value)}>
+                      <Icon size={16} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white">{opt.label}</p>
+                      <p className="text-xs text-gray-500 mt-0.5">{opt.desc}</p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
-
-            {sendError && (
-              <p className="text-sm text-red-400 text-center">
-                Erro ao enviar. Tente pelo WhatsApp ou contate-nos diretamente.
-              </p>
-            )}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button
-                onClick={handleSubmit}
-                disabled={!form.name || !form.email || sending}
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <Send size={16} />
-                {sending ? 'Enviando...' : 'Enviar projeto'}
-              </button>
-              <button
-                onClick={handleWhatsApp}
-                disabled={!form.name || !form.email}
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 text-sm font-medium text-white hover:bg-emerald-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <MessageCircle size={16} />
-                Enviar pelo WhatsApp
-              </button>
-            </div>
-          </div>
-        </StepCard>
+          </StepCard>
+        </div>
       )}
 
-      <div ref={bottomRef} />
+      {/* Step 3: Descreva o problema */}
+      {form.projectType && (
+        <div ref={step3Ref}>
+          <StepCard
+            number={3}
+            title="Descreva o problema"
+            done={messageCompleted}
+            doneLabel={form.message.length > 60 ? form.message.slice(0, 60) + '...' : form.message}
+            onReset={() => resetStep('message')}
+          >
+            <div>
+              <textarea
+                value={form.message}
+                onChange={(e) => update({ message: e.target.value })}
+                placeholder={messagePlaceholders[form.projectType] || messagePlaceholders.other}
+                rows={4}
+                className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none resize-none"
+                autoFocus
+              />
+              <button
+                onClick={() => { if (form.message.trim()) setMessageCompleted(true); }}
+                disabled={!form.message.trim()}
+                className="mt-3 flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              >
+                Continuar
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </StepCard>
+        </div>
+      )}
+
+      {/* Step 4: Contato */}
+      {messageCompleted && (
+        <div ref={step4Ref}>
+          <StepCard number={4} title="Seu contato">
+            <div className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs text-gray-400 mb-1.5">E-mail *</label>
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => update({ email: e.target.value })}
+                    placeholder="seu@email.com"
+                    className={inputClass(submitAttempted && !form.email)}
+                    autoFocus
+                  />
+                  {submitAttempted && !form.email && (
+                    <p className="mt-1 text-xs text-red-400">Campo obrigatório</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-xs text-gray-400 mb-1.5">WhatsApp</label>
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => update({ phone: e.target.value })}
+                    placeholder="(11) 98000-0000"
+                    className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {sendError && (
+                <p className="text-sm text-red-400 text-center">
+                  Erro ao enviar. Tente pelo WhatsApp ou contate-nos diretamente.
+                </p>
+              )}
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <button
+                  onClick={handleSubmit}
+                  disabled={sending}
+                  className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  <Send size={16} />
+                  {sending ? 'Enviando...' : 'Enviar'}
+                </button>
+                <button
+                  onClick={handleWhatsApp}
+                  className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 text-sm font-medium text-white hover:bg-emerald-700 transition-colors cursor-pointer"
+                >
+                  <MessageCircle size={16} />
+                  Enviar pelo WhatsApp
+                </button>
+              </div>
+            </div>
+          </StepCard>
+        </div>
+      )}
     </div>
   );
 }
