@@ -48,13 +48,13 @@
       "shortDescription": "Gerador de currículo profissional com inteligência artificial, importação do LinkedIn e templates otimizados para ATS.",
       "description": "Plataforma SaaS que permite criar currículos profissionais utilizando IA para gerar resumos, sugerir habilidades e melhorar descrições de experiência. Importação automática de dados do LinkedIn via PDF, sistema de créditos com pagamento via Stripe e templates otimizados para sistemas ATS como Gupy e Kenoby.",
       "url": "https://currify.app",
-      "image": "/images/projects/currify.svg",
-      "technologies": ["Next.js", "React", "NestJS", "TypeScript", "AWS Lambda", "DynamoDB", "Anthropic Claude", "Stripe"],
+      "image": "/images/projects/currify.png",
+      "technologies": ["Next.js", "NestJS", "TypeScript", "AWS Lambda", "DynamoDB", "Anthropic Claude", "Stripe"],
       "highlights": [
-        "IA integrada para geração de conteúdo",
-        "Importação automática do LinkedIn via PDF",
-        "Templates otimizados para ATS (Gupy, Kenoby)",
-        "Sistema de créditos com pagamento via Stripe"
+        "IA (Claude) para resumo, habilidades e experiências",
+        "Importação de PDF/DOCX com extração automática",
+        "Templates ATS-ready para Gupy e Kenoby",
+        "Sistema de créditos + pagamento via Stripe"
       ],
       "ownership": "Tonolli Software"
     },
