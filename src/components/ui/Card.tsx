@@ -11,9 +11,9 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8 backdrop-blur-sm ${
+      className={`rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8 backdrop-blur-sm elevation-1 ${
         hover
-          ? 'transition-[border-color,background-color,box-shadow] duration-300 hover:border-gray-700 hover:bg-gray-900/80 hover:shadow-xl hover:shadow-blue-500/5'
+          ? 'hover-lift press-scale hover:border-gray-700 hover:bg-gray-900/80 hover:elevation-3'
           : ''
       } ${className}`}
     >
