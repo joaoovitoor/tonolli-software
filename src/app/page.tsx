@@ -10,9 +10,9 @@ import homeData from '@/content/home.json';
 import projectsData from '@/content/projects.json';
 
 export const metadata: Metadata = {
-  title: 'Tonolli Software | Modernização de Sistemas Legados',
+  title: 'Tonolli Software | Software Sob Medida para Empresas',
   description:
-    'Desenvolvimento de software sob medida, sistemas com inteligência artificial e modernização de plataformas. 19+ anos de experiência. São Paulo.',
+    'Fábrica de software B2B com 19+ anos. Desenvolvimento sob medida, modernização de sistemas e integração. 50+ projetos entregues no Brasil e exterior.',
   alternates: { canonical: '/' },
 };
 

@@ -1,10 +1,10 @@
 {
   "hero": {
-    "badge": "Software House B2B — São Paulo",
-    "title": "Modernizamos sistemas legados. Sem parar sua operação.",
-    "subtitle": "Refatoramos, migramos e modernizamos sistemas corporativos com 19 anos de experiência. Projetos entregues para empresas no Brasil, EUA e Europa.",
+    "badge": "Software House B2B — 19 Anos",
+    "title": "Software sob medida para empresas que não aceitam soluções genéricas.",
+    "subtitle": "Desenvolvemos, modernizamos e integramos sistemas corporativos. 50+ projetos entregues no Brasil, EUA e Europa — com escopo e prazo fechados.",
     "cta": {
-      "primary": { "label": "Falar sobre meu sistema", "href": "/contato" },
+      "primary": { "label": "Falar com especialista", "href": "/contato" },
       "secondary": { "label": "Ver projetos", "href": "/projetos" }
     }
   },
@@ -19,19 +19,19 @@
     "subtitle": "Soluções completas de tecnologia para empresas que precisam de software confiável, escalável e inteligente.",
     "items": [
       {
-        "icon": "RefreshCw",
-        "title": "Modernização de Sistemas Legados",
-        "description": "Refatoramos e migramos sistemas legados sem interromper sua operação. Seu time continua trabalhando enquanto modernizamos a base — com escopo e prazo fechados."
-      },
-      {
         "icon": "Code",
         "title": "Desenvolvimento Sob Medida",
         "description": "Sistemas corporativos web e mobile construídos do zero ou evoluídos a partir do que já existe. Do MVP ao sistema enterprise com suporte contínuo."
       },
       {
+        "icon": "RefreshCw",
+        "title": "Modernização de Sistemas",
+        "description": "Refatoramos e migramos sistemas existentes sem interromper sua operação. Seu time continua trabalhando enquanto modernizamos a base."
+      },
+      {
         "icon": "Shield",
         "title": "Consultoria & Arquitetura",
-        "description": "Diagnóstico técnico, revisão de arquitetura e orientação estratégica para empresas que precisam tomar decisões críticas de tecnologia com segurança."
+        "description": "Revisão de arquitetura, diagnóstico técnico e orientação estratégica para empresas que precisam tomar decisões críticas de tecnologia."
       },
       {
         "icon": "Brain",
@@ -45,9 +45,9 @@
     "subtitle": "Produtos próprios e soluções desenvolvidas para clientes com resultados mensuráveis."
   },
   "cta": {
-    "title": "Seu sistema precisa de atenção?",
-    "subtitle": "Avaliamos sem compromisso e apresentamos um diagnóstico técnico em até 48 horas.",
-    "button": { "label": "Iniciar conversa", "href": "/contato" }
+    "title": "Precisa de software que funcione de verdade?",
+    "subtitle": "Conte sobre seu projeto. Respondemos em até 24 horas com uma avaliação inicial e os próximos passos — sem compromisso.",
+    "button": { "label": "Falar com especialista", "href": "/contato" }
   },
   "trust": {
     "title": "Experiência com projetos de alta complexidade em diversos setores",

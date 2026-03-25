@@ -98,6 +98,6 @@
   "cta": {
     "title": "Qual é o seu desafio?",
     "subtitle": "Cada projeto é único. Conte-nos sobre sua necessidade e receba uma proposta personalizada.",
-    "button": { "label": "Solicitar proposta", "href": "/contato" }
+    "button": { "label": "Falar com especialista", "href": "/contato" }
   }
 }

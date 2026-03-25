@@ -46,7 +46,7 @@ export default function Header() {
             ))}
             <div className="ml-4">
               <Button href="/contato" size="sm">
-                Diagnóstico gratuito
+                Falar com especialista
               </Button>
             </div>
           </nav>
@@ -82,7 +82,7 @@ export default function Header() {
             ))}
             <div className="mt-2 px-4">
               <Button href="/contato" size="sm" className="w-full">
-                Diagnóstico gratuito
+                Falar com especialista
               </Button>
             </div>
           </nav>
