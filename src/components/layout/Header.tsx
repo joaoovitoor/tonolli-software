@@ -53,8 +53,10 @@ export default function Header() {
 
           <button
             onClick={() => setOpen(!open)}
+            onKeyDown={(e) => { if (e.key === 'Escape' && open) setOpen(false); }}
             className="md:hidden p-2 text-gray-400 hover:text-white"
-            aria-label="Menu"
+            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>

@@ -69,7 +69,7 @@ export default function WhatsAppWidget() {
       {!isOpen && (
         <button
           onClick={handleOpen}
-          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-all hover:scale-105 cursor-pointer"
+          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-[background-color,transform] hover:scale-105 cursor-pointer"
           aria-label="Abrir WhatsApp"
         >
           <MessageCircle size={24} />
@@ -77,7 +77,7 @@ export default function WhatsAppWidget() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-700 bg-gray-900 shadow-2xl overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-700 bg-gray-900 shadow-2xl overflow-hidden overscroll-contain">
           <div className="flex items-center justify-between bg-emerald-600 px-4 py-3">
             <div className="flex items-center gap-3">
               {step !== 'greeting' && (
@@ -112,14 +112,17 @@ export default function WhatsAppWidget() {
                   {contactData.whatsappWidget.greeting}
                 </div>
                 <div className="mt-auto">
-                  <label className="block text-xs text-gray-400 mb-1.5">
+                  <label htmlFor="wa-name" className="block text-xs text-gray-400 mb-1.5">
                     Seu nome
                   </label>
                   <input
+                    id="wa-name"
                     type="text"
+                    name="name"
+                    autoComplete="given-name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Como posso te chamar?"
+                    placeholder="Como posso te chamar\u2026"
                     className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-emerald-500 focus:outline-none"
                   />
                   <button
@@ -149,7 +152,7 @@ export default function WhatsAppWidget() {
                           opt.label
                         )
                       }
-                      className="w-full text-left rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-gray-200 hover:border-emerald-500 hover:bg-emerald-500/10 transition-all cursor-pointer"
+                      className="w-full text-left rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-gray-200 hover:border-emerald-500 hover:bg-emerald-500/10 transition-colors cursor-pointer"
                     >
                       {opt.label}
                     </button>
@@ -171,7 +174,7 @@ export default function WhatsAppWidget() {
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Descreva brevemente seu projeto (opcional)..."
+                  placeholder="Descreva brevemente seu projeto (opcional)\u2026"
                   rows={3}
                   className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-emerald-500 focus:outline-none resize-none"
                 />

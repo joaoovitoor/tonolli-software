@@ -6,7 +6,13 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
+}
+
+/* Disable double-tap zoom delay on touch devices */
+a, button, [role="button"], input, select, textarea {
+  touch-action: manipulation;
 }
 
 body {
@@ -19,6 +25,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Anchor headings: offset for fixed header */
+[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* Tesla-inspired typography for brand name - bold like logo */

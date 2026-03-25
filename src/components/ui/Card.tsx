@@ -13,7 +13,7 @@ export default function Card({
     <div
       className={`rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8 backdrop-blur-sm ${
         hover
-          ? 'transition-all duration-300 hover:border-gray-700 hover:bg-gray-900/80 hover:shadow-xl hover:shadow-blue-500/5'
+          ? 'transition-[border-color,background-color,box-shadow] duration-300 hover:border-gray-700 hover:bg-gray-900/80 hover:shadow-xl hover:shadow-blue-500/5'
           : ''
       } ${className}`}
     >

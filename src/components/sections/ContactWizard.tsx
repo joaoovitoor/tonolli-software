@@ -34,11 +34,11 @@ const projectTypeOptions = [
 ];
 
 const messagePlaceholders: Record<string, string> = {
-  modernization: 'Descreva o sistema atual: tecnologia, idade aproximada, principais problemas e o que precisa mudar...',
-  software: 'Descreva o sistema que precisa construir: funcionalidades principais, usuários, integrações necessárias...',
-  consulting: 'Descreva o contexto: qual decisão técnica precisa tomar ou qual problema quer resolver...',
-  ai: 'Descreva o processo que quer automatizar ou onde IA pode ajudar no seu negócio...',
-  other: 'Descreva o que precisa — qualquer detalhe é bem-vindo...',
+  modernization: 'Descreva o sistema atual: tecnologia, idade aproximada, principais problemas e o que precisa mudar\u2026',
+  software: 'Descreva o sistema que precisa construir: funcionalidades principais, usuários, integrações necessárias\u2026',
+  consulting: 'Descreva o contexto: qual decisão técnica precisa tomar ou qual problema quer resolver\u2026',
+  ai: 'Descreva o processo que quer automatizar ou onde IA pode ajudar no seu negócio\u2026',
+  other: 'Descreva o que precisa \u2014 qualquer detalhe é bem-vindo\u2026',
 };
 
 function StepCard({
@@ -203,7 +203,7 @@ export default function ContactWizard() {
   };
 
   const optionClass = (value: string) =>
-    `flex items-start gap-3 rounded-xl border p-4 text-left transition-all cursor-pointer group ${
+    `flex items-start gap-3 rounded-xl border p-4 text-left transition-[border-color,background-color,transform] cursor-pointer group ${
       selectingValue === value
         ? 'border-blue-400 bg-blue-500/15 scale-[0.98]'
         : 'border-gray-700 bg-gray-800/30 hover:border-blue-500 hover:bg-blue-500/5'
@@ -231,7 +231,7 @@ export default function ContactWizard() {
         </div>
         <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-blue-500 rounded-full transition-all duration-500 ease-out"
+            className="h-full bg-blue-500 rounded-full transition-[width] duration-500 ease-out"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -248,25 +248,31 @@ export default function ContactWizard() {
         <div className="space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5">Nome *</label>
+              <label htmlFor="wizard-name" className="block text-xs text-gray-400 mb-1.5">Nome *</label>
               <input
+                id="wizard-name"
                 type="text"
+                name="name"
+                autoComplete="name"
                 value={form.name}
                 onChange={(e) => update({ name: e.target.value })}
                 onKeyDown={(e) => { if (e.key === 'Enter' && form.name.trim()) setNameCompleted(true); }}
-                placeholder="Seu nome"
+                placeholder="Seu nome…"
                 className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                 autoFocus
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-400 mb-1.5">Empresa</label>
+              <label htmlFor="wizard-company" className="block text-xs text-gray-400 mb-1.5">Empresa</label>
               <input
+                id="wizard-company"
                 type="text"
+                name="organization"
+                autoComplete="organization"
                 value={form.company}
                 onChange={(e) => update({ company: e.target.value })}
                 onKeyDown={(e) => { if (e.key === 'Enter' && form.name.trim()) setNameCompleted(true); }}
-                placeholder="Nome da empresa"
+                placeholder="Nome da empresa…"
                 className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -327,11 +333,14 @@ export default function ContactWizard() {
             number={3}
             title="Descreva o problema"
             done={messageCompleted}
-            doneLabel={form.message.length > 60 ? form.message.slice(0, 60) + '...' : form.message}
+            doneLabel={form.message.length > 60 ? form.message.slice(0, 60) + '\u2026' : form.message}
             onReset={() => resetStep('message')}
           >
             <div>
+              <label htmlFor="wizard-message" className="sr-only">Descreva o problema</label>
               <textarea
+                id="wizard-message"
+                name="message"
                 value={form.message}
                 onChange={(e) => update({ message: e.target.value })}
                 placeholder={messagePlaceholders[form.projectType] || messagePlaceholders.other}
@@ -359,9 +368,13 @@ export default function ContactWizard() {
             <div className="space-y-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1.5">E-mail *</label>
+                  <label htmlFor="wizard-email" className="block text-xs text-gray-400 mb-1.5">E-mail *</label>
                   <input
+                    id="wizard-email"
                     type="email"
+                    name="email"
+                    autoComplete="email"
+                    spellCheck={false}
                     value={form.email}
                     onChange={(e) => update({ email: e.target.value })}
                     placeholder="seu@email.com"
@@ -369,13 +382,17 @@ export default function ContactWizard() {
                     autoFocus
                   />
                   {submitAttempted && !form.email && (
-                    <p className="mt-1 text-xs text-red-400">Campo obrigatório</p>
+                    <p className="mt-1 text-xs text-red-400" role="alert">Campo obrigatório</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-400 mb-1.5">WhatsApp</label>
+                  <label htmlFor="wizard-phone" className="block text-xs text-gray-400 mb-1.5">WhatsApp</label>
                   <input
+                    id="wizard-phone"
                     type="tel"
+                    name="phone"
+                    autoComplete="tel"
+                    inputMode="tel"
                     value={form.phone}
                     onChange={(e) => update({ phone: e.target.value })}
                     placeholder="(11) 98000-0000"

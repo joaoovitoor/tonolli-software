@@ -20,7 +20,7 @@ export default function Stats({ items }: StatsProps) {
               <div className="text-3xl md:text-4xl font-bold gradient-heading tabular-nums">
                 {item.value}
               </div>
-              <div className="mt-2 text-sm text-gray-500 leading-snug">{item.label}</div>
+              <div className="mt-2 text-sm text-gray-400 leading-snug">{item.label}</div>
             </div>
           ))}
         </div>

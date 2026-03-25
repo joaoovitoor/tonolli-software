@@ -34,7 +34,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
           <FadeInSection key={item.title} delay={index * 80}>
             <Card className="group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/0 via-blue-500/60 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl" />
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 border border-blue-500/15 text-blue-400 mb-5 group-hover:border-blue-500/30 group-hover:from-blue-500/25 transition-all duration-300">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 border border-blue-500/15 text-blue-400 mb-5 group-hover:border-blue-500/30 group-hover:from-blue-500/25 transition-colors duration-300">
                 <Icon size={22} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
