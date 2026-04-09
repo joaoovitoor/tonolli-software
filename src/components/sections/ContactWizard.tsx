@@ -401,24 +401,10 @@ export default function ContactWizard() {
                 </div>
               </div>
 
-              {sendError && (
-                <p className="text-sm text-red-400 text-center">
-                  Erro ao enviar. Tente pelo WhatsApp ou contate-nos diretamente.
-                </p>
-              )}
-
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <button
-                  onClick={handleSubmit}
-                  disabled={sending}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-                >
-                  <Send size={16} />
-                  {sending ? 'Enviando...' : 'Enviar'}
-                </button>
+              <div className="flex flex-col gap-3 pt-2">
                 <button
                   onClick={handleWhatsApp}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 text-sm font-medium text-white hover:bg-emerald-700 transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3.5 text-sm font-medium text-white hover:bg-emerald-700 transition-colors cursor-pointer"
                 >
                   <MessageCircle size={16} />
                   Enviar pelo WhatsApp
