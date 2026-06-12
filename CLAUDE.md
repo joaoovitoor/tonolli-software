@@ -1,7 +1,7 @@
 # CLAUDE.md — Tonolli Software Website
 
 > Especialista em UI/UX e Conversão B2B para este repositório.
-> Última atualização: 22/03/2026
+> Última atualização: 12/06/2026
 
 ---
 
@@ -505,17 +505,16 @@ http://localhost:3000/sistema-legado → nova landing page (quando criada)
 - [ ] `contact.json`: hero title + subtitle + mensagem de sucesso
 - [ ] Testar local → revisar → subir
 
-### Fase 2 — Nova landing page `/sistema-legado`
-- [ ] Criar `src/content/sistema-legado.json` com todo o conteúdo
-- [ ] Criar `src/app/sistema-legado/page.tsx`
-- [ ] Criar componentes específicos se necessário (FearCard, ProcessStep)
-- [ ] Testar local → revisar → subir
-- [ ] Atualizar URL de destino dos anúncios Google Ads para `/sistema-legado`
+### Fase 2 — Nova landing page `/sistema-legado` ✅ CONCLUÍDA (12/06/2026)
+- [x] Criar `src/content/sistema-legado.json` com todo o conteúdo
+- [x] Criar `src/app/sistema-legado/page.tsx` (reusa Hero/ProcessSteps/CTA/Card — não precisou de componentes novos)
+- [x] Testar local → revisar → subir (no ar, com FAQPage + Service + BreadcrumbList JSON-LD)
+- [ ] Atualizar URL de destino dos anúncios Google Ads para `/sistema-legado` ← **pendente, ação do João**
 
 ### Fase 3 — Micro-copy e trust signals
-- [ ] Adicionar texto de suporte abaixo dos CTAs principais
+- [x] Adicionar texto de suporte abaixo dos CTAs principais (feito na landing; falta na home)
 - [ ] Revisar todas as meta descriptions (SEO) para linguagem Perfil B
-- [ ] Adicionar structured data para LocalBusiness
+- [x] Adicionar structured data para LocalBusiness (ProfessionalService com endereço já existia; foundingDate 2022 adicionado)
 
 ### Fase 4 — Medição (após subir)
 - [ ] Configurar evento de conversão no Google Ads para formulário enviado
@@ -524,7 +523,35 @@ http://localhost:3000/sistema-legado → nova landing page (quando criada)
 
 ---
 
+## ESTADO ATUAL DA CODEBASE (12/06/2026)
+
+### Sistema de "anos de experiência" automático — CONVENÇÃO CRÍTICA
+
+Os "X+ anos" do site são **calculados no build**: `src/lib/content.ts` define `anosDeExperiencia = ano atual - 2006` e substitui o token `{anos}` em todas as strings dos JSONs de conteúdo.
+
+**Regras para não regredir:**
+1. **NUNCA hardcodar anos** ("20 anos", "21+") em JSON ou TSX — usar `{anos}` nos JSONs ou importar `anosDeExperiencia` no código.
+2. **Consumidores importam de `@/lib/content`** (`siteData`, `homeData`, `aboutData`, `servicesData`, `projectsData`, `contactData`, `sistemaLegadoData`) — **nunca** importar `@/content/*.json` direto, senão o token `{anos}` vaza cru pra tela.
+3. O cron anual no `deploy.yml` (02/jan, 06h UTC) rebuilda na virada do ano para o número atualizar sozinho.
+4. **Distinção factual**: empresa fundada em **2022** (`foundingDate` no schema, stat em /sobre); "desde 2006" é a **experiência do fundador**. Não alegar "empresa desde 2006".
+
+### Deploy e SEO
+
+- Push na `main` → GitHub Actions → Cloudflare Pages (projeto `tonolli-software`). Static export (`output: "export"`, trailingSlash).
+- Site **indexado no Google, #1 para a marca**. Sitemap/robots em `public/` (manuais — atualizar ao criar página!), domínio canônico sem www, URLs com barra final.
+- og-image (`public/og-image.png`): gerada com o logo real (`public/icon.png`) e "Experiência desde 2006" (não envelhece). Se regenerar, manter 1200x630 e o logo original.
+- Cases citáveis: **apenas projetos próprios** (PrevAgro, ClimIA, Currify) — João decidiu não citar clientes externos nominalmente em páginas de case.
+- Maior alavanca pendente: **Google Business Profile** (não existe ainda; ação do João) para "software house são paulo".
+
+---
+
 ## HISTORICO DE MUDANCAS
+
+### 12/06/2026 — SEO + landing /sistema-legado (Fase 2)
+- Anos de experiência calculados desde 2006 via token `{anos}` (src/lib/content.ts) + cron anual de rebuild
+- Landing `/sistema-legado` no ar conforme spec deste arquivo (3 medos, 3 passos, prova social do case Modernização Enterprise, FAQ com FAQPage JSON-LD); adicionada à navegação e ao sitemap
+- og-image regenerada com logo real e "Experiência desde 2006"; foundingDate 2022 no schema; meta keywords obsoleta removida; sitemap com barra final e sem www
+- Auditoria SEO completa: site tecnicamente saudável; próximos ganhos vêm de GBP + cases, não de ajuste técnico
 
 ### 22/03/2026 — Criação deste arquivo
 - Diagnóstico completo do site atual
