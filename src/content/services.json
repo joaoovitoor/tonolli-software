@@ -9,7 +9,7 @@
       "icon": "RefreshCw",
       "title": "Modernização de Sistemas Legados",
       "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
-      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. A Tonolli tem 19 anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação. Já entregamos para Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
+      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. A Tonolli tem {anos} anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação. Já entregamos para Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
       "features": [
         "Seu sistema continua operando durante toda a modernização — zero downtime",
         "Mapeamos todas as dependências antes de tocar em qualquer código",

@@ -16,7 +16,7 @@
     "title": "Quem está por trás",
     "name": "João Vitor Ramos Tonolli",
     "role": "Fundador & Software Architect",
-    "description": "Engenheiro de software com 19 anos de experiência e vivência em projetos internacionais de grande escala. Combina profundidade técnica com visão estratégica de negócios para garantir que cada projeto entregue valor real."
+    "description": "Engenheiro de software com {anos} anos de experiência e vivência em projetos internacionais de grande escala. Combina profundidade técnica com visão estratégica de negócios para garantir que cada projeto entregue valor real."
   },
   "values": {
     "title": "Como trabalhamos",
@@ -42,7 +42,7 @@
   "numbers": {
     "title": "Em números",
     "items": [
-      { "value": "19+", "label": "Anos de experiência em software" },
+      { "value": "{anos}+", "label": "Anos de experiência em software" },
       { "value": "50+", "label": "Projetos entregues" },
       { "value": "6+", "label": "Países atendidos" },
       { "value": "2022", "label": "Fundação da empresa" }

@@ -6,13 +6,11 @@ import ProjectCard from '@/components/sections/ProjectCard';
 import TrustBar from '@/components/sections/TrustBar';
 import CTA from '@/components/sections/CTA';
 import SectionTitle from '@/components/ui/SectionTitle';
-import homeData from '@/content/home.json';
-import projectsData from '@/content/projects.json';
+import { homeData, projectsData, anosDeExperiencia } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Tonolli Software | Software Sob Medida para Empresas',
-  description:
-    'Fábrica de software B2B com 19+ anos. Desenvolvimento sob medida, modernização de sistemas e integração. 50+ projetos entregues no Brasil e exterior.',
+  description: `Fábrica de software B2B com ${anosDeExperiencia}+ anos de experiência. Desenvolvimento sob medida, modernização de sistemas e integração. 50+ projetos entregues no Brasil e exterior.`,
   alternates: { canonical: '/' },
 };
 

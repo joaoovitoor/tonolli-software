@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { Mail, Phone, MapPin, type LucideIcon } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import ContactWizard from '@/components/sections/ContactWizard';
-import contactData from '@/content/contact.json';
 import { breadcrumbJsonLd } from '@/lib/seo';
-import siteData from '@/content/site.json';
+import { contactData, siteData } from '@/lib/content';
 
 const iconMap: Record<string, LucideIcon> = { Mail, Phone, MapPin };
 

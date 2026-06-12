@@ -4,8 +4,8 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppWidget from '@/components/sections/WhatsAppWidget';
-import siteData from '@/content/site.json';
 import { organizationJsonLd, websiteJsonLd, localBusinessJsonLd } from '@/lib/seo';
+import { siteData } from '@/lib/content';
 
 const inter = Inter({
   variable: '--font-inter',

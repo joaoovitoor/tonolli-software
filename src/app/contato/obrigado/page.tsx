@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, MessageCircle, ArrowRight } from 'lucide-react';
-import siteData from '@/content/site.json';
+import { siteData } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Projeto recebido — Tonolli Software',

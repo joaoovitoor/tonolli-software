@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import siteData from '@/content/site.json';
 import Button from '@/components/ui/Button';
+import { siteData } from '@/lib/content';
 
 export default function Header() {
   const [open, setOpen] = useState(false);

@@ -4,14 +4,14 @@
   "tradeName": "Softonolli",
   "cnpj": "48.512.403/0001-46",
   "domain": "tonollisoftware.com.br",
-  "url": "https://www.tonollisoftware.com.br",
-  "description": "Desenvolvimento de software sob medida, sistemas com inteligência artificial e modernização de plataformas legadas. 19+ anos de experiência em arquitetura de sistemas escaláveis.",
+  "url": "https://tonollisoftware.com.br",
+  "description": "Desenvolvimento de software sob medida, sistemas com inteligência artificial e modernização de plataformas legadas. {anos}+ anos de experiência em arquitetura de sistemas escaláveis.",
   "shortDescription": "Software sob medida com inteligência artificial",
   "founder": {
     "name": "João Vitor Ramos Tonolli",
     "role": "Fundador & Software Architect",
-    "experience": "19+ anos",
-    "bio": "Senior Software Architect com 19 anos de experiência construindo sistemas de alta escala. Atua com empresas dos EUA (CRED, Som Livre/Sony) e desenvolve produtos próprios com IA para o agronegócio e clima.",
+    "experience": "{anos}+ anos",
+    "bio": "Senior Software Architect com {anos} anos de experiência construindo sistemas de alta escala. Atua com empresas dos EUA (CRED, Som Livre/Sony) e desenvolve produtos próprios com IA para o agronegócio e clima.",
     "linkedin": "https://www.linkedin.com/in/joaoovitoor",
     "github": "https://github.com/joaoovitoor",
     "email": "joaoovitoor@hotmail.com"

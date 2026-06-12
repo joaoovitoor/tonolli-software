@@ -5,9 +5,8 @@ import Stats from '@/components/sections/Stats';
 import CTA from '@/components/sections/CTA';
 import Card from '@/components/ui/Card';
 import SectionTitle from '@/components/ui/SectionTitle';
-import aboutData from '@/content/about.json';
 import { breadcrumbJsonLd } from '@/lib/seo';
-import siteData from '@/content/site.json';
+import { aboutData, siteData } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Sobre',

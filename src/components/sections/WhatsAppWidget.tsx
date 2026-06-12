@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { MessageCircle, X, Send, ArrowLeft } from 'lucide-react';
-import contactData from '@/content/contact.json';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { contactData } from '@/lib/content';
 
 type Step = 'greeting' | 'questions' | 'message' | 'sending';
 

@@ -11,9 +11,8 @@ import Hero from '@/components/sections/Hero';
 import ProcessSteps from '@/components/sections/ProcessSteps';
 import CTA from '@/components/sections/CTA';
 import SectionTitle from '@/components/ui/SectionTitle';
-import servicesData from '@/content/services.json';
 import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo';
-import siteData from '@/content/site.json';
+import { servicesData, siteData } from '@/lib/content';
 
 const iconMap: Record<string, LucideIcon> = {
   Code,

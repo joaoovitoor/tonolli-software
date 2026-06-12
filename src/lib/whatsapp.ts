@@ -1,4 +1,4 @@
-import siteData from '@/content/site.json';
+import { siteData } from '@/lib/content';
 
 interface ContactData {
   name?: string;

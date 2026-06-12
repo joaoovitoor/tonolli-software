@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild anual: os "X+ anos de experiencia" sao calculados no build
+  # (src/lib/content.ts) — garante a virada do numero todo dia 02/jan
+  schedule:
+    - cron: "0 6 2 1 *"
 
 jobs:
   deploy:

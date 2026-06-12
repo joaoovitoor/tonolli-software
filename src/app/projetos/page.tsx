@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import ProjectCard from '@/components/sections/ProjectCard';
 import CTA from '@/components/sections/CTA';
-import projectsData from '@/content/projects.json';
 import { breadcrumbJsonLd } from '@/lib/seo';
-import siteData from '@/content/site.json';
+import { projectsData, siteData } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Projetos',

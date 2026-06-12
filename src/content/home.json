@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Software House B2B — 19 Anos",
+    "badge": "Software House B2B — {anos}+ Anos de Experiência",
     "title": "Software sob medida para empresas que não aceitam soluções genéricas.",
     "subtitle": "Desenvolvemos, modernizamos e integramos sistemas corporativos. 50+ projetos entregues no Brasil, EUA e Europa — com escopo e prazo fechados.",
     "cta": {
@@ -9,7 +9,7 @@
     }
   },
   "stats": [
-    { "value": "19+", "label": "Anos de experiência" },
+    { "value": "{anos}+", "label": "Anos de experiência" },
     { "value": "50+", "label": "Projetos entregues" },
     { "value": "6+", "label": "Países atendidos" },
     { "value": "99%", "label": "Clientes satisfeitos" }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
-import siteData from '@/content/site.json';
+import { siteData } from '@/lib/content';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

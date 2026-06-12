@@ -1,4 +1,4 @@
-import siteData from '@/content/site.json';
+import { siteData } from '@/lib/content';
 
 export function organizationJsonLd() {
   return {
@@ -24,6 +24,7 @@ export function organizationJsonLd() {
       availableLanguage: ['Portuguese', 'English'],
     },
     sameAs: [siteData.social.linkedin, siteData.social.github],
+    foundingDate: '2022',
     founder: {
       '@type': 'Person',
       name: siteData.founder.name,
