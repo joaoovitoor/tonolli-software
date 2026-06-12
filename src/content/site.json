@@ -35,10 +35,29 @@
     "github": "https://github.com/joaoovitoor"
   },
   "nav": [
-    { "label": "Início", "href": "/" },
-    { "label": "Serviços", "href": "/servicos" },
-    { "label": "Projetos", "href": "/projetos" },
-    { "label": "Sobre", "href": "/sobre" },
-    { "label": "Contato", "href": "/contato" }
+    {
+      "label": "Início",
+      "href": "/"
+    },
+    {
+      "label": "Sistemas Legados",
+      "href": "/sistema-legado"
+    },
+    {
+      "label": "Serviços",
+      "href": "/servicos"
+    },
+    {
+      "label": "Projetos",
+      "href": "/projetos"
+    },
+    {
+      "label": "Sobre",
+      "href": "/sobre"
+    },
+    {
+      "label": "Contato",
+      "href": "/contato"
+    }
   ]
 }

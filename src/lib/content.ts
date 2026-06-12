@@ -4,6 +4,7 @@ import about from '@/content/about.json';
 import services from '@/content/services.json';
 import projects from '@/content/projects.json';
 import contact from '@/content/contact.json';
+import sistemaLegado from '@/content/sistema-legado.json';
 
 // Início da carreira do fundador — base de todos os "X+ anos de experiência".
 // O valor é calculado no build (site estático); o cron anual no deploy.yml
@@ -33,3 +34,4 @@ export const aboutData = withYears(about);
 export const servicesData = withYears(services);
 export const projectsData = withYears(projects);
 export const contactData = withYears(contact);
+export const sistemaLegadoData = withYears(sistemaLegado);
