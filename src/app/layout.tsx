@@ -78,11 +78,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Google Ads tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18025483786" />
+        {/* Google Analytics 4 + Google Ads — single gtag.js load */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-529153542" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18025483786');`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-529153542');gtag('config','AW-18025483786');`,
           }}
         />
 
