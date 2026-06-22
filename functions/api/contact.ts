@@ -1,21 +1,18 @@
 import { Resend } from 'resend';
 
-interface Env {
-  RESEND_API_KEY: string;
-}
-
-interface ContactPayload {
-  name: string;
-  email: string;
-  phone?: string;
-  company?: string;
-  projectType: string;
-  message: string;
-}
-
-export const onRequestPOST: PagesFunction<Env> = async (context) => {
+export const onRequestPOST = async (context: {
+  request: Request;
+  env: { RESEND_API_KEY: string };
+}) => {
   try {
-    const body = (await context.request.json()) as ContactPayload;
+    const body = (await context.request.json()) as {
+      name: string;
+      email: string;
+      phone?: string;
+      company?: string;
+      projectType: string;
+      message: string;
+    };
 
     if (!body.name || !body.email || !body.message) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
