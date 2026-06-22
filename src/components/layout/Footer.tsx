@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <Image
-                src="/images/logo-white.svg"
+                src="/icon.svg"
                 alt="Tonolli Software"
                 width={28}
                 height={28}

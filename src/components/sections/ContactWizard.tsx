@@ -409,6 +409,28 @@ export default function ContactWizard() {
                   <MessageCircle size={16} />
                   Enviar pelo WhatsApp
                 </button>
+                <button
+                  onClick={handleSubmit}
+                  disabled={sending || !form.email}
+                  className="w-full flex items-center justify-center gap-2 rounded-xl border border-gray-700 bg-gray-800/30 py-3 text-sm font-medium text-gray-300 hover:border-blue-500 hover:text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  {sending ? (
+                    <span>Enviando…</span>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Enviar por e-mail
+                    </>
+                  )}
+                </button>
+                {sendError && (
+                  <p className="text-center text-xs text-red-400">
+                    Erro ao enviar. Tente pelo WhatsApp ou escreva para{' '}
+                    <a href="mailto:contato@tonollisoftware.com.br" className="underline">
+                      contato@tonollisoftware.com.br
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
           </StepCard>
