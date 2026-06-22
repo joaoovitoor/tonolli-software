@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-export const onRequestPOST = async (context: {
+export const onRequestPost = async (context: {
   request: Request;
   env: { RESEND_API_KEY: string };
 }) => {
