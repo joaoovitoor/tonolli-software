@@ -3,12 +3,11 @@ import { FileCheck, UserCheck, Layers, type LucideIcon } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import ServicesGrid from '@/components/sections/ServicesGrid';
-import ProjectCard from '@/components/sections/ProjectCard';
 import TrustBar from '@/components/sections/TrustBar';
 import CTA from '@/components/sections/CTA';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Card from '@/components/ui/Card';
-import { homeData, projectsData, anosDeExperiencia } from '@/lib/content';
+import { homeData, anosDeExperiencia } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Tonolli Software | Programador com CNPJ — Contratação Direta',
@@ -19,8 +18,6 @@ export const metadata: Metadata = {
 const whyMeIconMap: Record<string, LucideIcon> = { FileCheck, UserCheck, Layers };
 
 export default function HomePage() {
-  const featuredProjects = projectsData.projects.slice(0, 3);
-
   return (
     <>
       <Hero
@@ -79,20 +76,6 @@ export default function HomePage() {
         title={homeData.trust.title}
         companies={homeData.trust.companies}
       />
-
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={homeData.projectsPreview.title}
-            subtitle={homeData.projectsPreview.subtitle}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       <CTA
         title={homeData.cta.title}

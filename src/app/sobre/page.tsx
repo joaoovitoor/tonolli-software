@@ -11,7 +11,7 @@ import { aboutData, siteData } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Sobre',
   description:
-    'Conheça a Tonolli Software: software house em São Paulo especializada em desenvolvimento sob medida, IA e modernização de sistemas.',
+    'Conheça João Vitor Tonolli e a Tonolli Software: desenvolvimento sob medida, IA e modernização de sistemas, direto com quem programa.',
   alternates: { canonical: '/sobre' },
 };
 

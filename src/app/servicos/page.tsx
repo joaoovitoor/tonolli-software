@@ -24,7 +24,7 @@ const iconMap: Record<string, LucideIcon> = {
 export const metadata: Metadata = {
   title: 'Serviços',
   description:
-    'Desenvolvimento de software sob medida, inteligência artificial, modernização de sistemas legados e consultoria técnica. Conheça nossos serviços.',
+    'Desenvolvimento de software sob medida, inteligência artificial, modernização de sistemas legados e consultoria técnica. Conheça meus serviços.',
   alternates: { canonical: '/servicos' },
 };
 

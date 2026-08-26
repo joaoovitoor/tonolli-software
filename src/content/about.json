@@ -1,15 +1,15 @@
 {
   "hero": {
-    "title": "Sobre a Tonolli Software",
-    "subtitle": "Uma software house brasileira especializada em desenvolvimento sob medida, inteligência artificial e modernização de sistemas para empresas que precisam de tecnologia que funciona."
+    "title": "Sobre mim",
+    "subtitle": "Sou engenheiro de software brasileiro, especializado em desenvolvimento sob medida, inteligência artificial e modernização de sistemas para empresas que precisam de tecnologia que funciona."
   },
   "company": {
-    "title": "Quem somos",
+    "title": "Quem sou",
     "paragraphs": [
-      "A Tonolli Software é uma empresa de desenvolvimento de software com sede em São Paulo, no coração da Berrini — um dos principais polos de tecnologia do país.",
-      "Nascemos da combinação de quase duas décadas de experiência em engenharia de software com a visão de oferecer soluções de alto nível técnico para empresas que precisam de resultados reais.",
-      "Atuamos desde o desenvolvimento de sistemas completos do zero até a modernização de plataformas legadas, sempre com foco em arquitetura escalável, código de qualidade e entrega dentro do prazo.",
-      "Nosso diferencial é a experiência prática com projetos de alta complexidade em setores como fintech, agronegócio, entretenimento e saúde — tanto no mercado brasileiro quanto internacional."
+      "A Tonolli Software é minha empresa de desenvolvimento de software, com sede em São Paulo, no coração da Berrini — um dos principais polos de tecnologia do país.",
+      "Construí a Tonolli combinando quase duas décadas de experiência em engenharia de software com a visão de oferecer soluções de alto nível técnico para empresas que precisam de resultados reais.",
+      "Atuo desde o desenvolvimento de sistemas completos do zero até a modernização de plataformas legadas, sempre com foco em arquitetura escalável, código de qualidade e entrega dentro do prazo.",
+      "Meu diferencial é a experiência prática com projetos de alta complexidade em setores como fintech, agronegócio, entretenimento e saúde — tanto no mercado brasileiro quanto internacional."
     ]
   },
   "founder": {
@@ -35,7 +35,7 @@
       },
       {
         "title": "Parceria de longo prazo",
-        "description": "Não entregamos e sumimos. Oferecemos suporte contínuo, evolução e acompanhamento técnico do que construímos."
+        "description": "Não entrego e sumo. Ofereço suporte contínuo, evolução e acompanhamento técnico do que construo."
       }
     ]
   },
@@ -43,7 +43,7 @@
     "title": "Em números",
     "items": [
       { "value": "{anos}+", "label": "Anos de experiência em software" },
-      { "value": "50+", "label": "Projetos entregues" },
+      { "value": "{projetos}+", "label": "Projetos entregues" },
       { "value": "6+", "label": "Países atendidos" },
       { "value": "2022", "label": "Fundação da empresa" }
     ]

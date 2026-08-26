@@ -2,7 +2,6 @@ import site from '@/content/site.json';
 import home from '@/content/home.json';
 import about from '@/content/about.json';
 import services from '@/content/services.json';
-import projects from '@/content/projects.json';
 import contact from '@/content/contact.json';
 import sistemaLegado from '@/content/sistema-legado.json';
 
@@ -12,10 +11,16 @@ import sistemaLegado from '@/content/sistema-legado.json';
 export const EXPERIENCE_START_YEAR = 2006;
 export const anosDeExperiencia = new Date().getFullYear() - EXPERIENCE_START_YEAR;
 
-// Substitui o token {anos} em qualquer string dos JSONs de conteúdo
+// Ritmo real de entrega (João: ~1 projeto/mês nos últimos {anos} anos) — dinâmico
+// junto com anosDeExperiencia, não hardcoded.
+export const projetosEntregues = anosDeExperiencia * 12;
+
+// Substitui os tokens {anos}/{projetos} em qualquer string dos JSONs de conteúdo
 function withYears<T>(value: T): T {
   if (typeof value === 'string') {
-    return value.replaceAll('{anos}', String(anosDeExperiencia)) as T;
+    return value
+      .replaceAll('{anos}', String(anosDeExperiencia))
+      .replaceAll('{projetos}', String(projetosEntregues)) as T;
   }
   if (Array.isArray(value)) {
     return value.map(withYears) as T;
@@ -32,6 +37,5 @@ export const siteData = withYears(site);
 export const homeData = withYears(home);
 export const aboutData = withYears(about);
 export const servicesData = withYears(services);
-export const projectsData = withYears(projects);
 export const contactData = withYears(contact);
 export const sistemaLegadoData = withYears(sistemaLegado);

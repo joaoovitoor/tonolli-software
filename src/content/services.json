@@ -9,7 +9,7 @@
       "icon": "Code",
       "title": "Desenvolvimento de Software Sob Medida",
       "shortDescription": "Sistemas web e mobile personalizados para sua empresa.",
-      "description": "Construímos sistemas completos do zero ou evoluímos plataformas existentes. Utilizamos as tecnologias mais modernas do mercado para entregar software robusto, escalável e de fácil manutenção.",
+      "description": "Construo sistemas completos do zero ou evoluo plataformas existentes. Uso as tecnologias mais modernas do mercado para entregar software robusto, escalável e de fácil manutenção.",
       "features": [
         "Aplicações web com React, Next.js e TypeScript",
         "APIs REST e GraphQL com Node.js e NestJS",
@@ -25,7 +25,7 @@
       "icon": "RefreshCw",
       "title": "Modernização de Sistemas Legados",
       "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
-      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. A Tonolli tem {anos} anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação. Já entregamos para Sony Music e Banco do Brasil, reduzindo custos de infraestrutura em até 70%.",
+      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. Tenho {anos} anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação, com casos de redução de até 70% em custos de infraestrutura.",
       "features": [
         "Seu sistema continua operando durante toda a modernização — zero downtime",
         "Mapeamos todas as dependências antes de tocar em qualquer código",
@@ -41,7 +41,7 @@
       "icon": "Shield",
       "title": "Consultoria & Arquitetura de Software",
       "shortDescription": "Revisão de arquitetura, DevOps e mentoria técnica.",
-      "description": "Oferecemos consultoria técnica para empresas que precisam de orientação estratégica em tecnologia. Ajudamos a definir arquiteturas, implementar boas práticas de DevOps e capacitar equipes de desenvolvimento.",
+      "description": "Ofereço consultoria técnica para empresas que precisam de orientação estratégica em tecnologia. Ajudo a definir arquiteturas, implementar boas práticas de DevOps e capacitar equipes de desenvolvimento.",
       "features": [
         "Revisão e design de arquitetura de software",
         "Implementação de CI/CD e DevOps",
@@ -57,7 +57,7 @@
       "icon": "Brain",
       "title": "Inteligência Artificial & Automação",
       "shortDescription": "Agentes inteligentes, chatbots e automação com IA.",
-      "description": "Desenvolvemos soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalhamos com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
+      "description": "Desenvolvo soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalho com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
       "features": [
         "Agentes inteligentes com LangChain e MCP",
         "Chatbots e assistentes virtuais com LLMs",
@@ -76,28 +76,28 @@
       {
         "number": "01",
         "title": "Descoberta",
-        "description": "Entendemos seu negócio, desafios e objetivos. Mapeamos requisitos técnicos e de negócio para propor a melhor solução."
+        "description": "Entendo seu negócio, desafios e objetivos. Mapeio requisitos técnicos e de negócio para propor a melhor solução."
       },
       {
         "number": "02",
         "title": "Proposta",
-        "description": "Apresentamos um plano detalhado com escopo, cronograma, tecnologias e investimento. Sem surpresas."
+        "description": "Apresento um plano detalhado com escopo, cronograma, tecnologias e investimento. Sem surpresas."
       },
       {
         "number": "03",
         "title": "Desenvolvimento",
-        "description": "Construímos em sprints com entregas frequentes. Você acompanha cada etapa e valida antes de avançarmos."
+        "description": "Construo em sprints com entregas frequentes. Você acompanha cada etapa e valida antes de avançarmos."
       },
       {
         "number": "04",
         "title": "Entrega & Suporte",
-        "description": "Deploy em produção com documentação completa. Oferecemos suporte contínuo e evolução do sistema."
+        "description": "Deploy em produção com documentação completa. Ofereço suporte contínuo e evolução do sistema."
       }
     ]
   },
   "cta": {
     "title": "Qual é o seu desafio?",
-    "subtitle": "Cada projeto é único. Conte-nos sobre sua necessidade e receba uma proposta personalizada.",
-    "button": { "label": "Falar com especialista", "href": "/contato" }
+    "subtitle": "Cada projeto é único. Conte sobre sua necessidade e receba uma proposta personalizada.",
+    "button": { "label": "Falar comigo", "href": "/contato" }
   }
 }

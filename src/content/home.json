@@ -5,7 +5,7 @@
     "subtitle": "Tonolli Software é minha empresa: CNPJ, contrato e nota fiscal. Quem atende, orça e programa sou eu — sem account, sem repasse pra terceiros. {anos}+ anos de experiência entregando sistemas para empresas no Brasil e no exterior.",
     "cta": {
       "primary": { "label": "Falar comigo sobre o projeto", "href": "/contato" },
-      "secondary": { "label": "Ver projetos", "href": "/projetos" }
+      "secondary": { "label": "Ver serviços", "href": "/servicos" }
     }
   },
   "whyMe": {
@@ -31,7 +31,7 @@
   },
   "stats": [
     { "value": "{anos}+", "label": "Anos de experiência" },
-    { "value": "50+", "label": "Projetos entregues" },
+    { "value": "{projetos}+", "label": "Projetos entregues" },
     { "value": "6+", "label": "Países atendidos" },
     { "value": "99%", "label": "Clientes satisfeitos" }
   ],
@@ -61,14 +61,10 @@
       }
     ]
   },
-  "projectsPreview": {
-    "title": "Projetos em destaque",
-    "subtitle": "Produtos próprios e soluções desenvolvidas para clientes com resultados mensuráveis."
-  },
   "cta": {
     "title": "Precisa de software que funcione de verdade?",
     "subtitle": "Conte sobre seu projeto. Respondemos em até 24 horas com uma avaliação inicial e os próximos passos — sem compromisso.",
-    "button": { "label": "Falar com especialista", "href": "/contato" }
+    "button": { "label": "Falar comigo", "href": "/contato" }
   },
   "trust": {
     "title": "Experiência com projetos de alta complexidade em diversos setores",

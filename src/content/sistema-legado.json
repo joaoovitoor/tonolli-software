@@ -5,21 +5,21 @@
     "subtitle": "A Tonolli Software tem {anos} anos modernizando sistemas corporativos sem interromper a operação. Sem reescrever tudo do zero.",
     "cta": {
       "primary": { "label": "Falar sobre meu sistema", "href": "/contato?origem=sistema-legado" },
-      "secondary": { "label": "Ver projetos", "href": "/projetos" }
+      "secondary": { "label": "Ver serviços", "href": "/servicos" }
     },
     "microcopy": "Diagnóstico inicial sem compromisso. Respondemos em até 24h."
   },
   "fears": {
     "title": "Os três medos de quem precisa modernizar",
-    "subtitle": "São as preocupações que ouvimos em toda primeira conversa — e como eliminamos cada uma.",
+    "subtitle": "São as preocupações que ouço em toda primeira conversa — e como elimino cada uma.",
     "items": [
       {
         "fear": "\"O sistema vai parar durante a migração\"",
-        "answer": "Modernizamos em paralelo. Seu sistema atual continua operando durante toda a migração — a troca só acontece quando a nova base está validada."
+        "answer": "Modernizo em paralelo. Seu sistema atual continua operando durante toda a migração — a troca só acontece quando a nova base está validada."
       },
       {
         "fear": "\"A equipe vai perder o contexto do código\"",
-        "answer": "Mapeamos todas as dependências antes de tocar em qualquer código e entregamos documentação completa. Transferência total de conhecimento para o seu time."
+        "answer": "Mapeio todas as dependências antes de tocar em qualquer código e entrego documentação completa. Transferência total de conhecimento para o seu time."
       },
       {
         "fear": "\"Vai custar mais do que foi orçado\"",
@@ -34,7 +34,7 @@
       {
         "number": "01",
         "title": "Diagnóstico gratuito",
-        "description": "Avaliamos seu sistema e apresentamos um diagnóstico técnico em até 48 horas, sem compromisso."
+        "description": "Avalio seu sistema e apresento um diagnóstico técnico em até 48 horas, sem compromisso."
       },
       {
         "number": "02",
@@ -49,20 +49,20 @@
     ]
   },
   "proof": {
-    "title": "Já fizemos isso em escala enterprise",
-    "description": "Para uma multinacional de entretenimento, transformamos sistemas legados em 4 plataformas modernas — com a operação global rodando durante todo o projeto.",
+    "title": "Já fiz isso em escala enterprise",
+    "description": "Para uma multinacional de entretenimento, transformei sistemas legados em 4 plataformas modernas — com a operação global rodando durante todo o projeto.",
     "highlights": [
       "70% de redução em custos de infraestrutura",
       "4 plataformas enterprise construídas",
       "Entrega 3 meses antes do prazo",
       "Zero interrupção da operação"
     ],
-    "link": { "label": "Ver todos os projetos", "href": "/projetos" }
+    "link": { "label": "Ver como funciona a modernização", "href": "/servicos#modernizacao" }
   },
   "cta": {
     "title": "Agende um diagnóstico gratuito do seu sistema",
     "subtitle": "Descreva o que está travando. Respondemos em até 24 horas com uma avaliação inicial e os próximos passos — sem compromisso.",
-    "button": { "label": "Falar com especialista", "href": "/contato?origem=sistema-legado" }
+    "button": { "label": "Falar comigo", "href": "/contato?origem=sistema-legado" }
   },
   "faq": [
     {
@@ -75,7 +75,7 @@
     },
     {
       "question": "E se o sistema não tiver documentação?",
-      "answer": "É o cenário mais comum. Mapeamos a arquitetura e todas as dependências antes de tocar no código, e entregamos a documentação completa junto com o sistema modernizado."
+      "answer": "É o cenário mais comum. Mapeio a arquitetura e todas as dependências antes de tocar no código, e entrego a documentação completa junto com o sistema modernizado."
     }
   ]
 }
