@@ -1,12 +1,33 @@
 {
   "hero": {
-    "badge": "Software House B2B — {anos}+ Anos de Experiência",
-    "title": "Software sob medida para empresas que não aceitam soluções genéricas.",
-    "subtitle": "Desenvolvemos, modernizamos e integramos sistemas corporativos. 50+ projetos entregues no Brasil, EUA e Europa — com escopo e prazo fechados.",
+    "badge": "Programador com CNPJ — sem agência no meio",
+    "title": "Contrate direto quem vai programar o seu sistema.",
+    "subtitle": "Tonolli Software é minha empresa: CNPJ, contrato e nota fiscal. Quem atende, orça e programa sou eu — sem account, sem repasse pra terceiros. {anos}+ anos de experiência entregando sistemas para empresas no Brasil e no exterior.",
     "cta": {
-      "primary": { "label": "Falar com especialista", "href": "/contato" },
+      "primary": { "label": "Falar comigo sobre o projeto", "href": "/contato" },
       "secondary": { "label": "Ver projetos", "href": "/projetos" }
     }
+  },
+  "whyMe": {
+    "title": "Por que trabalhar comigo, e não com uma agência ou um freela qualquer",
+    "subtitle": "As perguntas que toda empresa se faz antes de contratar um desenvolvedor — e como respondo cada uma.",
+    "items": [
+      {
+        "icon": "FileCheck",
+        "concern": "\"E se for um freelancer sem estrutura nenhuma?\"",
+        "answer": "Tonolli Software é uma empresa com CNPJ, contrato e nota fiscal — a formalização que sua empresa precisa pra contratar com segurança."
+      },
+      {
+        "icon": "UserCheck",
+        "concern": "\"Vou falar com um vendedor e nunca mais ver quem programa?\"",
+        "answer": "Do orçamento à entrega, você fala comigo. Sem account, sem repasse pra terceiros, sem telefone sem fio."
+      },
+      {
+        "icon": "Layers",
+        "concern": "\"Minha demanda é específica demais pra uma agência genérica?\"",
+        "answer": "Atendo qualquer demanda de desenvolvimento — sistema web, automação, integração, app ou modernização — com {anos}+ anos de experiência real."
+      }
+    ]
   },
   "stats": [
     { "value": "{anos}+", "label": "Anos de experiência" },
