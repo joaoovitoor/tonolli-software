@@ -1,77 +1,145 @@
 {
   "hero": {
     "title": "Serviços",
-    "subtitle": "Soluções de tecnologia sob medida para empresas que precisam de software confiável, escalável e inteligente."
+    "subtitle": "Qualquer demanda de desenvolvimento, com quem programa te atendendo direto — do site institucional ao sistema mais crítico."
   },
   "services": [
     {
-      "id": "desenvolvimento",
-      "icon": "Code",
-      "title": "Desenvolvimento de Software Sob Medida",
-      "shortDescription": "Sistemas web e mobile personalizados para sua empresa.",
-      "description": "Construo sistemas completos do zero ou evoluo plataformas existentes. Uso as tecnologias mais modernas do mercado para entregar software robusto, escalável e de fácil manutenção.",
-      "features": [
-        "Aplicações web com React, Next.js e TypeScript",
-        "APIs REST e GraphQL com Node.js e NestJS",
-        "Aplicações mobile multiplataforma",
-        "Integração com sistemas terceiros (ERPs, CRMs, APIs bancárias)",
-        "Dashboards e painéis administrativos",
-        "E-commerce e marketplaces"
+      "id": "sites",
+      "slug": "criacao-de-sites-e-landing-pages",
+      "icon": "Globe",
+      "title": "Criação de Sites & Landing Pages",
+      "shortDescription": "Site institucional ou landing page de conversão, no ar rápido e sem enrolação.",
+      "whatIs": "Construção de sites institucionais e landing pages — a porta de entrada da sua empresa na internet, ou uma página única focada em converter uma campanha específica. Não é template de plataforma de montar site, é uma página pensada pro seu negócio e pro que você quer que o visitante faça.",
+      "how": "Defino junto com você o objetivo da página (institucional, captar contato, vender um produto específico), estruturo o conteúdo pra isso, e construo com performance e SEO técnico desde o início — não é só bonito, carrega rápido e aparece no Google.",
+      "concerns": [
+        {
+          "concern": "\"Já tenho um site feito em plataforma de montar site, preciso trocar tudo?\"",
+          "answer": "Depende do que você precisa. Às vezes o problema é só performance ou SEO, não a plataforma em si — eu avalio antes de recomendar refazer do zero."
+        },
+        {
+          "concern": "\"Vou pagar caro por uma página simples?\"",
+          "answer": "Um site institucional ou uma landing page é um projeto de escopo menor e mais rápido que um sistema — o orçamento reflete isso."
+        },
+        {
+          "concern": "\"Depois de pronto, como eu atualizo o conteúdo sozinho?\"",
+          "answer": "Entrego com um painel simples de edição quando faz sentido, ou documento como pedir uma atualização rápida quando não precisar de painel."
+        }
       ],
-      "technologies": ["React", "Next.js", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "MongoDB"]
+      "technologies": ["Next.js", "React", "Tailwind CSS", "SEO técnico", "Cloudflare Pages"]
+    },
+    {
+      "id": "sistemas-web",
+      "slug": "sistemas-web-e-paineis-sob-medida",
+      "icon": "LayoutDashboard",
+      "title": "Sistemas Web & Painéis Sob Medida",
+      "shortDescription": "O sistema interno que sua operação precisa, do zero ou evoluindo o que já existe.",
+      "whatIs": "Sistemas web sob medida pra sua operação — painel administrativo, ferramenta interna, CRM ou ERP próprio, portal para clientes. Construído do zero ou evoluindo uma base que você já tem, sempre pensado pro seu processo específico, não um produto genérico adaptado à força.",
+      "how": "Mapeio o processo que o sistema precisa resolver, defino a arquitetura certa pro tamanho do problema — não maior nem menor do que precisa — e construo em ciclos curtos com entregas visíveis. Você acompanha o progresso, não recebe uma caixa-preta só no final.",
+      "concerns": [
+        {
+          "concern": "\"Não sei explicar tecnicamente o que preciso\"",
+          "answer": "Você não precisa saber tecnologia. Eu traduzo sua necessidade de negócio em requisitos técnicos — essa parte é comigo."
+        },
+        {
+          "concern": "\"Prefiro comprar um sistema pronto (SaaS) a pagar por algo sob medida\"",
+          "answer": "Faz sentido em muitos casos, e recomendo isso quando é a opção certa. Sob medida vale quando seu processo não cabe no que o SaaS genérico oferece."
+        },
+        {
+          "concern": "\"Depois de pronto, fico refém de você pra qualquer mudança?\"",
+          "answer": "Documentação completa e código organizado. Se um dia quiser levar pra outro time, consegue — sem depender de mim pra sempre."
+        }
+      ],
+      "technologies": ["React", "Next.js", "Node.js", "NestJS", "TypeScript", "PostgreSQL"]
+    },
+    {
+      "id": "mobile",
+      "slug": "aplicativos-mobile",
+      "icon": "Smartphone",
+      "title": "Aplicativos Mobile",
+      "shortDescription": "App mobile pro seu negócio ou pro seu cliente final, sob medida.",
+      "whatIs": "Aplicativos mobile — pra uso interno da sua equipe ou pra seus clientes finais usarem no celular. Do MVP simples validando uma ideia até um app completo integrado com seus sistemas existentes.",
+      "how": "Avalio se o caso pede um app nativo, multiplataforma, ou se um site responsivo já resolveria — nem toda demanda precisa virar app, e sou direto sobre isso. Defino escopo e construo com entregas testáveis no seu celular desde as primeiras semanas.",
+      "concerns": [
+        {
+          "concern": "\"Preciso mesmo de um app, ou um site já resolve?\"",
+          "answer": "Só recomendo app quando faz sentido pro seu caso — um site responsivo custa menos e resolve boa parte das demandas."
+        },
+        {
+          "concern": "\"Publicar na App Store e no Google Play é complicado\"",
+          "answer": "Cuido do processo de publicação nas lojas como parte do projeto, incluindo as exigências técnicas de cada uma."
+        }
+      ],
+      "technologies": ["React Native", "TypeScript", "Expo", "Node.js"]
     },
     {
       "id": "modernizacao",
+      "slug": "modernizacao-de-sistemas-legados",
       "icon": "RefreshCw",
       "title": "Modernização de Sistemas Legados",
-      "shortDescription": "Migração de sistemas antigos para arquiteturas modernas.",
-      "description": "Sistemas legados travam o crescimento porque ninguém quer tocar neles. Tenho {anos} anos fazendo exatamente isso — modernizando sistemas críticos sem parar a operação, com casos de redução de até 70% em custos de infraestrutura.",
-      "features": [
-        "Seu sistema continua operando durante toda a modernização — zero downtime",
-        "Mapeamos todas as dependências antes de tocar em qualquer código",
-        "Documentação completa entregue junto com o sistema modernizado",
-        "Escopo e prazo fechados antes de assinar — sem surpresas de custo",
-        "Refatoração progressiva: modernizamos por partes, sem big bang",
-        "Diagnóstico técnico gratuito em até 48 horas"
+      "shortDescription": "Seu sistema atual continua no ar enquanto eu modernizo por baixo.",
+      "whatIs": "Sistemas legados travam o crescimento porque ninguém quer tocar neles — o time tem medo de quebrar algo que já funciona. Modernização é justamente isso: atualizar a base técnica de um sistema crítico sem reescrever tudo do zero e sem parar sua operação no meio do caminho.",
+      "how": "Mapeio todas as dependências antes de tocar em qualquer código, faço um diagnóstico técnico gratuito em até 48 horas, e modernizo por partes — refatoração progressiva, nunca um \"big bang\" que arrisca derrubar tudo de uma vez. Seu sistema atual continua operando durante toda a migração.",
+      "concerns": [
+        {
+          "concern": "\"O sistema vai parar durante a migração\"",
+          "answer": "Modernizo em paralelo. Seu sistema atual continua operando — a troca só acontece quando a nova base está validada."
+        },
+        {
+          "concern": "\"A equipe vai perder o contexto do código\"",
+          "answer": "Mapeio todas as dependências antes de tocar em qualquer código e entrego documentação completa. Transferência total de conhecimento pro seu time."
+        },
+        {
+          "concern": "\"Vai custar mais do que foi orçado\"",
+          "answer": "Diagnóstico gratuito e proposta com escopo e prazo fechados antes de iniciar. Sem surpresa de custo no meio do projeto."
+        }
       ],
       "technologies": ["Docker", "Kubernetes", "AWS", "GCP", "Azure", "Terraform"]
     },
     {
       "id": "consultoria",
+      "slug": "consultoria-e-arquitetura",
       "icon": "Shield",
       "title": "Consultoria & Arquitetura de Software",
-      "shortDescription": "Revisão de arquitetura, DevOps e mentoria técnica.",
-      "description": "Ofereço consultoria técnica para empresas que precisam de orientação estratégica em tecnologia. Ajudo a definir arquiteturas, implementar boas práticas de DevOps e capacitar equipes de desenvolvimento.",
-      "features": [
-        "Revisão e design de arquitetura de software",
-        "Implementação de CI/CD e DevOps",
-        "Code review e definição de padrões",
-        "Mentoria técnica para equipes",
-        "Auditoria de segurança e performance",
-        "Planejamento de infraestrutura cloud"
+      "shortDescription": "Segunda opinião técnica antes de um erro caro de estrutura.",
+      "whatIs": "Análise técnica de um sistema existente, ou orientação de arquitetura antes de começar um projeto novo — pra evitar decisões estruturais caras de corrigir mais pra frente. Não é uma auditoria genérica de prateleira, é uma leitura específica do seu contexto.",
+      "how": "Reviso o que já existe (ou o que está planejado), aponto riscos e gargalos concretos, e entrego recomendações práticas e priorizadas — o que mudar primeiro, e por quê. Nada de relatório teórico de 40 páginas que ninguém aplica.",
+      "concerns": [
+        {
+          "concern": "\"Já tenho um time técnico, por que preciso de consultoria externa?\"",
+          "answer": "Segunda opinião sem o viés de quem construiu o sistema — às vezes só quem está de fora enxerga o problema estrutural."
+        },
+        {
+          "concern": "\"Vou receber um relatório teórico sem aplicação prática\"",
+          "answer": "A entrega é acionável: prioridades claras do que mudar primeiro, não um framework genérico de consultoria."
+        }
       ],
       "technologies": ["GitHub Actions", "Jenkins", "SonarQube", "New Relic", "Datadog"]
     },
     {
       "id": "inteligencia-artificial",
+      "slug": "automacao-e-inteligencia-artificial",
       "icon": "Brain",
-      "title": "Inteligência Artificial & Automação",
-      "shortDescription": "Agentes inteligentes, chatbots e automação com IA.",
-      "description": "Desenvolvo soluções com IA que automatizam processos, analisam dados e criam experiências inteligentes. Trabalho com os frameworks mais avançados do mercado para construir agentes autônomos e sistemas de processamento de linguagem natural.",
-      "features": [
-        "Agentes inteligentes com LangChain e MCP",
-        "Chatbots e assistentes virtuais com LLMs",
-        "Processamento de documentos (PDF, áudio, imagens)",
-        "Análise de dados com machine learning",
-        "Otimização de custos de tokens e modelos",
-        "Integração com APIs de IA (OpenAI, Anthropic, Google)"
+      "title": "Automação & Inteligência Artificial",
+      "shortDescription": "IA aplicada numa tarefa específica, não IA por modismo.",
+      "whatIs": "Agentes, chatbots e automações que tiram trabalho manual repetitivo do seu time usando IA de forma aplicada. Não é sobre \"ter IA\" — é sobre resolver uma tarefa concreta mais rápido, com controle sobre o resultado.",
+      "how": "Mapeio o processo manual que está consumindo tempo do seu time, desenho a automação certa pro caso (nem sempre a solução mais \"high-tech\" é a certa), e meço o resultado antes de expandir pra outros processos.",
+      "concerns": [
+        {
+          "concern": "\"IA parece modismo, vai realmente ajudar meu negócio?\"",
+          "answer": "Só recomendo automação com IA onde faz sentido prático e mensurável — não empurro IA por empurrar."
+        },
+        {
+          "concern": "\"Tenho medo de a IA errar e ninguém perceber\"",
+          "answer": "Todo processo automatizado tem validação e limites claros definidos. IA não fica solta tomando decisão sem supervisão."
+        }
       ],
       "technologies": ["Python", "LangChain", "MCP", "LLMs", "OpenAI", "AWS Lambda"]
     }
   ],
   "process": {
-    "title": "Como trabalhamos",
-    "subtitle": "Um processo transparente e colaborativo do início ao fim.",
+    "title": "Como trabalho",
+    "subtitle": "Um processo transparente do início ao fim, sem intermediário.",
     "steps": [
       {
         "number": "01",

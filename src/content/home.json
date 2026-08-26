@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Programador com CNPJ — sem agência no meio",
+    "badge": "{anos}+ anos de experiência — orçamento gratuito",
     "title": "Contrate direto quem vai programar o seu sistema.",
     "subtitle": "Tonolli Software é minha empresa: CNPJ, contrato e nota fiscal. Quem atende, orça e programa sou eu — sem account, sem repasse pra terceiros. {anos}+ anos de experiência entregando sistemas para empresas no Brasil e no exterior.",
     "cta": {
@@ -37,27 +37,37 @@
   ],
   "servicesPreview": {
     "title": "O que fazemos",
-    "subtitle": "Soluções completas de tecnologia para empresas que precisam de software confiável, escalável e inteligente.",
+    "subtitle": "Qualquer demanda de desenvolvimento, com quem programa te atendendo direto.",
     "items": [
       {
-        "icon": "Code",
-        "title": "Desenvolvimento Sob Medida",
-        "description": "Sistemas corporativos web e mobile construídos do zero ou evoluídos a partir do que já existe. Do MVP ao sistema enterprise com suporte contínuo."
+        "icon": "Globe",
+        "title": "Criação de Sites & Landing Pages",
+        "description": "Site institucional ou landing page de conversão, no ar rápido e sem enrolação."
+      },
+      {
+        "icon": "LayoutDashboard",
+        "title": "Sistemas Web & Painéis Sob Medida",
+        "description": "O sistema interno que sua operação precisa, do zero ou evoluindo o que já existe."
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Aplicativos Mobile",
+        "description": "App mobile pro seu negócio ou pro seu cliente final, sob medida."
       },
       {
         "icon": "RefreshCw",
-        "title": "Modernização de Sistemas",
-        "description": "Refatoramos e migramos sistemas existentes sem interromper sua operação. Seu time continua trabalhando enquanto modernizamos a base."
+        "title": "Modernização de Sistemas Legados",
+        "description": "Seu sistema atual continua no ar enquanto eu modernizo por baixo."
       },
       {
         "icon": "Shield",
         "title": "Consultoria & Arquitetura",
-        "description": "Revisão de arquitetura, diagnóstico técnico e orientação estratégica para empresas que precisam tomar decisões críticas de tecnologia."
+        "description": "Segunda opinião técnica antes de um erro caro de estrutura."
       },
       {
         "icon": "Brain",
-        "title": "Inteligência Artificial",
-        "description": "Agentes inteligentes, automação de processos e integração com LLMs para empresas que já têm sistemas estabelecidos e querem incorporar IA."
+        "title": "Automação & Inteligência Artificial",
+        "description": "IA aplicada numa tarefa específica, não IA por modismo."
       }
     ]
   },

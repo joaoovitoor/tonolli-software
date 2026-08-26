@@ -1,17 +1,22 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import {
   Code,
   Brain,
   RefreshCw,
   Shield,
-  Check,
+  Globe,
+  LayoutDashboard,
+  Smartphone,
+  ArrowRight,
   type LucideIcon,
 } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import ProcessSteps from '@/components/sections/ProcessSteps';
 import CTA from '@/components/sections/CTA';
 import SectionTitle from '@/components/ui/SectionTitle';
-import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo';
+import Card from '@/components/ui/Card';
+import { breadcrumbJsonLd } from '@/lib/seo';
 import { servicesData, siteData } from '@/lib/content';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -19,12 +24,15 @@ const iconMap: Record<string, LucideIcon> = {
   Brain,
   RefreshCw,
   Shield,
+  Globe,
+  LayoutDashboard,
+  Smartphone,
 };
 
 export const metadata: Metadata = {
   title: 'Serviços',
   description:
-    'Desenvolvimento de software sob medida, inteligência artificial, modernização de sistemas legados e consultoria técnica. Conheça meus serviços.',
+    'Sites, sistemas web, apps, modernização, consultoria e automação com IA — direto com quem programa. Conheça meus serviços.',
   alternates: { canonical: '/servicos' },
 };
 
@@ -42,15 +50,6 @@ export default function ServicosPage() {
           ).replace(/</g, '\\u003c'),
         }}
       />
-      {servicesData.services.map((s) => (
-        <script
-          key={s.id}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(serviceJsonLd(s)).replace(/</g, '\\u003c'),
-          }}
-        />
-      ))}
 
       <Hero
         title={servicesData.hero.title}
@@ -59,58 +58,31 @@ export default function ServicosPage() {
       />
 
       <section className="pt-8 pb-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
-          {servicesData.services.map((service) => {
-            const Icon = iconMap[service.icon] || Code;
-            return (
-              <div
-                key={service.id}
-                id={service.id}
-                className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
-              >
-                <div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400 mb-6">
-                    <Icon size={28} />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-gray-400 leading-relaxed text-lg">
-                    {service.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {service.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-2xl border border-gray-800 bg-gray-900/50 p-6 md:p-8">
-                  <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
-                    O que inclui
-                  </p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-3 text-gray-300"
-                      >
-                        <Check
-                          size={16}
-                          className="mt-1 text-emerald-500 shrink-0"
-                        />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {servicesData.services.map((service) => {
+              const Icon = iconMap[service.icon] || Code;
+              return (
+                <Link key={service.id} href={`/servicos/${service.slug}`}>
+                  <Card className="group h-full">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 mb-5 group-hover:bg-blue-500/20 transition-colors">
+                      <Icon size={22} />
+                    </div>
+                    <h2 className="text-xl font-semibold text-white mb-3">
+                      {service.title}
+                    </h2>
+                    <p className="text-gray-400 leading-relaxed mb-5">
+                      {service.shortDescription}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 group-hover:gap-3 transition-all">
+                      Ver detalhes
+                      <ArrowRight size={16} />
+                    </span>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -3,6 +3,9 @@ import {
   Brain,
   RefreshCw,
   Shield,
+  Globe,
+  LayoutDashboard,
+  Smartphone,
   type LucideIcon,
 } from 'lucide-react';
 import Card from '@/components/ui/Card';
@@ -13,6 +16,9 @@ const iconMap: Record<string, LucideIcon> = {
   Brain,
   RefreshCw,
   Shield,
+  Globe,
+  LayoutDashboard,
+  Smartphone,
 };
 
 interface ServiceItem {

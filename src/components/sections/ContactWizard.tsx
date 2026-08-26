@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import {
-  Code,
+  Globe,
+  LayoutDashboard,
+  Smartphone,
   Brain,
   RefreshCw,
   Shield,
@@ -26,16 +28,20 @@ interface FormState {
 }
 
 const projectTypeOptions = [
+  { value: 'site', label: 'Site ou Landing Page', icon: Globe, desc: 'Site institucional ou página de conversão' },
+  { value: 'sistema', label: 'Sistema Web', icon: LayoutDashboard, desc: 'Painel, sistema interno, CRM ou ERP próprio' },
+  { value: 'mobile', label: 'Aplicativo Mobile', icon: Smartphone, desc: 'App pro seu negócio ou pro seu cliente final' },
   { value: 'modernization', label: 'Modernização de Sistema', icon: RefreshCw, desc: 'Migrar ou refatorar sistema legado' },
-  { value: 'software', label: 'Desenvolvimento de Software', icon: Code, desc: 'Sistema web, mobile ou API do zero' },
   { value: 'consulting', label: 'Consultoria Técnica', icon: Shield, desc: 'Arquitetura, code review, mentoria' },
-  { value: 'ai', label: 'Inteligência Artificial', icon: Brain, desc: 'Agentes IA, chatbots, automação' },
+  { value: 'ai', label: 'Automação & IA', icon: Brain, desc: 'Agentes IA, chatbots, automação' },
   { value: 'other', label: 'Outro assunto', icon: HelpCircle, desc: 'Algo diferente do listado' },
 ];
 
 const messagePlaceholders: Record<string, string> = {
+  site: 'Descreva o site ou landing page: objetivo da página, quantas seções, se já tem conteúdo/design pronto\u2026',
+  sistema: 'Descreva o sistema que precisa construir: funcionalidades principais, usuários, integrações necessárias\u2026',
+  mobile: 'Descreva o app: pra quem é (equipe interna ou cliente final), principais funcionalidades, iOS/Android\u2026',
   modernization: 'Descreva o sistema atual: tecnologia, idade aproximada, principais problemas e o que precisa mudar\u2026',
-  software: 'Descreva o sistema que precisa construir: funcionalidades principais, usuários, integrações necessárias\u2026',
   consulting: 'Descreva o contexto: qual decisão técnica precisa tomar ou qual problema quer resolver\u2026',
   ai: 'Descreva o processo que quer automatizar ou onde IA pode ajudar no seu negócio\u2026',
   other: 'Descreva o que precisa \u2014 qualquer detalhe é bem-vindo\u2026',

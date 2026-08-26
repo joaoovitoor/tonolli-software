@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Award } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
@@ -53,6 +54,15 @@ export default function SobrePage() {
             </div>
             <div className="lg:col-span-2">
               <Card hover={false}>
+                <div className="duotone-photo relative h-20 w-20 overflow-hidden rounded-full border border-gray-800 mb-5">
+                  <Image
+                    src="/images/joao-vitor.jpg"
+                    alt="João Vitor Tonolli"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
                 <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
                   {aboutData.founder.title}
                 </p>

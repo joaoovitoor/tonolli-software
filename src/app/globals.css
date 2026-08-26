@@ -67,6 +67,24 @@ select option {
   background-clip: text;
 }
 
+/* Duotone photo treatment — mascara resolução baixa e traz o toque pessoal (quente),
+   em contraste com o azul "institucional" usado no resto do site */
+.duotone-photo {
+  background: linear-gradient(160deg, #fb923c 0%, #050505 100%);
+}
+
+.duotone-photo img {
+  filter: grayscale(1) contrast(1.15) brightness(1.05);
+  mix-blend-mode: luminosity;
+}
+
+@media (prefers-contrast: more), (forced-colors: active) {
+  .duotone-photo img {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+}
+
 /* Shimmer sweep on primary buttons */
 .shimmer-sweep {
   overflow: hidden;
