@@ -134,6 +134,13 @@ Ainda em aberto:
    cliente precisa, em vez de focar no que já foi entregue no passado. Ainda não desenhado como isso se
    traduz no site (feature futura? só discurso no /contato? mockup sob demanda?) — anotar aqui quando
    virar decisão concreta.
+5. **Landing dedicada por serviço** (ideia do João, 26/08/2026): hoje `/sistema-legado` é a única landing
+   isolada; o resto dos serviços só existe como âncora dentro de `/servicos`. Proposta: cada serviço
+   (desenvolvimento sob medida, automação/IA, consultoria & arquitetura) ganhar sua própria landing no
+   padrão da `/sistema-legado` (hero + objeções + processo + prova + FAQ), pra capturar cada cluster de
+   keyword separadamente. Precisa decidir: `/servicos` vira só um índice curto linkando pra cada landing,
+   ou continua com conteúdo completo também (risco de duplicar conteúdo com as landings novas)? Não
+   implementado ainda — é trabalho de conteúdo, não prioridade durante o redesign visual em andamento.
 
 ---
 
