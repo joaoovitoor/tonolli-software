@@ -46,9 +46,9 @@
       },
       {
         "icon": "MapPin",
-        "label": "Endereço",
-        "value": "Av. Eng. Luiz Carlos Berrini, 1748 - São Paulo/SP",
-        "href": "https://maps.google.com/?q=Av+Eng+Luiz+Carlos+Berrini+1748+São+Paulo"
+        "label": "Atendimento",
+        "value": "100% remoto — Grande São Paulo",
+        "href": null
       }
     ]
   }

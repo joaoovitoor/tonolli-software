@@ -10,8 +10,8 @@ import { breadcrumbJsonLd, serviceJsonLd } from '@/lib/seo';
 import { sistemaLegadoData, siteData, anosDeExperiencia } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Modernização de Sistemas Legados sem Parar a Operação',
-  description: `Modernizamos sistemas legados corporativos sem interromper sua operação. ${anosDeExperiencia}+ anos de experiência, diagnóstico gratuito em 48h e proposta com escopo fechado.`,
+  title: 'Modernização de Sistema Legado sem Downtime',
+  description: `Modernizo sistemas legados corporativos sem interromper sua operação. ${anosDeExperiencia}+ anos de experiência, diagnóstico gratuito em 48h e proposta com escopo fechado.`,
   alternates: { canonical: '/sistema-legado' },
 };
 

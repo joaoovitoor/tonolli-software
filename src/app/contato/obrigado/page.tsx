@@ -4,7 +4,7 @@ import { CheckCircle, MessageCircle, ArrowRight } from 'lucide-react';
 import { siteData } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Projeto recebido — Tonolli Software',
+  title: 'Projeto recebido',
   description: 'Recebemos sua solicitação e retornaremos em até 24 horas.',
   robots: { index: false, follow: false },
 };

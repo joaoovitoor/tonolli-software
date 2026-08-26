@@ -10,7 +10,7 @@ const iconMap: Record<string, LucideIcon> = { Mail, Phone, MapPin };
 export const metadata: Metadata = {
   title: 'Contato',
   description:
-    'Entre em contato com a Tonolli Software. Solicite uma proposta para seu projeto de software, IA ou modernização de sistemas.',
+    'Conte sobre seu projeto — site, sistema, app ou modernização. Direto com quem programa, sem agência. Resposta em até 24h.',
   alternates: { canonical: '/contato' },
 };
 
@@ -49,12 +49,17 @@ export default function ContatoPage() {
                 <div className="space-y-6">
                   {contactData.info.items.map((item) => {
                     const Icon = iconMap[item.icon] || Mail;
+                    const Wrapper = item.href ? 'a' : 'div';
                     return (
-                      <a
+                      <Wrapper
                         key={item.label}
-                        href={item.href}
-                        target={item.href.startsWith('http') ? '_blank' : undefined}
-                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        {...(item.href
+                          ? {
+                              href: item.href,
+                              target: item.href.startsWith('http') ? '_blank' : undefined,
+                              rel: item.href.startsWith('http') ? 'noopener noreferrer' : undefined,
+                            }
+                          : {})}
                         className="flex items-start gap-4 group"
                       >
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 shrink-0 group-hover:bg-blue-500/20 transition-colors">
@@ -66,21 +71,9 @@ export default function ContatoPage() {
                             {item.value}
                           </p>
                         </div>
-                      </a>
+                      </Wrapper>
                     );
                   })}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-gray-800/50">
-                  <h3 className="text-sm font-semibold text-white mb-3">
-                    Horário
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Seg-Sex, 9h-18h (Brasília)
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Disponível em EST/PST
-                  </p>
                 </div>
               </div>
             </div>

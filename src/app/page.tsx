@@ -11,7 +11,7 @@ import { homeData, anosDeExperiencia } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Tonolli Software | Programador com CNPJ — Contratação Direta',
-  description: `Contrate direto quem programa: CNPJ, contrato e nota fiscal, sem agência pelo meio. Sistemas, sites, automações e integrações sob medida. ${anosDeExperiencia}+ anos de experiência.`,
+  description: `Contrate direto quem programa: CNPJ, contrato e nota fiscal, sem agência. Sistemas, sites e automações sob medida. ${anosDeExperiencia}+ anos de experiência.`,
   alternates: { canonical: '/' },
 };
 
