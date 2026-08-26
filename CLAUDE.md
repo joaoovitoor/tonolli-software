@@ -98,49 +98,36 @@ direto — ver convenção do token `{anos}` abaixo).
 
 ---
 
-## PENDÊNCIAS ABERTAS (auditoria iniciada 26/08/2026 — nada disto foi corrigido ainda)
+## PENDÊNCIAS ABERTAS
 
-Achados de uma revisão de português/consistência em todo o conteúdo. Cada um precisa de uma decisão do
-João antes de mexer — não são só erros de digitação, envolvem dado real ou escolha de tom.
+Resolvidas em 26/08/2026:
+- ~~Erro de concordância "projeto como estes"~~ → corrigido para "este".
+- ~~`/projetos`, `ProjectCard`, `projects.json`~~ → removidos por completo (dois dos três cases,
+  PrevAgro e ClimIA, tinham link morto — confirmado via curl). Home e `/sistema-legado` não apontam
+  mais pra lá; CTAs redirecionados pra `/servicos`. Decisão do João: focar em serviço/solução e
+  marketing pra captar cliente novo, não em vitrine de entregas passadas.
+- ~~Inconsistência de voz eu/nós~~ → migrado tudo pra primeira pessoa ("eu"), a pedido do João. `about`,
+  `services`, `sistema-legado` e os CTAs de header/footer agora falam em "eu"/"comigo", consistente com
+  o hero.
+- ~~"50+ projetos" sem lastro~~ → virou `{projetos}+`, calculado como `anosDeExperiencia * 12` (~1
+  projeto/mês nos últimos {anos} anos, conforme estimativa do João) em `src/lib/content.ts`. Dinâmico
+  igual ao `{anos}`, nunca mais hardcoded.
 
-1. **Erro de concordância real:** `projects.json` → `cta.title`: *"Quer um projeto como **estes**?"* —
-   "estes" (plural) não concorda com "um projeto" (singular). Devia ser "como **este**". Fix mecânico,
-   sem decisão pendente.
+Ainda em aberto:
 
-2. **Clientes nomeados que contradizem a própria regra do site:** `services.json`, descrição do serviço
-   `modernizacao`, cita *"Já entregamos para Sony Music e Banco do Brasil"*. A seção "Cases citáveis"
-   (histórico deste arquivo) registra que João decidiu **não citar clientes externos nominalmente** —
-   só projetos próprios (PrevAgro, ClimIA, Currify) são citáveis. Precisa confirmar: essa menção é
-   verdadeira e autorizada pelo cliente, ou é resquício que deveria ter sido genérico
-   ("empresas de entretenimento e do setor financeiro")? Risco de credibilidade/jurídico se não for
-   autorizado.
-
-3. **Inconsistência de voz (eu vs. nós):** o hero da home fala em primeira pessoa ("sou eu", "fale
-   comigo"), mas `about.json`, `services.json`, `sistema-legado.json` e o CTA de `projects.json` usam
-   voz corporativa plural o tempo todo ("Nascemos", "Atuamos", "Oferecemos", "Construímos", "Já
-   fizemos", "Não entregamos e sumimos"). Um cliente que lê a home e depois `/sobre` ou `/servicos` vai
-   notar a contradição. Decisão do João: manter "nós" como voz da empresa (comum em consultorias solo)
-   ou migrar tudo para "eu" pra bater com o hero? Nenhuma opção está certa por padrão — é escolha de
-   tom.
-
-4. **Honestidade do stat "50+ projetos":** João apontou que 50 projetos em {anos}+ anos soa pouco.
-   Preciso do número real (ou de um stat substituto verdadeiro) antes de mudar — não posso simplesmente
-   aumentar o número. Also `99% clientes satisfeitos` nunca foi trocado por um dado verificável, apesar
-   de já estar anotado como problema em versões anteriores deste arquivo.
-
-5. **Projetos em destaque com link morto:** `prevagro.com.br` e `climia.com.br` **não respondem**
-   (confirmado via curl em 26/08/2026 — só `currify.app` está no ar). Isso por si só já é motivo pra
-   tirar os dois cards ou pelo menos remover o link/URL clicável, independente da decisão maior de
-   remover "Projetos em destaque" da home (João sugeriu isso — ver próxima seção).
-
-6. **Home sem "Projetos em destaque":** proposta do João é tirar a seção de projetos da home e usar
-   aquele espaço pra reforçar a solução/serviço (mais alinhado com "atendo qualquer demanda", já que
-   projetos são vitrine estática e o trabalho é dinâmico). Falta decidir: tira só da home (mantém
-   `/projetos` no nav para quem quiser ver cases) ou tira a página inteira? E os dois links mortos
-   (PrevAgro/ClimIA) somem da listagem também, ou ficam como "descontinuado"?
-
-**Não fixar nada da lista acima sem confirmar com o João** (exceto o item 1, que é gramática pura sem
-ambiguidade).
+1. **Clientes nomeados em `services.json`:** a descrição do serviço `modernizacao` citava *"Já
+   entregamos para Sony Music e Banco do Brasil"*, o que contradiz a regra já registrada de não citar
+   clientes externos nominalmente (só PrevAgro/ClimIA/Currify são citáveis). **Removi a menção nominal
+   por padrão** (ficou "com casos de redução de até 70% em custos de infraestrutura", sem nomear
+   ninguém) até o João confirmar se era verdadeiro e autorizado — se sim, dá pra reintroduzir de forma
+   genérica ou nominal.
+2. **`99% clientes satisfeitos`** (home + o quanto isso aparece em `about.json`) continua sem fonte
+   verificável — mesmo problema apontado em versões anteriores deste arquivo, nunca resolvido.
+3. **Estrutura do site** (pergunta do João, 26/08/2026): manter páginas separadas (Home, Sobre,
+   Serviços, Contato, Sistema Legado) ou consolidar em landing única? Ver resposta/recomendação na
+   conversa — decisão ainda não fechada.
+4. **Pesquisa de design/layout** (pergunta do João, 26/08/2026): qual padrão visual de site
+   individual/consultoria chama mais atenção globalmente — ainda não pesquisado a fundo, próximo passo.
 
 ---
 
