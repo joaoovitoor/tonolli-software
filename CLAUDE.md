@@ -113,21 +113,27 @@ Resolvidas em 26/08/2026:
   projeto/mês nos últimos {anos} anos, conforme estimativa do João) em `src/lib/content.ts`. Dinâmico
   igual ao `{anos}`, nunca mais hardcoded.
 
+Resolvida em seguida:
+- ~~Clientes nomeados~~ → João confirmou: **nenhum cliente é citado nominalmente em lugar nenhum do
+  site, ponto final** — não é caso a caso, é regra sem exceção. Removido "Sony Music e Banco do Brasil"
+  de `services.json` e "CRED, Som Livre/Sony" do bio do founder em `site.json` (esse campo nem é
+  renderizado hoje, mas a fonte não deve carregar nomes de cliente de qualquer forma). Motivo do João:
+  a tática de venda é mostrar uma **prévia do que o cliente quer** (não o portfólio do que já foi
+  feito) — o site não precisa "provar" via cases nomeados.
+
 Ainda em aberto:
 
-1. **Clientes nomeados em `services.json`:** a descrição do serviço `modernizacao` citava *"Já
-   entregamos para Sony Music e Banco do Brasil"*, o que contradiz a regra já registrada de não citar
-   clientes externos nominalmente (só PrevAgro/ClimIA/Currify são citáveis). **Removi a menção nominal
-   por padrão** (ficou "com casos de redução de até 70% em custos de infraestrutura", sem nomear
-   ninguém) até o João confirmar se era verdadeiro e autorizado — se sim, dá pra reintroduzir de forma
-   genérica ou nominal.
-2. **`99% clientes satisfeitos`** (home + o quanto isso aparece em `about.json`) continua sem fonte
-   verificável — mesmo problema apontado em versões anteriores deste arquivo, nunca resolvido.
-3. **Estrutura do site** (pergunta do João, 26/08/2026): manter páginas separadas (Home, Sobre,
+1. **`99% clientes satisfeitos`** (home + `about.json`) continua sem fonte verificável — mesmo problema
+   apontado em versões anteriores deste arquivo, nunca resolvido.
+2. **Estrutura do site** (pergunta do João, 26/08/2026): manter páginas separadas (Home, Sobre,
    Serviços, Contato, Sistema Legado) ou consolidar em landing única? Ver resposta/recomendação na
    conversa — decisão ainda não fechada.
-4. **Pesquisa de design/layout** (pergunta do João, 26/08/2026): qual padrão visual de site
+3. **Pesquisa de design/layout** (pergunta do João, 26/08/2026): qual padrão visual de site
    individual/consultoria chama mais atenção globalmente — ainda não pesquisado a fundo, próximo passo.
+4. **Tática de venda por "prévia"**: João quer que a abordagem comercial mostre uma prévia do que o
+   cliente precisa, em vez de focar no que já foi entregue no passado. Ainda não desenhado como isso se
+   traduz no site (feature futura? só discurso no /contato? mockup sob demanda?) — anotar aqui quando
+   virar decisão concreta.
 
 ---
 
