@@ -1,560 +1,220 @@
 # CLAUDE.md — Tonolli Software Website
 
-> Especialista em UI/UX e Conversão B2B para este repositório.
-> Última atualização: 12/06/2026
+> Especialista em UI/UX, conversão e posicionamento para este repositório.
+> Última reescrita: 26/08/2026 — este arquivo documenta o estado e a estratégia ATUAIS.
+> Não se prenda a raciocínios antigos: se algo aqui parecer desatualizado frente ao código, o código manda.
 
 ---
 
 ## PAPEL DESTE ARQUIVO
 
-Este documento funciona como um co-piloto especialista em:
-- **UX de conversão B2B** — como decisores corporativos navegam e decidem
-- **Copy orientada a dor** — o que faz um CEO/CTO clicar em "Entrar em contato"
-- **Diagnóstico do site atual** — o que está funcionando, o que está matando conversão
-- **Roadmap de mudanças** — o que fazer primeiro, com maior impacto, rodando localmente
+Co-piloto para decisões de:
+- **Posicionamento** — o que o site diz que a Tonolli é, e pra quem
+- **Copy de conversão** — o que faz alguém preencher o formulário de contato
+- **Consistência** — pegar erro de português, contradição de tom ou dado antes do cliente
+- **Convenções técnicas do conteúdo** — regras que não podem regredir (token `{anos}`, imports, etc.)
 
-Leia `DESIGN.md` para princípios visuais e stack técnica. Este arquivo é sobre **estratégia e decisões de conteúdo**.
-
----
-
-## QUEM VISITA ESTE SITE (E POR QUE IMPORTA)
-
-### Perfil B — o visitante que converte (foco total)
-
-> "Meu sistema atual está me travando. A equipe tem medo de mexer nele. Custa caro manter. E eu não sei se consigo confiar numa empresa externa para isso."
-
-**Cargo:** CEO, CTO, Diretor de TI de empresa com 50-500 funcionários
-**Situação:** Sistema legado em produção há 5-10+ anos. Lento, frágil, sem documentação.
-**Motivação para buscar:** Crescimento travado OU crise iminente (sistema quebrando).
-**Medo primário:** Contratar errado e piorar a situação.
-**Como decide:** Pesquisa no Google → lê o site → avalia credibilidade → pede proposta.
-
-**O que ele precisa ver no site para tomar ação:**
-1. Que a Tonolli já fez isso antes (prova, não promessa)
-2. Que entende a dor específica (linguagem familiar, não genérica)
-3. Que tem experiência suficiente para não quebrar o que está funcionando
-4. Uma próxima ação de baixo risco (conversar, não assinar)
-
-### Perfil A — visitante que chega mas não é o foco
-
-Empreendedor querendo construir MVP, desenvolvedor pesquisando tecnologias, startups com budget < R$30k. O site não precisa afastá-los, mas também **não deve ser otimizado para eles** — isso dilui a mensagem para o Perfil B.
+Leia `DESIGN.md` para stack visual/técnica. Este arquivo é sobre conteúdo e estratégia.
 
 ---
 
-## DIAGNÓSTICO DO SITE ATUAL
+## QUEM É A TONOLLI SOFTWARE (contexto de negócio real)
 
-### Homepage — o que está fraco
+João Vitor é **engenheiro de software sênior, pessoa física, com CNPJ próprio** (Tonolli Software LTDA,
+CNPJ 48.512.403/0001-46). Atende individualmente — não há equipe por trás. O site é intencionalmente
+**híbrido**: tem estrutura de empresa (CNPJ, contrato, nota fiscal — o que dá segurança jurídica pra quem
+contrata) mas o atendimento, do orçamento à entrega, é direto com ele.
 
-**Hero atual:**
-```
-Badge:    "Software House em São Paulo"
-Título:   "Transformamos ideias em software que gera resultado"
-Subtítulo: "Desenvolvimento sob medida com inteligência artificial, arquitetura escalável..."
-```
-
-**Problemas:**
-- "Transformamos ideias" → fala com Perfil A (quem tem ideia nova). O Perfil B não tem "uma ideia" — tem um sistema quebrado.
-- "Inteligência artificial" na primeira dobra → atrai curiosos e devs, não decisores com sistema legado.
-- Genérico demais — qualquer software house poderia ter este headline.
-- Não nomeia a dor. O visitante lê e pensa "ok, mas você resolve meu problema específico?".
-
-**Services Preview — o que está fraco:**
-- "Inteligência Artificial" como segundo card (posição de destaque) → sinal errado para Perfil B.
-- Descrição de "Modernização de Sistemas" é boa em conteúdo mas enterrada em terceiro lugar.
-- As descrições mencionam tecnologias (Node.js, React, LangChain) — o decisor corporativo não sabe o que isso significa e não deveria precisar saber.
-
-**Stats (19+, 50+, 6+, 99%):**
-- São bons mas vagos. "50+ projetos entregues" não diz nada. Qual tipo de projeto? Para quem?
-- "99% clientes satisfeitos" é uma métrica sem fonte — o visitante cético ignora.
-- Oportunidade perdida: nenhum número fala diretamente ao Perfil B (ex: "12 sistemas legados modernizados").
-
-**Trust Bar (Fintech, Entretenimento, Agronegócio, Saúde, Marketing Digital):**
-- Bom conceito, execução fraca. Setores sem logos reais não constroem confiança.
-- Se não há logos de clientes reais, substituir por depoimentos reais ou cases nomeados.
-
-**CTA final:**
-- "Tem um projeto em mente?" → assume Perfil A (quem está construindo algo novo).
-- "Avaliamos cada projeto individualmente" → boa linha, mas perdida no subtítulo.
-
-### O que está funcionando
-
-- Estrutura de seções está correta (Hero → Stats → Services → Projects → CTA).
-- Conteúdo em JSON — facilita edição sem tocar em componentes.
-- Página de Contato com campos de budget e timeline → qualifica o lead de forma inteligente.
-- Página de Projetos com casos reais (PrevAgro, ClimIA) → prova de capacidade técnica.
-- "19 anos de experiência" e "6 países atendidos" → credenciais sólidas, mas subutilizadas.
-
-### Páginas de serviço — estado atual
-
-Cada serviço tem id, description e features listadas com tecnologias. O problema é que **features e tecnologias são o que a Tonolli faz, não o que o cliente ganha**. Exemplo real:
-
-```
-Feature atual: "Migração de sistemas legados para arquiteturas modernas com microserviços"
-O que o cliente quer ler: "Seu sistema atual continua funcionando durante toda a migração"
-```
-
-### Página de Contato — estado atual
-
-**Muito boa estrutura.** O wizard com tipo de projeto, budget e timeline é exatamente o certo para qualificação B2B. Não mudar a lógica — apenas ajustar copy de suporte.
+**Objetivo do site:** ranquear bem para quem procura contratar um programador/desenvolvedor para
+qualquer demanda de desenvolvimento — não é currículo, não é vitrine só do emprego atual, não é um site
+que só faz sentido para um nicho estreito de cliente.
 
 ---
 
-## ESTRATÉGIA DE COPY — PRINCÍPIOS
+## POSICIONAMENTO ATUAL
 
-### 1. Falar com a dor, não com a solução
+### O wedge identificado (pesquisa de concorrentes, 26/08/2026)
 
-Regra: o visitante do Perfil B não está comprando tecnologia, está comprando **redução de risco** e **retomada do crescimento**.
+Existem dois arquétipos ocupando o mercado de busca:
 
-| Errado (feature) | Certo (dor/resultado) |
+1. **Freelancer pessoa física genérico** (ex: alanfernds.com.br) — sem CNPJ/empresa formal, menos
+   credibilidade para contratação por empresa que precisa de nota fiscal/contrato.
+2. **"Software house" corporativa anônima** (ex: comhub.com.br, is-desenvolvimento.com.br) — copy vaga
+   e intercambiável ("impulsione seu negócio"), sem rosto, sem prova social concreta, e o cliente nunca
+   sabe se vai falar com quem realmente programa.
+
+**Nenhum dos dois ocupa o meio-termo real da Tonolli: empresa formal + atendimento individual direto.**
+Termos de cauda longa ligados a isso (`contratar programador direto com CNPJ`, `programador PJ para
+sistemas de empresas`, `desenvolvedor freelancer com nota fiscal`) apareceram nas buscas sem nenhuma
+página comercial concorrente — só conteúdo informativo de blog. É a âncora de SEO prioritária.
+
+Termos genéricos de altíssima concorrência (`programador freelancer são paulo`, `contratar programador`)
+são dominados por marketplaces (99Freelas, Workana, Indeed, LinkedIn) — não vale mirar ranking #1 aí.
+`software house são paulo` é ganhável mas genérico demais para diferenciar.
+
+### A mensagem central (repetir em várias seções do site)
+
+> Empresa formal (CNPJ, contrato, nota fiscal) + atendimento sem intermediário (quem orça e programa é
+> quem atende, não passa por vendedor/account/dev júnior).
+
+Isso responde às duas objeções que cada arquétipo concorrente deixa em aberto: "e se for freelancer sem
+estrutura?" e "vou falar com um vendedor e nunca mais ver quem programa?".
+
+**Risco a vigiar na copy:** não fingir ser um "time" (evitar "nossa equipe", "Nascemos", "Trabalhamos"
+como voz corporativa plural) quando na prática é uma pessoa só — isso quebra a confiança assim que o
+cliente descobre. Ver auditoria de consistência de voz abaixo — ainda não resolvida em todo o site.
+
+### Legado como oferta, não como carro-chefe
+
+A modernização de sistemas legados **deixou de ser o posicionamento principal da home** (era o foco
+antes de 26/08/2026). Agora é uma oferta entre outras — a landing `/sistema-legado` continua no ar para
+quem chega buscando especificamente isso (ex: Ads), mas o hero e a mensagem-guarda-chuva do site são
+generalistas.
+
+---
+
+## ESTADO ATUAL DA HOMEPAGE (pós 26/08/2026)
+
+```
+Hero:      "Contrate direto quem vai programar o seu sistema."
+           badge: "Programador com CNPJ — sem agência no meio"
+           CTA primário: "Falar comigo sobre o projeto" → /contato
+           CTA secundário: "Ver projetos" → /projetos
+
+whyMe:     3 cards respondendo objeções (freelancer sem estrutura / vendedor no meio / demanda genérica)
+
+Stats:     {anos}+ anos, 50+ projetos, 6+ países, 99% clientes satisfeitos  ← em auditoria, ver pendências
+
+Services:  Desenvolvimento Sob Medida (1º) → Modernização de Sistemas (2º) →
+           Consultoria & Arquitetura (3º) → Inteligência Artificial (4º)
+
+Projetos em destaque:  PrevAgro, ClimIA, Currify  ← em auditoria, ver pendências (dois links mortos)
+
+CTA final + Trust bar (setores, sem logos reais)
+```
+
+Conteúdo em `src/content/*.json`, consumido via `@/lib/content` (nunca importar `@/content/*.json`
+direto — ver convenção do token `{anos}` abaixo).
+
+---
+
+## PENDÊNCIAS ABERTAS (auditoria iniciada 26/08/2026 — nada disto foi corrigido ainda)
+
+Achados de uma revisão de português/consistência em todo o conteúdo. Cada um precisa de uma decisão do
+João antes de mexer — não são só erros de digitação, envolvem dado real ou escolha de tom.
+
+1. **Erro de concordância real:** `projects.json` → `cta.title`: *"Quer um projeto como **estes**?"* —
+   "estes" (plural) não concorda com "um projeto" (singular). Devia ser "como **este**". Fix mecânico,
+   sem decisão pendente.
+
+2. **Clientes nomeados que contradizem a própria regra do site:** `services.json`, descrição do serviço
+   `modernizacao`, cita *"Já entregamos para Sony Music e Banco do Brasil"*. A seção "Cases citáveis"
+   (histórico deste arquivo) registra que João decidiu **não citar clientes externos nominalmente** —
+   só projetos próprios (PrevAgro, ClimIA, Currify) são citáveis. Precisa confirmar: essa menção é
+   verdadeira e autorizada pelo cliente, ou é resquício que deveria ter sido genérico
+   ("empresas de entretenimento e do setor financeiro")? Risco de credibilidade/jurídico se não for
+   autorizado.
+
+3. **Inconsistência de voz (eu vs. nós):** o hero da home fala em primeira pessoa ("sou eu", "fale
+   comigo"), mas `about.json`, `services.json`, `sistema-legado.json` e o CTA de `projects.json` usam
+   voz corporativa plural o tempo todo ("Nascemos", "Atuamos", "Oferecemos", "Construímos", "Já
+   fizemos", "Não entregamos e sumimos"). Um cliente que lê a home e depois `/sobre` ou `/servicos` vai
+   notar a contradição. Decisão do João: manter "nós" como voz da empresa (comum em consultorias solo)
+   ou migrar tudo para "eu" pra bater com o hero? Nenhuma opção está certa por padrão — é escolha de
+   tom.
+
+4. **Honestidade do stat "50+ projetos":** João apontou que 50 projetos em {anos}+ anos soa pouco.
+   Preciso do número real (ou de um stat substituto verdadeiro) antes de mudar — não posso simplesmente
+   aumentar o número. Also `99% clientes satisfeitos` nunca foi trocado por um dado verificável, apesar
+   de já estar anotado como problema em versões anteriores deste arquivo.
+
+5. **Projetos em destaque com link morto:** `prevagro.com.br` e `climia.com.br` **não respondem**
+   (confirmado via curl em 26/08/2026 — só `currify.app` está no ar). Isso por si só já é motivo pra
+   tirar os dois cards ou pelo menos remover o link/URL clicável, independente da decisão maior de
+   remover "Projetos em destaque" da home (João sugeriu isso — ver próxima seção).
+
+6. **Home sem "Projetos em destaque":** proposta do João é tirar a seção de projetos da home e usar
+   aquele espaço pra reforçar a solução/serviço (mais alinhado com "atendo qualquer demanda", já que
+   projetos são vitrine estática e o trabalho é dinâmico). Falta decidir: tira só da home (mantém
+   `/projetos` no nav para quem quiser ver cases) ou tira a página inteira? E os dois links mortos
+   (PrevAgro/ClimIA) somem da listagem também, ou ficam como "descontinuado"?
+
+**Não fixar nada da lista acima sem confirmar com o João** (exceto o item 1, que é gramática pura sem
+ambiguidade).
+
+---
+
+## CONVENÇÕES TÉCNICAS CRÍTICAS
+
+### Anos de experiência — cálculo automático
+
+`src/lib/content.ts`: `anosDeExperiencia = ano atual - 2006`, substitui o token `{anos}` em toda string
+dos JSONs de conteúdo.
+
+1. **Nunca hardcodar anos** ("20 anos", "21+") em JSON ou TSX — usar `{anos}` nos JSONs ou importar
+   `anosDeExperiencia`.
+2. **Sempre importar de `@/lib/content`** (`siteData`, `homeData`, `aboutData`, `servicesData`,
+   `projectsData`, `contactData`, `sistemaLegadoData`) — nunca `@/content/*.json` direto, senão o token
+   `{anos}` vaza cru na tela.
+3. Cron anual no `deploy.yml` (02/jan, 06h UTC) rebuilda na virada do ano.
+4. **Distinção factual:** empresa fundada em **2022** (`foundingDate` no schema); "desde 2006" é a
+   **experiência do fundador**, não da empresa. Nunca alegar "empresa desde 2006".
+
+### Deploy e SEO
+
+- Push na `main` → GitHub Actions → Cloudflare Pages (`tonolli-software`). Static export
+  (`output: "export"`, trailingSlash).
+- Indexado no Google, #1 para a marca própria (ainda não para termos genéricos — essa é a lacuna que o
+  reposicionamento de 26/08 mira).
+- Sitemap/robots em `public/` são manuais — atualizar ao criar página nova.
+- Domínio canônico sem `www`, URLs com barra final.
+- Maior alavanca de SEO local pendente: Google Business Profile (não existe ainda; ação do João).
+
+---
+
+## O QUE NÃO MUDAR (sem pedido explícito)
+
+| Elemento | Motivo |
 |---|---|
-| "Migração para microsserviços" | "Seu sistema legado fica operando enquanto modernizamos" |
-| "Arquitetura escalável" | "Sistema que aguenta 10x mais sem cair" |
-| "Code review e DevOps" | "Equipe deixa de ter medo de subir código em produção" |
-| "19 anos de experiência" | "19 anos modernizando sistemas que ninguém mais queria tocar" |
-| "50+ projetos entregues" | "12 sistemas legados modernizados sem interrupção de operação" |
-
-### 2. O headline do hero precisa fazer uma pergunta ou nomear uma dor
-
-Referência: Linear — "Purpose-built tool for planning and building products." Direto. Sem metáforas.
-
-Para Tonolli Perfil B, algumas opções:
-
-```
-Opção A (dor direta):
-"Seu sistema legado está travando o crescimento da empresa?"
-
-Opção B (proposta de valor):
-"Modernizamos sistemas legados. Sem parar sua operação."
-
-Opção C (credencial + dor):
-"19 anos modernizando sistemas que empresas tinham medo de tocar."
-
-Opção D (resultado):
-"Transformamos sistemas legados em plataformas que escalam."
-```
-
-> **Recomendação:** Opção B ou D. Diretas, específicas, sem interrogação que pode afastar quem não se identifica como "travado". Testar ambas.
-
-### 3. Subtítulo: contexto + prova, não lista de tecnologias
-
-```
-Atual:
-"Desenvolvimento sob medida com inteligência artificial, arquitetura escalável e
-experiência comprovada em projetos de alta complexidade para empresas no Brasil e exterior."
-
-Proposto:
-"Refatoramos, migramos e modernizamos sistemas corporativos com zero downtime.
-19 anos de experiência. Projetos entregues no Brasil, EUA e Europa."
-```
-
-### 4. CTAs — baixo risco, ação clara
-
-O Perfil B não vai "fechar negócio" no primeiro acesso. Ele quer iniciar uma conversa.
-
-| Errado | Certo |
-|---|---|
-| "Contratar agora" | "Falar sobre o meu sistema" |
-| "Solicitar proposta" | "Avaliar meu projeto" |
-| "Iniciar projeto" | "Conversa sem compromisso" |
-
-O CTA primário atual "Falar sobre meu projeto" é adequado. Manter. O secundário "Ver projetos" também funciona bem como opção de baixo risco.
-
----
-
-## HOMEPAGE — MUDANÇAS RECOMENDADAS (em ordem de impacto)
-
-### PRIORIDADE 1 — Hero (alto impacto, mudança mínima)
-
-**Arquivo:** `src/content/home.json`
-
-```json
-// ANTES
-"hero": {
-  "badge": "Software House em São Paulo",
-  "title": "Transformamos ideias em software que gera resultado",
-  "subtitle": "Desenvolvimento sob medida com inteligência artificial, arquitetura escalável e experiência comprovada em projetos de alta complexidade para empresas no Brasil e exterior."
-}
-
-// DEPOIS
-"hero": {
-  "badge": "Software House B2B — São Paulo",
-  "title": "Modernizamos sistemas legados. Sem parar sua operação.",
-  "subtitle": "Refatoramos, migramos e modernizamos sistemas corporativos com 19 anos de experiência. Projetos entregues para empresas no Brasil, EUA e Europa."
-}
-```
-
-**Por que funciona:**
-- Nomeia o serviço principal para Perfil B (modernização de sistema legado)
-- "Sem parar sua operação" elimina o maior medo do decisor
-- Subtítulo tem credencial (19 anos) + prova geográfica (Brasil, EUA, Europa)
-- Remove "IA" da primeira dobra (não é o foco do Perfil B)
-
-### PRIORIDADE 2 — Reordenar Services Preview
-
-O Perfil B precisa ver "Modernização de Sistemas" como primeiro ou segundo card, não terceiro.
-
-```json
-// Ordem proposta:
-1. Modernização de Sistemas  ← mover para primeiro
-2. Desenvolvimento Sob Medida
-3. Consultoria & Arquitetura
-4. Inteligência Artificial   ← mover para último
-```
-
-**Descrição do card de Modernização — reescrever:**
-```json
-// ANTES
-"description": "Migração de sistemas legados para arquiteturas modernas com microserviços, serverless e cloud."
-
-// DEPOIS
-"description": "Refatoramos e migramos sistemas legados sem interromper sua operação. Seu time continua trabalhando enquanto modernizamos a base do sistema."
-```
-
-### PRIORIDADE 3 — Stats: trocar "99% clientes satisfeitos" por dado real
-
-```json
-// ANTES
-{ "value": "99%", "label": "Clientes satisfeitos" }
-
-// DEPOIS (escolher o que for verdade)
-{ "value": "12+", "label": "Sistemas legados modernizados" }
-// ou
-{ "value": "0", "label": "Projetos abandonados" }
-// ou
-{ "value": "8+", "label": "Anos de projetos recorrentes" }
-```
-
-> **Regra:** só usar número que seja verificável e verdadeiro. Um número específico e honesto vale mais que "99%" genérico.
-
-### PRIORIDADE 4 — CTA final: mudar headline
-
-```json
-// ANTES
-"cta": {
-  "title": "Tem um projeto em mente?",
-  "subtitle": "Avaliamos cada projeto individualmente para propor a melhor solução técnica e comercial."
-}
-
-// DEPOIS
-"cta": {
-  "title": "Seu sistema legado precisa de atenção?",
-  "subtitle": "Avaliamos seu sistema sem compromisso e apresentamos um diagnóstico técnico em até 48 horas."
-}
-```
-
-### PRIORIDADE 5 — Trust Bar: substituir setores por resultado
-
-Se não há logos reais disponíveis, trocar setores por afirmações específicas que o Perfil B valoriza:
-
-```json
-// Opção A — manter setores mas ser mais específico
-"companies": ["Fintech — sistemas de pagamento", "Agronegócio — plataformas de dados", "Saúde — prontuários eletrônicos", "Entretenimento — streaming", "EUA / Europa"]
-
-// Opção B — trocar por claims verificáveis
-"companies": ["Zero downtime em migrações", "Suporte pós-entrega incluso", "Código documentado e auditável", "NDA disponível", "Reunião de diagnóstico grátis"]
-```
-
----
-
-## NOVA LANDING PAGE PROPOSTA: `/sistema-legado`
-
-Esta página é o destino prioritário dos anúncios Google Ads (aumenta Quality Score) e captura Perfil B que busca diretamente no Google.
-
-**URL:** `/sistema-legado`
-**Objetivo único:** levar ao formulário de contato
-**Estrutura sugerida (sem scroll desnecessário):**
-
-```
-[HERO]
-Headline:    "Seu sistema legado está travando o crescimento?"
-Subheadline: "A Tonolli Software tem 19 anos modernizando sistemas corporativos
-              sem interromper a operação. Sem reescrever tudo do zero."
-CTA:         [Falar sobre meu sistema] → /contato?origem=sistema-legado
-
-[3 MEDOS ELIMINADOS]
-Card 1: "Medo: o sistema vai parar durante a migração"
-        Resposta: "Modernizamos em paralelo. Seu sistema continua operando."
-Card 2: "Medo: a equipe vai perder o contexto do código"
-        Resposta: "Documentamos tudo. Transferência total de conhecimento."
-Card 3: "Medo: vai custar mais do que foi orçado"
-        Resposta: "Diagnóstico gratuito. Proposta com escopo fechado antes de iniciar."
-
-[COMO FUNCIONA — 3 PASSOS]
-1. Diagnóstico gratuito (até 48h)
-2. Proposta com escopo e prazo fechados
-3. Modernização sem parar a operação
-
-[PROVA SOCIAL]
-Case resumido de 1 projeto real de modernização com resultado mensurável
-
-[CTA FINAL]
-"Agende um diagnóstico gratuito do seu sistema"
-[Falar com especialista] → /contato?origem=sistema-legado
-```
-
-**Arquivo a criar:** `src/app/sistema-legado/page.tsx`
-**Conteúdo a criar:** `src/content/sistema-legado.json`
-
----
-
-## PÁGINA DE SERVIÇOS — MUDANÇAS RECOMENDADAS
-
-**Arquivo:** `src/content/services.json`
-
-### Serviço de Modernização — reescrever description e features
-
-```json
-// ANTES — description
-"Modernizamos sistemas e plataformas legadas para arquiteturas modernas.
-Combinamos estratégia de migração, refatoração progressiva e novas tecnologias
-para revitalizar sistemas críticos sem interromper as operações."
-
-// DEPOIS
-"Sistemas legados travam o crescimento porque ninguém quer tocar neles.
-A Tonolli tem 19 anos fazendo exatamente isso — modernizar sistemas críticos
-sem parar a operação. Diagnóstico gratuito. Proposta com escopo fechado."
-```
-
-```json
-// Features — antes (orientadas a tech)
-"Análise de arquitetura e mapeamento de dependências"
-"Refatoração progressiva sem interrupção de operações"
-"Migração para cloud (AWS, GCP, Azure)"
-
-// Features — depois (orientadas ao decisor)
-"Seu sistema continua operando durante toda a modernização"
-"Mapeamos todas as dependências antes de tocar em qualquer código"
-"Documentação completa entregue junto com o sistema modernizado"
-"Escopo e prazo fechados antes de assinar — sem surpresas de custo"
-"Diagnóstico técnico gratuito em até 48 horas"
-```
-
----
-
-## PÁGINA DE CONTATO — AJUSTES MENORES
-
-A estrutura está muito boa. Pequenos ajustes de copy:
-
-```json
-// ANTES
-"hero": {
-  "title": "Fale conosco",
-  "subtitle": "Conte-nos sobre seu projeto. Respondemos em até 24 horas..."
-}
-
-// DEPOIS
-"hero": {
-  "title": "Vamos avaliar seu sistema",
-  "subtitle": "Descreva o que está travando. Respondemos em até 24 horas com uma avaliação inicial e os próximos passos sem compromisso."
-}
-```
-
-**O campo "Modernização de Sistema Legado" no projectType já existe — manter como primeira opção** para reforçar o foco do Perfil B.
-
----
-
-## UX — PRINCÍPIOS PARA ESTE SITE ESPECIFICAMENTE
-
-### Hierarquia visual que converte para B2B corporativo
-
-1. **Headline = dor ou resultado** (não nome da empresa, não tecnologia)
-2. **Subheadline = credencial + especificidade** (19 anos + tipo de projeto)
-3. **CTA primário = ação de baixo risco** (conversar, não comprar)
-4. **CTA secundário = prova** (ver projetos, ver cases)
-5. **Social proof = concreto** (números reais, setores reais, não "99% satisfeitos")
-6. **Benefícios = resultado do cliente** (não features do serviço)
-
-### Cognitive load para o Perfil B
-
-O decisor corporativo chega cansado, ocupado, desconfiado. Cada seção deve responder uma pergunta implícita:
-
-| Seção | Pergunta implícita do visitante |
-|---|---|
-| Hero | "Essa empresa resolve meu problema?" |
-| Stats | "Posso confiar nessa empresa?" |
-| Services | "Eles já fizeram o que eu preciso?" |
-| Projects | "Tem prova disso?" |
-| CTA | "Qual é o próximo passo sem risco?" |
-
-### Micro-copy que constrói confiança
-
-Adicionar em locais estratégicos (abaixo dos CTAs principais):
-
-```
-Abaixo do botão "Falar sobre meu projeto":
-→ "Diagnóstico inicial sem compromisso. Respondemos em até 24h."
-
-Abaixo do formulário de contato:
-→ "Seus dados são confidenciais. NDA disponível mediante solicitação."
-
-Na página de sistema legado:
-→ "Mais de 12 sistemas legados modernizados sem downtime."
-```
-
-### Friction zero no formulário
-
-O ContactWizard atual é bom. Garantir que:
-- O primeiro passo peça apenas nome + email (não assusta)
-- O tipo de projeto apareça cedo (qualifica sem sentir interrogatório)
-- Mensagem de sucesso seja específica ("Recebemos. Retorno em até 24h úteis.")
-
----
-
-## DESIGN SYSTEM — DIRETRIZES ESPECÍFICAS
-
-### Hierarquia tipográfica para páginas de serviço
-
-```
-H1 (hero): font-bold, text-4xl md:text-5xl lg:text-6xl — máx 8 palavras
-H2 (seção): font-semibold, text-3xl — deve completar "Como [H2] resolve [dor]"
-H3 (card): font-medium, text-xl — benefício, não feature
-Body: text-base, leading-relaxed — frase curta, parágrafo curto (máx 3 linhas)
-```
-
-### Cores e sinalização visual
-
-- **CTA primário:** cor sólida com alto contraste — deve ser o elemento mais visível na viewport
-- **CTA secundário:** ghost/outlined — visível mas não compete com primário
-- **Cards de serviço:** borda sutil, hover com elevação leve (shadow-md)
-- **Stats:** número em destaque (text-4xl font-bold), label em muted (text-sm text-muted)
-
-### Espaçamento entre seções
-
-Manter `py-24` para seções principais. Aumentar para `py-32` na hero e no CTA final — essas seções precisam de "respiração" para parecerem premium (referência: Stripe, Vercel).
-
-### Padrão para cards de benefício (nova landing page)
-
-```tsx
-// Estrutura sugerida para cards de "Medo Eliminado":
-<div className="rounded-2xl border border-border bg-card p-6">
-  <div className="flex items-start gap-4">
-    <div className="rounded-lg bg-primary/10 p-2">
-      <Icon className="h-5 w-5 text-primary" />
-    </div>
-    <div>
-      <p className="text-sm font-medium text-muted-foreground mb-1">
-        A preocupação comum:
-      </p>
-      <p className="font-semibold text-foreground mb-2">{fear}</p>
-      <p className="text-sm text-muted-foreground">{answer}</p>
-    </div>
-  </div>
-</div>
-```
+| Estrutura de rotas (`/servicos`, `/projetos`, `/sobre`, `/contato`, `/sistema-legado`) | URLs indexadas — mudar afeta SEO |
+| `ContactWizard` — lógica de campos e etapas | Já é bem qualificado, só copy pode mudar |
+| Token `{anos}` e o import de `@/lib/content` | Ver convenção técnica acima |
+| Componentes UI genéricos (`Button`, `Card`, `SectionTitle`, etc.) | Stack estável |
+| Dados do fundador em `/sobre` | Autenticidade é ativo |
+
+Note que **os números de stats (50+, 99%) saíram desta lista** — estão em auditoria (pendência 4 acima),
+não são mais "intocáveis por padrão".
 
 ---
 
 ## COMO RODAR LOCAL E TESTAR
 
 ```bash
-# Na raiz do projeto
 npm run dev
-
-# Acessar em:
-http://localhost:3000          → homepage
-http://localhost:3000/servicos → página de serviços
-http://localhost:3000/contato  → formulário de contato
-http://localhost:3000/sistema-legado → nova landing page (quando criada)
+# http://localhost:3000            → homepage
+# http://localhost:3000/servicos   → serviços
+# http://localhost:3000/contato    → contato
+# http://localhost:3000/sistema-legado → landing legado
 ```
 
-### Checklist de revisão local antes de subir
-
-**Homepage:**
-- [ ] Hero headline nomeia modernização de sistemas ou legado
-- [ ] Nenhuma menção a "IA" ou tecnologia específica above the fold
-- [ ] Serviço de Modernização aparece como 1º ou 2º card
-- [ ] CTA primário diz "Falar sobre meu sistema" ou similar
-- [ ] Stats têm números verificáveis e específicos
-
-**Serviços:**
-- [ ] Description do serviço de modernização fala com Perfil B
-- [ ] Features listam benefícios (o que o cliente ganha) não features técnicas
-- [ ] Nenhuma descrição de serviço menciona linguagens/frameworks no texto principal
-
-**Contato:**
-- [ ] Título da página não é "Fale conosco" genérico
-- [ ] "Modernização de Sistema Legado" é a primeira opção no projectType
-- [ ] Mensagem de confirmação é específica
-
-**Nova landing page `/sistema-legado`:**
-- [ ] Headline nomeia a dor diretamente
-- [ ] Três medos eliminados com respostas concretas
-- [ ] Um case ou prova social real
-- [ ] CTA único e claro para /contato
+Antes de subir qualquer mudança de copy: `npm run build` (pega erro de tipo/rota) + rodar local e ler a
+página de verdade — não só confiar no JSON.
 
 ---
 
-## O QUE NAO MUDAR
+## HISTÓRICO DE MUDANÇAS
 
-| Elemento | Motivo |
-|---|---|
-| Estrutura de rotas (`/servicos`, `/projetos`, `/sobre`, `/contato`) | URLs indexadas — mudar afeta SEO |
-| ContactWizard — lógica de campos e etapas | Já é bem qualificado, só ajustar copy |
-| Stats de números verificáveis (19+, 50+, 6+) | São credenciais reais e fortes |
-| Página de Projetos — conteúdo dos cases | Cases reais são prova social — não mexer |
-| Componentes UI (botões, cards, inputs) | Stack estável, não há ganho em refatorar |
-| Dados do fundador em `/sobre` | Autenticidade é ativo — não generivar |
+Only entradas a partir da reescrita deste arquivo. Contexto anterior (diagnóstico do site antigo, roadmap
+de 4 fases, criação da `/sistema-legado`) está preservado no `git log` deste arquivo, não repetido aqui.
 
----
-
-## ROADMAP DE IMPLEMENTACAO
-
-### Fase 1 — Mudanças em JSON (sem criar nada novo, testar local primeiro)
-- [ ] `home.json`: hero title + subtitle + services order + CTA title
-- [ ] `services.json`: description + features do serviço de modernização
-- [ ] `contact.json`: hero title + subtitle + mensagem de sucesso
-- [ ] Testar local → revisar → subir
-
-### Fase 2 — Nova landing page `/sistema-legado` ✅ CONCLUÍDA (12/06/2026)
-- [x] Criar `src/content/sistema-legado.json` com todo o conteúdo
-- [x] Criar `src/app/sistema-legado/page.tsx` (reusa Hero/ProcessSteps/CTA/Card — não precisou de componentes novos)
-- [x] Testar local → revisar → subir (no ar, com FAQPage + Service + BreadcrumbList JSON-LD)
-- [ ] Atualizar URL de destino dos anúncios Google Ads para `/sistema-legado` ← **pendente, ação do João**
-
-### Fase 3 — Micro-copy e trust signals
-- [x] Adicionar texto de suporte abaixo dos CTAs principais (feito na landing; falta na home)
-- [ ] Revisar todas as meta descriptions (SEO) para linguagem Perfil B
-- [x] Adicionar structured data para LocalBusiness (ProfessionalService com endereço já existia; foundingDate 2022 adicionado)
-
-### Fase 4 — Medição (após subir)
-- [ ] Configurar evento de conversão no Google Ads para formulário enviado
-- [ ] Checar Google Analytics: taxa de saída no hero (bounce acima de 70% = hero fraco)
-- [ ] Checar scroll depth: até onde os usuários chegam antes de sair
-
----
-
-## ESTADO ATUAL DA CODEBASE (12/06/2026)
-
-### Sistema de "anos de experiência" automático — CONVENÇÃO CRÍTICA
-
-Os "X+ anos" do site são **calculados no build**: `src/lib/content.ts` define `anosDeExperiencia = ano atual - 2006` e substitui o token `{anos}` em todas as strings dos JSONs de conteúdo.
-
-**Regras para não regredir:**
-1. **NUNCA hardcodar anos** ("20 anos", "21+") em JSON ou TSX — usar `{anos}` nos JSONs ou importar `anosDeExperiencia` no código.
-2. **Consumidores importam de `@/lib/content`** (`siteData`, `homeData`, `aboutData`, `servicesData`, `projectsData`, `contactData`, `sistemaLegadoData`) — **nunca** importar `@/content/*.json` direto, senão o token `{anos}` vaza cru pra tela.
-3. O cron anual no `deploy.yml` (02/jan, 06h UTC) rebuilda na virada do ano para o número atualizar sozinho.
-4. **Distinção factual**: empresa fundada em **2022** (`foundingDate` no schema, stat em /sobre); "desde 2006" é a **experiência do fundador**. Não alegar "empresa desde 2006".
-
-### Deploy e SEO
-
-- Push na `main` → GitHub Actions → Cloudflare Pages (projeto `tonolli-software`). Static export (`output: "export"`, trailingSlash).
-- Site **indexado no Google, #1 para a marca**. Sitemap/robots em `public/` (manuais — atualizar ao criar página!), domínio canônico sem www, URLs com barra final.
-- og-image (`public/og-image.png`): gerada com o logo real (`public/icon.png`) e "Experiência desde 2006" (não envelhece). Se regenerar, manter 1200x630 e o logo original.
-- Cases citáveis: **apenas projetos próprios** (PrevAgro, ClimIA, Currify) — João decidiu não citar clientes externos nominalmente em páginas de case.
-- Maior alavanca pendente: **Google Business Profile** (não existe ainda; ação do João) para "software house são paulo".
-
----
-
-## HISTORICO DE MUDANCAS
-
-### 12/06/2026 — SEO + landing /sistema-legado (Fase 2)
-- Anos de experiência calculados desde 2006 via token `{anos}` (src/lib/content.ts) + cron anual de rebuild
-- Landing `/sistema-legado` no ar conforme spec deste arquivo (3 medos, 3 passos, prova social do case Modernização Enterprise, FAQ com FAQPage JSON-LD); adicionada à navegação e ao sitemap
-- og-image regenerada com logo real e "Experiência desde 2006"; foundingDate 2022 no schema; meta keywords obsoleta removida; sitemap com barra final e sem www
-- Auditoria SEO completa: site tecnicamente saudável; próximos ganhos vêm de GBP + cases, não de ajuste técnico
-
-### 22/03/2026 — Criação deste arquivo
-- Diagnóstico completo do site atual
-- Estratégia de copy definida para Perfil B
-- Roadmap de implementação em 4 fases
-- Nova landing page `/sistema-legado` proposta
+### 26/08/2026 — Reposicionamento generalista + híbrido CNPJ
+- Pesquisa de concorrentes (2 arquétipos, nenhum ocupa o meio-termo CNPJ + atendimento direto).
+- `home.json`: hero, nova seção `whyMe`, `servicesPreview` já estava com Desenvolvimento Sob Medida em
+  1º.
+- `services.json`: reordenado (Desenvolvimento Sob Medida primeiro, Modernização vira 2ª oferta).
+- `site.json`: `description`/`shortDescription` atualizados para o wedge CNPJ/direto-sem-agência.
+- Auditoria de português/consistência iniciada no mesmo dia — ver "PENDÊNCIAS ABERTAS" acima. Achados:
+  erro de concordância em `projects.json`, clientes nomeados (Sony Music, Banco do Brasil) que
+  contradizem a regra de não citar clientes externos, inconsistência de voz eu/nós entre home e o resto
+  do site, stat "50+ projetos" questionado, dois links de projeto mortos (PrevAgro, ClimIA).
+- Este arquivo foi reescrito do zero a pedido do João para não ficar preso ao raciocínio antigo.
